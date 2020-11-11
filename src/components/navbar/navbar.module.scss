@@ -1,0 +1,47 @@
+header {
+  padding: 1rem;
+  border: 4px solid black;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.links {
+  flex-grow: 1;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    li {
+      transition: all 0.2s;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  background-color: whitesmoke;
+  height: 35px;
+  width: 35px;
+}
+
+.logoText {
+  color: white;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
