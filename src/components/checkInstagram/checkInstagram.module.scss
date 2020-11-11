@@ -1,0 +1,63 @@
+.container {
+  background: linear-gradient(190deg, #ebf4fd, hsla(0, 0%, 100%, 0) 45%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 5rem;
+  margin-top: 6rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.subTitle {
+  color: black;
+  margin-top: 1rem;
+}
+
+.instagramPostsContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+
+  & div:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+
+.instagramPost {
+  height: 450px;
+  width: 350px;
+  background: linear-gradient(60deg, black, transparent);
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.button {
+  color: white;
+  width: 300px;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  background-color: black;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}

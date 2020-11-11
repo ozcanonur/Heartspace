@@ -9,9 +9,9 @@ const Hero = () => {
         <div className={classes.title}>Nourish your relationship.</div>
         <div className={classes.subTitle}>
           <div>Communicate better. Deeper connections.</div>
-          <div>More intimacy</div>
+          <div>More intimacy.</div>
         </div>
-        <button className={classes.button}>Check out or community</button>
+        <button className={classes.button}>Check out our community</button>
       </div>
     </div>
   );

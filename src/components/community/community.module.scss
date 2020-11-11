@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+  background: linear-gradient(165deg, #ebf4fd, hsla(0, 0%, 100%, 0) 45%);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+}
+
+.title {
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.subTitle {
+  margin-top: 1rem;
+  color: black;
+  font-size: 2.2rem;
+}
+
+.storyContainer {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.img {
+  width: 68rem;
+  height: 200px;
+  background: linear-gradient(60deg, black, transparent);
+}
+
+.storyText {
+  color: black;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+}
+
+.footer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.footerImg {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(60deg, black, transparent);
+}
+
+.footerText {
+  color: black;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}

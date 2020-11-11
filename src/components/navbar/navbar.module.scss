@@ -1,6 +1,5 @@
 header {
   padding: 1rem;
-  border: 4px solid black;
 }
 
 nav {
@@ -14,9 +13,10 @@ nav {
   ul {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     li {
       transition: all 0.2s;
+      border-bottom: 1px solid transparent;
       a {
         text-decoration: none;
         color: white;
@@ -34,14 +34,14 @@ nav {
 }
 
 .logoImg {
-  background-color: whitesmoke;
+  background: linear-gradient(60deg, black, transparent);
   height: 35px;
   width: 35px;
 }
 
 .logoText {
   color: white;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
 }

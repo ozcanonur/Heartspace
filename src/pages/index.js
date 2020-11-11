@@ -14,9 +14,9 @@ const Index = () => {
     <div>
       <div
         style={{
-          backgroundColor: '#1C1B7E',
+          backgroundColor: '#719695',
           height: '900px',
-          width: '100vw',
+          width: '100%',
           position: 'absolute',
           zIndex: -1,
         }}
@@ -29,11 +29,13 @@ const Index = () => {
         }}
       >
         <Navbar />
-        <Hero />
-        <CoolAnimation />
-        <CheckInstagram />
-        <Community />
-        <Cards />
+        <div style={{ padding: '5rem' }}>
+          <Hero />
+          <CoolAnimation />
+          <CheckInstagram />
+          <Community />
+          <Cards />
+        </div>
         <Footer />
       </div>
     </div>
