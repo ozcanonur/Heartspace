@@ -16,13 +16,13 @@
 }
 
 .title {
-  color: #2f2e8b;
+  color: #0c0c0c;
   font-size: 2.8rem;
   font-weight: 900;
 }
 
 .subTitle {
-  color: #2f2e8b;
+  color: #0c0c0c;
   font-size: 1.5rem;
   margin-top: 2rem;
 }
@@ -54,7 +54,8 @@
 .button {
   margin-top: 6rem;
   font-size: 1.3rem;
-  background-color: #2f2e8b;
+  background-color: #4c8989;
+  color: white;
   width: fit-content;
   cursor: pointer;
   padding: 1.2rem 3rem;
@@ -68,7 +69,7 @@
 
 .anchor {
   position: absolute;
-  background-color: #1c59a0;
+  background-color: #f29f7d;
   height: 100px;
   width: 100px;
   top: 0;

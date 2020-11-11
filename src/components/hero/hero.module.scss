@@ -6,17 +6,19 @@
 .subContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 2rem;
+  padding: 0 10rem;
 }
 
 .title {
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 1rem;
+  color: white;
 }
 
 .subTitle {
   font-size: 1.5rem;
+  color: white;
 
   div {
     margin-top: 1rem;
@@ -25,19 +27,15 @@
 
 .button {
   margin-top: 2rem;
-  background-color: #fee895;
+  background-color: #4c8989;
   width: fit-content;
   cursor: pointer;
   padding: 1.2rem 2rem;
   border-radius: 1rem;
   transition: all 0.2s ease-out;
-  color: black;
+  color: white;
 
   &:hover {
     transform: scale(1.05);
   }
-}
-
-.lottie {
-  margin-top: -3rem;
 }

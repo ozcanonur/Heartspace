@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import * as animationData from '../../assets/womanPhone.json';
+import * as animationData from '../../assets/womanPhone2.json';
 import classes from './hero.module.scss';
 
 const Hero = () => {
@@ -24,7 +24,7 @@ const Hero = () => {
         </div>
       </div>
       <Lottie
-        className={classes.lottie}
+        style={{ marginTop: '-3rem' }}
         options={defaultOptions}
         height={400}
         width={400}

@@ -8,14 +8,6 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-* {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  color: white;
-}
-
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -363,11 +355,12 @@ button {
 }
 
 #top-image {
-  background-color: #1c59a0;
+  background-color: #f29f7d;
   height: 600px;
   width: 100%;
   position: absolute;
   z-index: -1;
+  border-radius: 63% 37% 52% 48% / 0% 100% 0% 100%;
 }
 
 #main-container {
@@ -378,4 +371,11 @@ button {
 
 #main {
   padding: 5rem;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
 }

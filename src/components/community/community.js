@@ -1,5 +1,7 @@
 import React from 'react';
 import classes from './community.module.scss';
+import happyCouple from '../../assets/happyCouple.jpeg';
+import heart from '../../assets/heart.png';
 
 const Community = () => {
   return (
@@ -9,7 +11,7 @@ const Community = () => {
         Changing my thoughts has changed my relationship
       </div>
       <div className={classes.storyContainer}>
-        <div className={classes.img} />
+        <img src={happyCouple} alt="Happy Couple" className={classes.img} />
         <div className={classes.storyText}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
           accusantium facilis saepe et expedita magni asperiores modi hic
@@ -20,7 +22,7 @@ const Community = () => {
         </div>
       </div>
       <div className={classes.footer}>
-        <div className={classes.footerImg} />
+        <img src={heart} alt="Heart" className={classes.footerImg} />
         <div className={classes.footerText}>Sarah from London, UK</div>
       </div>
     </div>
