@@ -361,3 +361,21 @@ template {
 button {
   border: none;
 }
+
+#top-image {
+  background-color: #1c59a0;
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#main-container {
+  padding: 0 5rem;
+  max-width: 1440px;
+  margin: auto auto;
+}
+
+#main {
+  padding: 5rem;
+}

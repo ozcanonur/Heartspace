@@ -1,11 +1,12 @@
 .container {
-  background: linear-gradient(190deg, #ebf4fd, hsla(0, 0%, 100%, 0) 45%);
+  background: linear-gradient(190deg, #ebf4fd, hsla(0, 0%, 100%, 0) 90%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 5rem;
-  margin-top: 6rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 7rem 5rem;
+  position: relative;
+  // margin-top: 6rem;
+  // box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .titleContainer {
@@ -15,14 +16,15 @@
 }
 
 .title {
-  color: black;
-  font-size: 2rem;
-  font-weight: 600;
+  color: #2f2e8b;
+  font-size: 2.8rem;
+  font-weight: 900;
 }
 
 .subTitle {
-  color: black;
-  margin-top: 1rem;
+  color: #2f2e8b;
+  font-size: 1.5rem;
+  margin-top: 2rem;
 }
 
 .instagramPostsContainer {
@@ -30,18 +32,19 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 7rem;
 
-  & div:not(:last-child) {
+  & img:not(:last-child) {
     margin-right: 2rem;
   }
 }
 
 .instagramPost {
   height: 450px;
-  width: 350px;
-  background: linear-gradient(60deg, black, transparent);
+  width: 33%;
   transition: all 0.2s;
+  object-fit: cover;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 
   &:hover {
     transform: scale(1.05);
@@ -49,16 +52,30 @@
 }
 
 .button {
-  color: white;
-  width: 300px;
-  padding: 1rem 2rem;
-  margin-top: 3rem;
-  background-color: black;
-  transition: all 0.2s;
+  margin-top: 6rem;
+  font-size: 1.3rem;
+  background-color: #2f2e8b;
+  width: fit-content;
   cursor: pointer;
-  outline: none;
+  padding: 1.2rem 3rem;
+  border-radius: 1rem;
+  transition: all 0.2s ease-out;
 
   &:hover {
     transform: scale(1.05);
   }
+}
+
+.anchor {
+  position: absolute;
+  background-color: #1c59a0;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.lottie {
+  margin-top: -3rem;
 }

@@ -3,12 +3,6 @@
   align-items: center;
 }
 
-.logo {
-  background: linear-gradient(60deg, black, transparent);
-  height: 160px;
-  width: 160px;
-}
-
 .subContainer {
   display: flex;
   flex-direction: column;
@@ -16,8 +10,8 @@
 }
 
 .title {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 900;
   margin-bottom: 1rem;
 }
 
@@ -25,21 +19,25 @@
   font-size: 1.5rem;
 
   div {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 }
 
 .button {
   margin-top: 2rem;
-  background-color: black;
+  background-color: #fee895;
   width: fit-content;
   cursor: pointer;
-  padding: 1rem 2rem;
-  transition: all 0.2s;
+  padding: 1.2rem 2rem;
+  border-radius: 1rem;
+  transition: all 0.2s ease-out;
+  color: black;
 
   &:hover {
-    background-color: white;
-    color: black;
     transform: scale(1.05);
   }
+}
+
+.lottie {
+  margin-top: -3rem;
 }

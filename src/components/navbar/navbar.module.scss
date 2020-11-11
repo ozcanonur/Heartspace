@@ -1,19 +1,24 @@
 header {
   padding: 1rem;
+  padding-top: 2rem;
 }
 
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 1rem;
 }
 
 .links {
-  flex-grow: 1;
   ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
+    & > li:not(:last-child) {
+      margin-right: 1.8rem;
+    }
+
     li {
       transition: all 0.2s;
       border-bottom: 1px solid transparent;
