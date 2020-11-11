@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+
+  & > .sectionContainer:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+
+  & > .sectionContainer:nth-child(2) {
+    flex-direction: row-reverse;
+
+    & > .card {
+      margin-left: 0;
+      background: linear-gradient(165deg, #ebf4fd, rgba(255, 255, 255, 0) 45%);
+      & > .button {
+        align-self: flex-start;
+      }
+    }
+
+    & > .img {
+      margin-left: 4rem;
+    }
+  }
+}
+
+.sectionContainer {
+  display: flex;
+  width: 100%;
+  min-height: 30rem;
+}
+
+.img {
+  width: 45%;
+  background: linear-gradient(60deg, black, transparent);
+}
+
+.card {
+  margin-left: 4rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 4rem;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(190deg, #ebf4fd, rgba(255, 255, 255, 0) 45%);
+}
+
+.cardTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+}
+
+.cardText {
+  color: black;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.button {
+  color: white;
+  width: 300px;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  background-color: black;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+  align-self: flex-end;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

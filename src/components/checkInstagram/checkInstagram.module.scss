@@ -55,9 +55,10 @@
   margin-top: 3rem;
   background-color: black;
   transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
 
   &:hover {
-    background-color: white;
-    color: black;
+    transform: scale(1.05);
   }
 }

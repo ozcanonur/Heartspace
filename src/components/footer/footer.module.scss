@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.privacy {
+  color: black;
+}
+
+.copyright {
+  color: black;
+  margin-left: 1rem;
+}
+
+.icon {
+  background: linear-gradient(60deg, black, transparent);
+  width: 35px;
+  height: 35px;
+  margin-left: 1rem;
+}
