@@ -1,41 +1,48 @@
 .container {
   display: flex;
   align-items: center;
+  background: #f29f7d;
+  border-radius: 0% 100% 100% 0% / 100% 0% 100% 0%;
 }
 
 .subContainer {
   display: flex;
   flex-direction: column;
-  padding: 0 10rem;
+  padding: 20rem 16rem;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 7rem;
   font-weight: 900;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   color: white;
 }
 
 .subTitle {
-  font-size: 1.5rem;
-  color: white;
-
   div {
     margin-top: 1rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: white;
   }
 }
 
 .button {
-  margin-top: 2rem;
+  margin-top: 4rem;
   background-color: #4c8989;
   width: fit-content;
   cursor: pointer;
-  padding: 1.2rem 2rem;
-  border-radius: 1rem;
+  padding: 2rem 3rem;
+  border-radius: 10rem;
   transition: all 0.2s ease-out;
   color: white;
+  z-index: 9;
+  outline: none;
+  font-size: 1.8rem;
 
   &:hover {
-    transform: scale(1.05);
+    background-color: #3c6b6b;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 }

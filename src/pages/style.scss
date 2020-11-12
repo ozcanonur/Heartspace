@@ -1,3 +1,5 @@
+@import './typography.css';
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -11,6 +13,7 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  font-size: 62.5%;
 }
 
 /* Sections
@@ -354,28 +357,28 @@ button {
   border: none;
 }
 
-#top-image {
-  background-color: #f29f7d;
-  height: 600px;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  border-radius: 63% 37% 52% 48% / 0% 100% 0% 100%;
-}
+// #top-image {
+//   background-color: #f29f7d;
+//   height: 600px;
+//   width: 100%;
+//   position: absolute;
+//   z-index: -1;
+//   border-radius: 63% 37% 52% 48% / 0% 100% 0% 100%;
+// }
 
-#main-container {
-  padding: 0 5rem;
-  max-width: 1440px;
-  margin: auto auto;
-}
+// #main-container {
+//   padding: 0 5rem;
+//   max-width: 1440px;
+//   margin: auto auto;
+// }
 
-#main {
-  padding: 5rem;
-}
+// #main {
+//   padding: 5rem;
+// }
 
 * {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  font-family: 'Apercu', sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }

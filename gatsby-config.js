@@ -17,12 +17,12 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: [`Poppins\:400, 500, 600, 900`],
-        display: 'swap',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-google-fonts',
+    //   options: {
+    //     fonts: [`Poppins\:400, 500, 600, 900`],
+    //     display: 'swap',
+    //   },
+    // },
   ],
 };

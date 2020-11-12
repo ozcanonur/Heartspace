@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
       <div className={classes.container}>
         <div className={classes.subContainer}>
           <div className={classes.title}>Nourish your relationship.</div>
@@ -24,13 +24,13 @@ const Hero = () => {
         </div>
       </div>
       <Lottie
-        style={{ marginTop: '-3rem' }}
+        style={{ position: 'absolute', bottom: '-10%', left: '35%' }}
         options={defaultOptions}
         height={400}
         width={400}
         isClickToPauseDisabled={true}
       />
-    </>
+    </div>
   );
 };
 

@@ -11,15 +11,12 @@ import './style.scss';
 const Index = () => {
   return (
     <div>
-      <div id="top-image" />
-      <div id="main-container">
-        <Navbar />
-        <div id="main">
-          <Hero />
-          <CheckInstagram />
-          <Community />
-          <Cards />
-        </div>
+      <Navbar />
+      <div style={{ margin: '0 auto', maxWidth: '1200px' }}>
+        <Hero />
+        <CheckInstagram />
+        <Community />
+        <Cards />
         <Footer />
       </div>
     </div>
