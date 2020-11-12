@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import * as animationData from '../../assets/womanPhone2.json';
+import * as animationData from '../../assets/lottie/womanPhone2.json';
 import classes from './hero.module.scss';
 
 const Hero = () => {
@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <div style={{ position: 'relative' }}>
       <div className={classes.container}>
-        <div className={classes.subContainer}>
+        <h1 className={classes.subContainer}>
           <div className={classes.title}>Nourish your relationship.</div>
           <div className={classes.subTitle}>
             <div>Communicate better.</div>
@@ -21,7 +21,7 @@ const Hero = () => {
             <div>More intimacy.</div>
           </div>
           <button className={classes.button}>Check out our community</button>
-        </div>
+        </h1>
       </div>
       <Lottie
         style={{ position: 'absolute', bottom: '-10%', left: '35%' }}

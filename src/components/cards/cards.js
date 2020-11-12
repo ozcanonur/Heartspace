@@ -1,8 +1,8 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import * as animationData1 from '../../assets/consulting.json';
-import * as animationData2 from '../../assets/meditate.json';
-import * as animationData3 from '../../assets/discussion.json';
+import * as animationData1 from '../../assets/lottie/consulting.json';
+import * as animationData2 from '../../assets/lottie/meditate.json';
+import * as animationData3 from '../../assets/lottie/editor2.json';
 import classes from './cards.module.scss';
 
 const Cards = () => {
@@ -24,57 +24,52 @@ const Cards = () => {
     animationData: animationData3.default,
   };
 
+  const cards = [
+    {
+      lottie: defaultOptions1,
+      title: 'Relationship Strength Quiz',
+      text:
+        'Psychology-based relationship assessment will help key areas you can improve in your relationship',
+      buttonText: 'Take it now!',
+    },
+    {
+      lottie: defaultOptions2,
+      title: 'About us / Who we are',
+      text:
+        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, nemo! Dicta assumenda rem vel velit, tempore ad minima? Rem similique assumenda, cupiditate voluptatem suscipit rerum?',
+      buttonText: 'Contact us',
+    },
+    {
+      lottie: defaultOptions3,
+      title: 'Get in touch',
+      text:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos doloribus nostrum eligendi ducimus. Exercitationem, sapiente!',
+      buttonText: 'Contact us',
+    },
+  ];
+
   return (
     <div className={classes.container}>
-      <div className={classes.sectionContainer}>
-        <Lottie
-          options={defaultOptions1}
-          width={400}
-          isClickToPauseDisabled={true}
-        />
-        <div className={classes.card}>
-          <div className={classes.cardTitle}>Relationship Strength Quiz</div>
-          <div className={classes.cardText}>
-            Psychology-based relationship assessment will help key areas you can
-            improve in your relationship
+      <section className={classes.section}>
+        {cards.map((card) => (
+          <div className={classes.sectionContainer}>
+            <div className={classes.card}>
+              <div className={classes.lottieContainer}>
+                <Lottie
+                  options={card.lottie}
+                  width={400}
+                  isClickToPauseDisabled={true}
+                />
+              </div>
+              <div className={classes.cardTypography}>
+                <div className={classes.cardTitle}>{card.title}</div>
+                <div className={classes.cardText}>{card.text}</div>
+                <button className={classes.button}>{card.buttonText}</button>
+              </div>
+            </div>
           </div>
-          <button className={classes.button}>Check it out!</button>
-        </div>
-      </div>
-      <div className={classes.sectionContainer}>
-        <Lottie
-          options={defaultOptions2}
-          width={400}
-          isClickToPauseDisabled={true}
-        />
-        <div className={classes.card}>
-          <div className={classes.cardTitle}>About us / Who are we?</div>
-          <div className={classes.cardText}>
-            We'd love to hear from you! Get in touch to Lorem ipsum dolor sit
-            amet consectetur, adipisicing elit. Rerum numquam laboriosam
-            voluptatem consequatur cupiditate voluptas! Lorem ipsum dolor sit,
-            amet consectetur adipisicing elit. Repellat, optio.
-          </div>
-          <button className={classes.button}>Check it out!</button>
-        </div>
-      </div>
-      <div className={classes.sectionContainer}>
-        <Lottie
-          options={defaultOptions3}
-          width={400}
-          isClickToPauseDisabled={true}
-        />
-        <div className={classes.card}>
-          <div className={classes.cardTitle}>Get in touch</div>
-          <div className={classes.cardText}>
-            We'd love to hear from you! Get in touch to Lorem ipsum dolor sit
-            amet consectetur, adipisicing elit. Rerum numquam laboriosam
-            voluptatem consequatur cupiditate voluptas! Lorem ipsum dolor sit,
-            amet consectetur adipisicing elit. Repellat, optio.
-          </div>
-          <button className={classes.button}>Check it out!</button>
-        </div>
-      </div>
+        ))}
+      </section>
     </div>
   );
 };

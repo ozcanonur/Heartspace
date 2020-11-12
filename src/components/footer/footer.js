@@ -1,14 +1,26 @@
 import React from 'react';
 import classes from './footer.module.scss';
 
+import Instagram from '../../assets/svg/instagram.inline.svg';
+import Twitter from '../../assets/svg/twitter.inline.svg';
+import Facebook from '../../assets/svg/facebook.inline.svg';
+import Linkedin from '../../assets/svg/linkedin.inline.svg';
+
 const Footer = () => {
   return (
     <div className={classes.container}>
-      <div className={classes.privacy}>Privacy Policy</div>
       <div className={classes.copyright}>
-        Happy Relationships copyright vs vs.
+        &copy; 2020 Happy Relationships Inc.
       </div>
-      <div className={classes.icon} />
+      <a href="#" className={classes.privacy}>
+        Privacy Policy
+      </a>
+      <div className={classes.socialMediaContainer}>
+        <Instagram />
+        <Twitter />
+        <Facebook />
+        <Linkedin />
+      </div>
     </div>
   );
 };

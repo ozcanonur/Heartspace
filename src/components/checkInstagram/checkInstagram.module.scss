@@ -1,11 +1,15 @@
 .container {
-  background: linear-gradient(190deg, #ebf4fd, hsla(0, 0%, 100%, 0) 90%);
+  padding: 0 16rem;
+  margin-top: 16rem;
+}
+
+.section {
+  background: linear-gradient(190deg, #ebf4fd, hsla(0, 0%, 100%, 0) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 7rem 5rem;
   position: relative;
-  // margin-top: 6rem;
   // box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
@@ -16,15 +20,15 @@
 }
 
 .title {
-  color: #0c0c0c;
-  font-size: 2.8rem;
+  color: #4b4c4d;
+  font-size: 4rem;
   font-weight: 900;
 }
 
 .subTitle {
-  color: #0c0c0c;
-  font-size: 1.5rem;
-  margin-top: 2rem;
+  color: #4b4c4d;
+  font-size: 2rem;
+  margin-top: 3rem;
 }
 
 .instagramPostsContainer {
@@ -40,42 +44,46 @@
 }
 
 .instagramPost {
-  height: 450px;
   width: 33%;
-  transition: all 0.2s;
+  transition: transform 0.2s;
   object-fit: cover;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 }
 
 .button {
-  margin-top: 6rem;
-  font-size: 1.3rem;
+  margin-top: 7rem;
   background-color: #4c8989;
-  color: white;
   width: fit-content;
   cursor: pointer;
-  padding: 1.2rem 3rem;
-  border-radius: 1rem;
+  padding: 2rem 3rem;
+  border-radius: 10rem;
   transition: all 0.2s ease-out;
+  color: white;
+  z-index: 9;
+  outline: none;
+  font-size: 1.8rem;
 
   &:hover {
-    transform: scale(1.05);
+    background-color: #3c6b6b;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 }
 
-.anchor {
-  position: absolute;
-  background-color: #f29f7d;
-  height: 100px;
-  width: 100px;
-  top: 0;
-  right: 0;
-  clip-path: polygon(100% 0, 0 0, 100% 100%);
-}
+// .anchor {
+//   position: absolute;
+//   background-color: #f29f7d;
+//   height: 10rem;
+//   width: 20rem;
+//   top: 0;
+//   left: 0;
+//   border-radius: 0% 100% 100% 0% / 100% 1% 99% 0%;
+// }
 
 .lottie {
   margin-top: -3rem;

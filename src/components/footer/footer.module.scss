@@ -2,20 +2,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #413d45;
+  font-size: 1.5rem;
+  padding: 3rem;
+  margin-top: 4rem;
 }
 
 .privacy {
-  color: black;
+  color: #f0f0f0;
+  opacity: 0.8;
+  font-weight: 300;
+  margin-left: 1rem;
 }
 
 .copyright {
-  color: black;
-  margin-left: 1rem;
+  color: #f0f0f0;
+
+  opacity: 0.8;
+  font-weight: 300;
 }
 
-.icon {
-  background: linear-gradient(60deg, black, transparent);
-  width: 35px;
-  height: 35px;
-  margin-left: 1rem;
+.socialMediaContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 8rem;
+
+  svg {
+    width: 35px;
+    height: 35px;
+    margin-left: 2rem;
+    cursor: pointer;
+  }
 }

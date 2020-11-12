@@ -12,13 +12,13 @@ const Index = () => {
   return (
     <div>
       <Navbar />
-      <div style={{ margin: '0 auto', maxWidth: '1200px' }}>
+      <main style={{ margin: '0 auto', maxWidth: '1440px' }}>
         <Hero />
         <CheckInstagram />
         <Community />
         <Cards />
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 };

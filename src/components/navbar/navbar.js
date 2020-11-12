@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/happy_logo_circle small.png';
+import logo from '../../assets/img/happy_logo_circle small.png';
 import classes from './navbar.module.scss';
 
 const Navbar = () => {
