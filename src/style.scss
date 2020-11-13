@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @font-face {
   font-family: Apercu;
   src: url('./assets/fonts/Apercu\ Pro\ Medium.woff2');
@@ -13,12 +15,33 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 54.6%;
+  }
 }
 
 body {
   font-family: 'Apercu', sans-serif;
   font-weight: 400;
   min-height: 100vh;
+  position: relative;
+}
+
+.bg {
+  background: $color-primary;
+  border-radius: $border-radius-hero-bg;
+  height: 77rem;
+  width: 100%;
+  position: absolute;
+
+  // @media only screen and (max-width: 750px) {
+  //   width: 120%;
+  // }
+
+  // @media only screen and (max-width: 600px) {
+  //   width: 135%;
+  // }
 }
 
 .main {

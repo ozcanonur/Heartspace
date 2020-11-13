@@ -33,6 +33,12 @@
   margin-top: 4rem;
 }
 
+.imgContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .img {
   width: 200px;
   height: 200px;
@@ -53,4 +59,23 @@
   margin-top: 2rem;
   margin-left: 1.5rem;
   font-weight: $font-weight-light;
+}
+
+.lottieContainer {
+  position: absolute;
+  bottom: 74%;
+  left: 35%;
+
+  @media only screen and (max-width: 1000px) {
+    bottom: 70%;
+    left: 30%;
+  }
+
+  @media only screen and (max-width: 850px) {
+    bottom: 77%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    bottom: 80%;
+  }
 }

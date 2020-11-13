@@ -3,6 +3,19 @@
 .container {
   padding: 0 16rem;
   margin-top: 16rem;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0 8rem;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    padding: 0 6rem;
+  }
+
+  @media only screen and (max-width: 850px) {
+    padding: 0 4rem;
+    margin-top: 8rem;
+  }
 }
 
 .subContainer {
@@ -25,6 +38,10 @@
   color: $color-grey-medium;
   font-size: 4rem;
   font-weight: 900;
+
+  @media only screen and (max-width: 850px) {
+    font-size: 3.5rem;
+  }
 }
 
 .subTitle {
@@ -40,16 +57,31 @@
   justify-content: center;
   margin-top: 7rem;
 
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+
   & img:not(:last-child) {
     margin-right: 2rem;
+
+    @media only screen and (max-width: 1000px) {
+      margin-bottom: 4rem;
+      margin-right: 0;
+    }
   }
 }
 
 .instagramPost {
-  width: 33%;
   transition: transform 0.2s;
   object-fit: cover;
   box-shadow: $box-shadow-hard;
+  max-width: 33%;
+  max-height: 34rem;
+
+  @media only screen and (max-width: 1000px) {
+    max-width: none;
+    max-height: none;
+  }
 
   &:hover {
     transform: scale(1.05) translateY(-3px);

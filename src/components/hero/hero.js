@@ -23,13 +23,14 @@ const Hero = () => {
           <button className={classes.button}>Check out our community</button>
         </h1>
       </div>
-      <Lottie
-        style={{ position: 'absolute', bottom: '-10%', left: '35%' }}
-        options={defaultOptions}
-        height={400}
-        width={400}
-        isClickToPauseDisabled={true}
-      />
+      <div className={classes.lottieContainer}>
+        <Lottie
+          options={defaultOptions}
+          height={400}
+          width={400}
+          isClickToPauseDisabled={true}
+        />
+      </div>
     </section>
   );
 };

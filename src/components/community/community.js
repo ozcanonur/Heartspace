@@ -19,20 +19,24 @@ const Community = () => {
         paused={false}
         options={{ height: 20, amplitude: 20, speed: 0.3, points: 5 }}
       />
-      <Lottie
-        style={{ position: 'absolute', bottom: '74%', left: '35%' }}
-        options={defaultOptions}
-        height={400}
-        width={400}
-        isClickToPauseDisabled={true}
-      />
+      <div className={classes.lottieContainer}>
+        <Lottie
+          options={defaultOptions}
+          height={400}
+          width={400}
+          isClickToPauseDisabled={true}
+        />
+      </div>
       <div className={classes.subContainer}>
         <h2 className={classes.title}>Community Story</h2>
         <h3 className={classes.subTitle}>
           Changing my thoughts has changed my relationship
         </h3>
         <div className={classes.storyContainer}>
-          <img src={happyCouple} alt="Happy Couple" className={classes.img} />
+          <div className={classes.imgContainer}>
+            <img src={happyCouple} alt="Happy Couple" className={classes.img} />
+            <div className={classes.footerText}>Sarah from London, UK</div>
+          </div>
           <article className={classes.storyText}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
             accusantium facilis saepe et expedita magni asperiores modi hic
@@ -42,7 +46,6 @@ const Community = () => {
             tempora atque incidunt debitis ad, neque fuga?
           </article>
         </div>
-        <div className={classes.footerText}>Sarah from London, UK</div>
       </div>
     </section>
   );

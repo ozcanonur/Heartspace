@@ -1,15 +1,10 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 module.exports = {
   siteMetadata: {
-    title: 'Happy Relationships',
+    brandName: 'Happy Relationships',
   },
   plugins: [
     'gatsby-plugin-sass',
+    'gatsby-plugin-smoothscroll',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -25,19 +20,11 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-smoothscroll',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: ['gatsby-remark-lottie'],
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-google-fonts',
-    //   options: {
-    //     fonts: [`Poppins\:400, 500, 600, 900`],
-    //     display: 'swap',
-    //   },
-    // },
   ],
 };

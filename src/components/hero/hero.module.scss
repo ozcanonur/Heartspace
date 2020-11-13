@@ -7,14 +7,16 @@
 .subContainer {
   display: flex;
   align-items: center;
-  background: $color-primary;
-  border-radius: $border-radius-hero-bg;
 }
 
 .titleContainer {
   display: flex;
   flex-direction: column;
   padding: 20rem 16rem;
+
+  @media only screen and (max-width: 1000px) {
+    padding: 20rem 8rem;
+  }
 }
 
 .title {
@@ -50,5 +52,26 @@
     background-color: $color-secondary-dark;
     transform: scale(1.05) translateY(-3px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+.lottieContainer {
+  position: absolute;
+  bottom: -10%;
+  left: 35%;
+
+  @media only screen and (max-width: 850px) {
+    left: 40%;
+    bottom: 5%;
+  }
+
+  @media only screen and (max-width: 750px) {
+    left: 42%;
+    bottom: 10%;
+  }
+
+  @media only screen and (max-width: 650px) {
+    left: 45%;
+    bottom: 10%;
   }
 }

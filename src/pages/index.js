@@ -15,6 +15,7 @@ const Index = () => {
     <div>
       <Helmet title="Happy Relationships" />
       <Navbar />
+      <div className="bg" />
       <main className="main">
         <Hero />
         <CheckInstagram />

@@ -3,6 +3,19 @@
 .container {
   padding: 0 16rem;
   margin-top: 6rem;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0 8rem;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    padding: 0 6rem;
+  }
+
+  @media only screen and (max-width: 850px) {
+    padding: 0 4rem;
+    margin-top: 8rem;
+  }
 }
 
 .cards {
@@ -21,11 +34,12 @@
   padding: 4rem;
   display: flex;
   align-items: center;
+  // background: darkgray;
   background: linear-gradient(190deg, $color-tertiary-light, rgba(255, 255, 255, 0) 45%);
-}
 
-.cardTypography {
-  margin-left: 3rem;
+  @media only screen and (max-width: 1000px) {
+    margin-top: 4rem;
+  }
 }
 
 .cardTitle {
@@ -58,5 +72,56 @@
     background-color: $color-secondary-dark;
     transform: scale(1.05) translateY(-3px);
     box-shadow: $box-shadow-hard;
+  }
+}
+
+.lottieContainer {
+  margin-right: 3rem;
+  @media only screen and (max-width: 1250px) {
+    margin-right: 0;
+  }
+
+  & > div {
+    @media only screen and (max-width: 1250px) {
+      width: 300px !important;
+    }
+
+    @media only screen and (max-width: 1100px) {
+      width: 250px !important;
+    }
+
+    @media only screen and (max-width: 950px) {
+      width: 250px !important;
+    }
+
+    @media only screen and (max-width: 850px) {
+      width: 250px !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+      width: 300px !important;
+    }
+  }
+
+  & > div > svg {
+    @media only screen and (max-width: 1250px) {
+      width: 85% !important;
+    }
+
+    @media only screen and (max-width: 1100px) {
+      width: 80% !important;
+    }
+
+    @media only screen and (max-width: 950px) {
+      width: 80% !important;
+    }
+
+    @media only screen and (max-width: 850px) {
+      width: 80% !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+      width: 50% !important;
+    }
   }
 }
