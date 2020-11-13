@@ -1,0 +1,46 @@
+@font-face {
+  font-family: Apercu;
+  src: url('./assets/fonts/Apercu\ Pro\ Medium.woff2');
+}
+
+@font-face {
+  font-family: Apercu;
+  font-weight: 300;
+  src: url('./assets/fonts/Apercu\ Pro\ Regular.woff2');
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Apercu', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+// #top-image {
+//   background-color: #f29f7d;
+//   height: 600px;
+//   width: 100%;
+//   position: absolute;
+//   z-index: -1;
+//   border-radius: 63% 37% 52% 48% / 0% 100% 0% 100%;
+// }
+
+// #main-container {
+//   padding: 0 5rem;
+//   max-width: 1440px;
+//   margin: auto auto;
+// }
+
+// #main {
+//   padding: 5rem;
+// }

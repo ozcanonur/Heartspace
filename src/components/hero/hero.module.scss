@@ -1,11 +1,17 @@
+@import '../../variables.scss';
+
 .container {
-  display: flex;
-  align-items: center;
-  background: #f29f7d;
-  border-radius: 0% 100% 100% 0% / 100% 0% 100% 0%;
+  position: relative;
 }
 
 .subContainer {
+  display: flex;
+  align-items: center;
+  background: $color-primary;
+  border-radius: $border-radius-hero-bg;
+}
+
+.titleContainer {
   display: flex;
   flex-direction: column;
   padding: 20rem 16rem;
@@ -15,21 +21,21 @@
   font-size: 7rem;
   font-weight: 900;
   margin-bottom: 3rem;
-  color: white;
+  color: $color-white;
 }
 
 .subTitle {
-  div {
+  p {
     margin-top: 1rem;
     font-size: 2.5rem;
-    font-weight: 300;
-    color: white;
+    font-weight: $font-weight-light;
+    color: $color-white;
   }
 }
 
 .button {
   margin-top: 4rem;
-  background-color: #4c8989;
+  background-color: $color-secondary;
   width: fit-content;
   cursor: pointer;
   padding: 2rem 3rem;
@@ -41,7 +47,7 @@
   font-size: 1.8rem;
 
   &:hover {
-    background-color: #3c6b6b;
+    background-color: $color-secondary-dark;
     transform: scale(1.05) translateY(-3px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }

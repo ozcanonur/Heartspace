@@ -3,22 +3,22 @@ import Lottie from 'react-lottie';
 import * as animationData from '../../assets/lottie/womanPhone2.json';
 import classes from './hero.module.scss';
 
-const Hero = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData.default,
-  };
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData.default,
+};
 
+const Hero = () => {
   return (
-    <div style={{ position: 'relative' }}>
-      <div className={classes.container}>
-        <h1 className={classes.subContainer}>
-          <div className={classes.title}>Nourish your relationship.</div>
+    <section className={classes.container}>
+      <div className={classes.subContainer}>
+        <h1 className={classes.titleContainer}>
+          <p className={classes.title}>Nourish your relationship.</p>
           <div className={classes.subTitle}>
-            <div>Communicate better.</div>
-            <div>Deeper connections.</div>
-            <div>More intimacy.</div>
+            <p>Communicate better.</p>
+            <p>Deeper connections.</p>
+            <p>More intimacy.</p>
           </div>
           <button className={classes.button}>Check out our community</button>
         </h1>
@@ -30,7 +30,7 @@ const Hero = () => {
         width={400}
         isClickToPauseDisabled={true}
       />
-    </div>
+    </section>
   );
 };
 

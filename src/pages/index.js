@@ -6,13 +6,14 @@ import Footer from '../components/footer/footer';
 import Hero from '../components/hero/hero';
 import Navbar from '../components/navbar/navbar';
 
-import './style.scss';
+import '../normalize.scss';
+import '../style.scss';
 
 const Index = () => {
   return (
     <div>
       <Navbar />
-      <main style={{ margin: '0 auto', maxWidth: '1440px' }}>
+      <main className="main">
         <Hero />
         <CheckInstagram />
         <Community />

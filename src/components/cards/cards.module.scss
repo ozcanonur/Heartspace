@@ -1,35 +1,27 @@
+@import '../../variables.scss';
+
 .container {
   padding: 0 16rem;
   margin-top: 6rem;
 }
 
-.section {
+.subContainer {
   display: flex;
   flex-direction: column;
-
-  // & > .sectionContainer:not(:last-child) {
-  //   margin-bottom: 2rem;
-  // }
 }
 
-.sectionContainer {
+.cards {
   display: flex;
   width: 100%;
   min-height: 30rem;
 }
 
-.img {
-  width: 45%;
-  background: linear-gradient(60deg, black, transparent);
-}
-
 .card {
-  margin-left: 4rem;
-  // box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  // box-shadow: $box-shadow-hard;
   padding: 4rem;
   display: flex;
   align-items: center;
-  background: linear-gradient(190deg, #ebf4fd, rgba(255, 255, 255, 0) 45%);
+  background: linear-gradient(190deg, $color-tertiary-light, rgba(255, 255, 255, 0) 45%);
 }
 
 .cardTypography {
@@ -39,31 +31,32 @@
 .cardTitle {
   font-size: 4rem;
   font-weight: 400;
-  color: #4b4c4d;
+  color: $color-grey-medium;
 }
 
 .cardText {
-  color: #4b4c4d;
+  color: $color-grey-medium;
   font-size: 2rem;
   margin-top: 4rem;
+  font-weight: $font-weight-light;
 }
 
 .button {
   margin-top: 6rem;
-  background-color: #4c8989;
+  background-color: $color-secondary;
   width: fit-content;
   cursor: pointer;
   padding: 2rem 3rem;
   border-radius: 10rem;
   transition: all 0.2s ease-out;
-  color: white;
+  color: $color-white;
   z-index: 9;
   outline: none;
   font-size: 1.8rem;
 
   &:hover {
-    background-color: #3c6b6b;
+    background-color: $color-secondary-dark;
     transform: scale(1.05) translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    box-shadow: $box-shadow-hard;
   }
 }

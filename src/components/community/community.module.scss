@@ -1,31 +1,30 @@
+@import '../../variables.scss';
+
 .container {
   padding: 0 16rem;
   margin-top: 26rem;
   position: relative;
-  top: 0;
 }
 
-.section {
+.subContainer {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #f29f7d, transparent 30%);
-  // background: linear-gradient(165deg, #ebf4fd, hsla(0, 0%, 100%, 0) 100%);
-  // box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, $color-primary, transparent 30%);
+  // background: linear-gradient(165deg, $color-tertiary-light, hsla(0, 0%, 100%, 0) 100%);
+  // box-shadow: $box-shadow-soft;
   padding: 6rem;
   border-radius: 4px;
   margin-top: -1rem;
 }
 
 .title {
-  color: #4b4c4d;
-  font-size: 5rem;
-  font-weight: 300;
-  letter-spacing: -0.8px;
+  color: $color-grey-medium;
+  font-size: 4rem;
 }
 
 .subTitle {
   margin-top: 3rem;
-  color: #4b4c4d;
+  color: $color-grey-medium;
   font-size: 3rem;
 }
 
@@ -42,16 +41,16 @@
 }
 
 .storyText {
-  color: #4b4c4d;
+  color: $color-grey-medium;
   margin-left: 5rem;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: $font-weight-light;
 }
 
 .footerText {
-  color: #4b4c4d;
+  color: $color-grey-medium;
   font-size: 1.6rem;
   margin-top: 2rem;
   margin-left: 1.5rem;
-  font-weight: 300;
+  font-weight: $font-weight-light;
 }

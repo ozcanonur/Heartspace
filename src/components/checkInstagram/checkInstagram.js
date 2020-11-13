@@ -6,23 +6,23 @@ import post3 from '../../assets/img/post3.png';
 
 const CheckInstagram = () => {
   return (
-    <div className={classes.container}>
-      <section className={classes.section}>
-        <div className={classes.titleContainer}>
-          <div className={classes.title}>Check out our Instagram</div>
-          <div className={classes.subTitle}>
+    <section id="community" className={classes.container}>
+      <div className={classes.subContainer}>
+        <h2 className={classes.titleContainer}>
+          <p className={classes.title}>Check out our Instagram</p>
+          <p className={classes.subTitle}>
             Lots of daily insights and fun, engaging advice
-          </div>
-        </div>
+          </p>
+        </h2>
         <div className={classes.instagramPostsContainer}>
           <img className={classes.instagramPost} src={post1} alt="post 1" />
           <img className={classes.instagramPost} src={post2} alt="post 2" />
           <img className={classes.instagramPost} src={post3} alt="post 3" />
         </div>
         <button className={classes.button}>Join our community</button>
-        <div className={classes.anchor} />
-      </section>
-    </div>
+        {/* <div className={classes.anchor} /> */}
+      </div>
+    </section>
   );
 };
 

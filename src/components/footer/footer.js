@@ -8,7 +8,7 @@ import Linkedin from '../../assets/svg/linkedin.inline.svg';
 
 const Footer = () => {
   return (
-    <div className={classes.container}>
+    <footer className={classes.container}>
       <div className={classes.copyright}>
         &copy; 2020 Happy Relationships Inc.
       </div>
@@ -21,7 +21,7 @@ const Footer = () => {
         <Facebook />
         <Linkedin />
       </div>
-    </div>
+    </footer>
   );
 };
 

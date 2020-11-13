@@ -1,15 +1,19 @@
 import React from 'react';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import logo from '../../assets/img/happy_logo_circle small.png';
 import classes from './navbar.module.scss';
 
-const Navbar = () => {
-  const navs = [
-    'Community',
-    'Relationship Assessment',
-    'About us',
-    'Get in touch',
-  ];
+const navs = [
+  { title: 'Community', scrollElementId: '#community' },
+  {
+    title: 'Relationship Assessment',
+    scrollElementId: '#relationshipAssessment',
+  },
+  { title: 'About us', scrollElementId: '#aboutUs' },
+  { title: 'Get in touch', scrollElementId: '#getInTouch' },
+];
 
+const Navbar = () => {
   return (
     <header>
       <nav>
@@ -23,9 +27,14 @@ const Navbar = () => {
         </div>
         <div className={classes.links}>
           <ul>
-            {navs.map((li) => (
-              <li key={li}>
-                <a href="#">{li}</a>
+            {navs.map(({ title, scrollElementId }) => (
+              <li key={title}>
+                <div
+                  role="navigation"
+                  onClick={() => scrollTo(scrollElementId)}
+                >
+                  {title}
+                </div>
               </li>
             ))}
           </ul>

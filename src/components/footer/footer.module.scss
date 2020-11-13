@@ -1,25 +1,26 @@
+@import '../../variables.scss';
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #413d45;
+  background-color: $color-grey-dark;
   font-size: 1.5rem;
   padding: 3rem;
   margin-top: 4rem;
 }
 
 .privacy {
-  color: #f0f0f0;
+  color: $color-white-dark;
   opacity: 0.8;
-  font-weight: 300;
+  font-weight: $font-weight-light;
   margin-left: 1rem;
 }
 
 .copyright {
-  color: #f0f0f0;
-
+  color: $color-white-dark;
   opacity: 0.8;
-  font-weight: 300;
+  font-weight: $font-weight-light;
 }
 
 .socialMediaContainer {
