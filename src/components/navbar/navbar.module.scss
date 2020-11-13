@@ -20,6 +20,7 @@ nav {
     list-style: none;
     display: flex;
     justify-content: space-around;
+
     & > li:not(:last-child) {
       margin-right: 2.5rem;
     }

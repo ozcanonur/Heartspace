@@ -12,9 +12,9 @@ const Footer = () => {
       <div className={classes.copyright}>
         &copy; 2020 Happy Relationships Inc.
       </div>
-      <a href="#" className={classes.privacy}>
+      <button href="#" className={classes.privacy}>
         Privacy Policy
-      </a>
+      </button>
       <div className={classes.socialMediaContainer}>
         <Instagram />
         <Twitter />

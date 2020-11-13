@@ -11,7 +11,7 @@ const defaultOptions = {
 
 const Hero = () => {
   return (
-    <section className={classes.container}>
+    <section id="home" className={classes.container}>
       <div className={classes.subContainer}>
         <h1 className={classes.titleContainer}>
           <p className={classes.title}>Nourish your relationship.</p>

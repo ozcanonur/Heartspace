@@ -4,6 +4,7 @@ import logo from '../../assets/img/happy_logo_circle small.png';
 import classes from './navbar.module.scss';
 
 const navs = [
+  { title: 'Home', scrollElementId: '#home' },
   { title: 'Community', scrollElementId: '#community' },
   {
     title: 'Relationship Assessment',

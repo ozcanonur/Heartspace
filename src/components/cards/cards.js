@@ -43,9 +43,9 @@ const cards = [
 const Cards = () => {
   return (
     <section className={classes.container}>
-      <div className={classes.subContainer}>
+      <div className={classes.cards}>
         {cards.map(({ id, lottie, title, text, buttonText }) => (
-          <div id={id} className={classes.cards}>
+          <div key={id} id={id} className={classes.cardContainer}>
             <div className={classes.card}>
               <div className={classes.lottieContainer}>
                 <Lottie

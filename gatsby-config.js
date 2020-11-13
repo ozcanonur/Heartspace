@@ -26,6 +26,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-smoothscroll',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: ['gatsby-remark-lottie'],
+      },
+    },
     // {
     //   resolve: 'gatsby-plugin-google-fonts',
     //   options: {
