@@ -50,7 +50,7 @@ const Cards = () => {
               <div className={classes.lottieContainer}>
                 <Lottie
                   options={lottie}
-                  width={400}
+                  width="40rem"
                   isClickToPauseDisabled={true}
                 />
               </div>

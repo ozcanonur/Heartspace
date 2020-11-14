@@ -17,36 +17,26 @@ html {
   scroll-behavior: smooth;
 
   @media only screen and (max-width: 1200px) {
-    font-size: 54.6%;
+    font-size: 55%;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 46%;
+  }
+
+  @media only screen and (max-width: 850px) {
+    font-size: 40%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 32%;
   }
 }
 
 body {
   font-family: 'Apercu', sans-serif;
   font-weight: 400;
-  min-height: 100vh;
   position: relative;
-}
-
-.bg {
-  background: $color-primary;
-  border-radius: $border-radius-hero-bg;
-  height: 77rem;
-  width: 100%;
-  position: absolute;
-
-  // @media only screen and (max-width: 750px) {
-  //   width: 120%;
-  // }
-
-  // @media only screen and (max-width: 600px) {
-  //   width: 135%;
-  // }
-}
-
-.main {
-  margin: 0 auto;
-  max-width: 1440px;
 }
 
 // #top-image {

@@ -18,6 +18,10 @@
   background-color: transparent;
   cursor: pointer;
   border-bottom: 1px solid $color-white;
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 2rem;
+  }
 }
 
 .copyright {
@@ -32,8 +36,8 @@
   margin-left: 8rem;
 
   svg {
-    width: 35px;
-    height: 35px;
+    width: 3.5rem;
+    height: 3.5rem;
     margin-left: 2rem;
     cursor: pointer;
   }

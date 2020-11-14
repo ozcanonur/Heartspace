@@ -1,13 +1,5 @@
 import React from 'react';
-import Lottie from 'react-lottie';
-import * as animationData from '../../assets/lottie/womanPhone2.json';
 import classes from './hero.module.scss';
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: animationData.default,
-};
 
 const Hero = () => {
   return (
@@ -22,14 +14,6 @@ const Hero = () => {
           </div>
           <button className={classes.button}>Check out our community</button>
         </h1>
-      </div>
-      <div className={classes.lottieContainer}>
-        <Lottie
-          options={defaultOptions}
-          height={400}
-          width={400}
-          isClickToPauseDisabled={true}
-        />
       </div>
     </section>
   );

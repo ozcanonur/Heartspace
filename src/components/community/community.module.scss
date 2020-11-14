@@ -1,9 +1,12 @@
 @import '../../variables.scss';
 
 .container {
-  padding: 0 16rem;
-  margin-top: 26rem;
+  margin-top: 30rem;
   position: relative;
+
+  @media only screen and (max-width: 600px) {
+    margin-top: 20rem;
+  }
 }
 
 .subContainer {
@@ -20,17 +23,29 @@
 .title {
   color: $color-grey-medium;
   font-size: 4rem;
+
+  // @media only screen and (max-width: 600px) {
+  //   font-size: 5rem;
+  // }
 }
 
 .subTitle {
   margin-top: 3rem;
   color: $color-grey-medium;
   font-size: 3rem;
+
+  // @media only screen and (max-width: 600px) {
+  //   font-size: 4rem;
+  // }
 }
 
 .storyContainer {
   display: flex;
   margin-top: 4rem;
+
+  @media only screen and (max-width: 400px) {
+    flex-direction: column;
+  }
 }
 
 .imgContainer {
@@ -40,8 +55,8 @@
 }
 
 .img {
-  width: 200px;
-  height: 200px;
+  width: 20rem;
+  height: 20rem;
   object-fit: cover;
   border-radius: 1rem;
 }
@@ -51,6 +66,15 @@
   margin-left: 5rem;
   font-size: 2rem;
   font-weight: $font-weight-light;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 3rem;
+  }
+
+  @media only screen and (max-width: 400px) {
+    margin-top: 4rem;
+    margin-left: 0;
+  }
 }
 
 .footerText {
@@ -59,23 +83,19 @@
   margin-top: 2rem;
   margin-left: 1.5rem;
   font-weight: $font-weight-light;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2rem;
+  }
 }
 
 .lottieContainer {
   position: absolute;
-  bottom: 74%;
-  left: 35%;
+  bottom: 70%;
+  left: 50%;
+  transform: translateX(-50%);
 
-  @media only screen and (max-width: 1000px) {
-    bottom: 70%;
-    left: 30%;
-  }
-
-  @media only screen and (max-width: 850px) {
-    bottom: 77%;
-  }
-
-  @media only screen and (max-width: 800px) {
-    bottom: 80%;
+  @media only screen and (max-width: 400px) {
+    bottom: 82%;
   }
 }

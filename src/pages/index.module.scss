@@ -1,0 +1,26 @@
+@import '../variables.scss';
+
+.lottieContainer {
+  position: absolute;
+
+  bottom: 0;
+  left: 40%;
+
+  @media only screen and (max-width: 600px) {
+    left: 47%;
+    bottom: 10%;
+  }
+}
+
+.heroBg {
+  background: $color-primary;
+  border-radius: $border-radius-hero-bg;
+  height: 80rem;
+  width: 100%;
+  position: absolute;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1200px;
+}

@@ -22,8 +22,7 @@ const Community = () => {
       <div className={classes.lottieContainer}>
         <Lottie
           options={defaultOptions}
-          height={400}
-          width={400}
+          height="40rem"
           isClickToPauseDisabled={true}
         />
       </div>
