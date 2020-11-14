@@ -14,8 +14,8 @@ import '../style.scss';
 import classes from './index.module.scss';
 
 const defaultOptions = {
-  loop: false,
-  autoplay: false,
+  loop: true,
+  autoplay: true,
   animationData: animationData.default,
 };
 

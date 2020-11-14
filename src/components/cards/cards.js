@@ -7,8 +7,8 @@ import classes from './cards.module.scss';
 
 const getLottieOptions = (animationData) => {
   return {
-    loop: false,
-    autoplay: false,
+    loop: true,
+    autoplay: true,
     animationData: animationData.default,
   };
 };
