@@ -34,9 +34,6 @@ const Community = () => {
       </div>
       <div className={classes.subContainer}>
         <h2 className={classes.title}>Community Story</h2>
-        <h3 className={classes.subTitle}>
-          Changing my thoughts has changed my relationship
-        </h3>
         <div className={classes.storyContainer}>
           <div className={classes.lottieSarah}>
             <Lottie
@@ -47,6 +44,9 @@ const Community = () => {
             />
           </div>
           <div className={classes.story}>
+            <h3 className={classes.subTitle}>
+              Changing my thoughts has changed my relationship
+            </h3>
             <article className={classes.storyText}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
               accusantium facilis saepe et expedita magni asperiores modi hic

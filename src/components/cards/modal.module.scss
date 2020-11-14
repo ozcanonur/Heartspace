@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.modalContainer {
+  padding: 2rem 4rem;
+  border: none;
+}
+
+.heading {
+  font-size: 4rem;
+  color: $color-grey-medium;
+}
+
+.text {
+  font-size: 2rem;
+  color: $color-grey-medium;
+  margin-top: 2rem;
+}
+
+.text2 {
+  font-size: 2rem;
+  color: $color-grey-medium;
+  margin-top: 2rem;
+}
+
+.button {
+  margin-top: 3rem;
+  background-color: $color-secondary;
+  width: fit-content;
+  cursor: pointer;
+  padding: 1.5rem 3.5rem;
+  border-radius: 10rem;
+  transition: all 0.2s ease-out;
+  color: white;
+  z-index: 9;
+  outline: none;
+  font-size: 1.8rem;
+
+  &:hover {
+    background-color: $color-secondary-dark;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+}

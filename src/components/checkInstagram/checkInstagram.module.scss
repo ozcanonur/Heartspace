@@ -38,6 +38,7 @@
   font-size: 3rem;
   margin-top: 3rem;
   text-align: center;
+  line-height: 1.5;
 }
 
 .instagramPostsContainer {
@@ -59,6 +60,7 @@
   box-shadow: $box-shadow-hard;
   max-width: 100%;
   border-radius: 5rem;
+  height: 40rem;
   // max-width: 33%;
   // max-height: 34rem;
 
@@ -101,13 +103,3 @@
     margin-top: 8rem;
   }
 }
-
-// .anchor {
-//   position: absolute;
-//   background-color: $color-primary;
-//   height: 10rem;
-//   width: 20rem;
-//   top: 0;
-//   left: 0;
-//   border-radius: 0% 100% 100% 0% / 100% 1% 99% 0%;
-// }
