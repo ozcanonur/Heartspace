@@ -27,21 +27,19 @@ const CheckInstagram = () => {
   return (
     <section id="community" className={classes.container}>
       <div className={classes.subContainer}>
-        <h2 className={classes.titleContainer}>
-          <p className={classes.title}>Our Community</p>
-          <p className={classes.subTitle}>
+        <h2 className={classes.heading}>
+          <p className={classes.headingTitle}>Our Community</p>
+          <p className={classes.headingSubTitle}>
             We are a community of people who seek to improve their
-            relationships. Join us. 👋🏽 What is your story?
+            relationships.
+          </p>
+          <p className={classes.headingSubTitle2}>
+            Join us. 👋🏽 What is your story?
           </p>
         </h2>
-        <div className={classes.instagramPostsContainer}>
+        <div className={classes.imgContainer}>
           {instagramPosts.map(({ src, alt }) => (
-            <img
-              key={alt}
-              className={classes.instagramPost}
-              src={src}
-              alt={alt}
-            />
+            <img key={alt} className={classes.img} src={src} alt={alt} />
           ))}
         </div>
         <button onClick={redirectToInstagram} className={classes.button}>

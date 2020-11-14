@@ -9,9 +9,9 @@ const Hero = () => {
   return (
     <section id="home" className={classes.container}>
       <div className={classes.subContainer}>
-        <h1 className={classes.titleContainer}>
-          <p className={classes.title}>Nourish your relationship.</p>
-          <div className={classes.subTitle}>
+        <h1 className={classes.heading}>
+          <p className={classes.headingTitle}>Nourish your relationship.</p>
+          <div className={classes.headingSubTitle}>
             <p>Communicate better.</p>
             <p>Create a deeper connection.</p>
             <p>Enjoy more intimacy.</p>

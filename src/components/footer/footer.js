@@ -12,7 +12,7 @@ const Footer = () => {
     window.open('https://www.instagram.com/happy__relationships', '_blank');
   };
 
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
     setModalOpen(true);
@@ -20,10 +20,10 @@ const Footer = () => {
 
   return (
     <footer className={classes.container}>
-      <div className={classes.copyright}>
+      <p className={classes.copyrightText}>
         &copy; 2020 Happy Relationships Inc.
-      </div>
-      <button onClick={openModal} className={classes.privacy}>
+      </p>
+      <button onClick={openModal} className={classes.privacyButton}>
         Privacy Policy
       </button>
       <div className={classes.socialMediaContainer}>

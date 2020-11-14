@@ -14,39 +14,40 @@ nav {
   align-items: center;
 }
 
-.links {
-  @media only screen and (max-width: 950px) {
-    display: none;
+.navsList {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+
+  & > li:not(:last-child) {
+    margin-right: 2.5rem;
+  }
+}
+
+.navItem {
+  transition: all 0.2s;
+  border-bottom: 1px solid transparent;
+  margin-top: 0.4rem;
+
+  &:hover {
+    border-bottom: 1px solid $color-text-black;
   }
 
+  div {
+    text-decoration: none;
+    color: $color-text-black;
+    font-size: 1.6rem;
+    font-weight: $font-weight-light;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+  }
+}
+
+.navsContainer {
   margin-left: 6rem;
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
 
-    & > li:not(:last-child) {
-      margin-right: 2.5rem;
-    }
-
-    li {
-      transition: all 0.2s;
-      border-bottom: 1px solid transparent;
-      margin-top: 0.4rem;
-
-      &:hover {
-        border-bottom: 1px solid $color-text-black;
-      }
-
-      div {
-        text-decoration: none;
-        color: $color-text-black;
-        font-size: 1.6rem;
-        font-weight: $font-weight-light;
-        letter-spacing: 0.2px;
-        cursor: pointer;
-      }
-    }
+  @media only screen and (max-width: 950px) {
+    display: none;
   }
 }
 

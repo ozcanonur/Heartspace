@@ -9,14 +9,14 @@
   align-items: center;
 }
 
-.titleContainer {
+.heading {
   display: flex;
   flex-direction: column;
   padding: 12rem 6rem;
   margin-top: 7rem;
 }
 
-.title {
+.headingTitle {
   font-size: 8rem;
   font-weight: 900;
   margin-bottom: 3rem;
@@ -27,7 +27,7 @@
   }
 }
 
-.subTitle {
+.headingSubTitle {
   p {
     margin-top: 1rem;
     font-size: 3.5rem;

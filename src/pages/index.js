@@ -26,7 +26,7 @@ const Index = () => {
     <div>
       <Helmet title="Happy Relationships" />
       <Navbar />
-      <div className={classes.heroBg} style={{ marginTop: '7rem' }}>
+      <div className={classes.heroBg}>
         <div className={classes.lottieContainer}>
           <Lottie
             options={lottieOptions}

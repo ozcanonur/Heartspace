@@ -3,6 +3,9 @@
 .modalContainer {
   padding: 2rem 4rem;
   border: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .heading {

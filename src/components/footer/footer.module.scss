@@ -10,7 +10,13 @@
   margin-top: 4rem;
 }
 
-.privacy {
+.copyrightText {
+  color: $color-white-dark;
+  opacity: 0.8;
+  font-weight: $font-weight-light;
+}
+
+.privacyButton {
   color: $color-white-dark;
   opacity: 0.8;
   font-weight: $font-weight-light;
@@ -22,12 +28,6 @@
   @media only screen and (max-width: 600px) {
     margin-left: 2rem;
   }
-}
-
-.copyright {
-  color: $color-white-dark;
-  opacity: 0.8;
-  font-weight: $font-weight-light;
 }
 
 .socialMediaContainer {

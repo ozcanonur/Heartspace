@@ -1,31 +1,24 @@
 @import '../../variables.scss';
 
 .container {
-  margin-top: 20rem;
   position: relative;
-
-  // @media only screen and (max-width: 600px) {
-  //   margin-top: 20rem;
-  // }
 }
 
 .subContainer {
   display: flex;
   flex-direction: column;
   background: linear-gradient(to bottom, $color-primary, transparent 30%);
-  // background: linear-gradient(165deg, $color-tertiary-light, hsla(0, 0%, 100%, 0) 100%);
-  // box-shadow: $box-shadow-soft;
   padding: 6rem;
   border-radius: 4px;
   margin-top: -1rem;
 }
 
-.title {
+.heading {
   color: $color-grey-medium;
   font-size: 4rem;
 }
 
-.subTitle {
+.storyTitle {
   color: $color-grey-medium;
   font-size: 3rem;
 }
@@ -60,7 +53,7 @@
   }
 }
 
-.storyUser {
+.storyUserInfo {
   font-size: 2.5rem;
   margin-top: 4rem;
   color: $color-grey-medium;
@@ -80,4 +73,5 @@
 
 .lottieSarah {
   display: flex;
+  align-items: center;
 }

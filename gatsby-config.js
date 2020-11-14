@@ -1,7 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    brandName: 'Happy Relationships',
-  },
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-smoothscroll',

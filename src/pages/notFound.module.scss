@@ -1,0 +1,94 @@
+@import '../variables.scss';
+
+header {
+  padding: 2rem 8rem;
+  position: none;
+  width: 100%;
+  box-shadow: $box-shadow-soft;
+  z-index: 9999;
+  background-color: $color-white;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: 950px) {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.logoImg {
+  height: 35px;
+  width: 35px;
+}
+
+.logoText {
+  color: $color-text-black;
+  margin-left: 1rem;
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 3rem;
+  }
+}
+
+.notFoundContainer {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-top: 8rem;
+}
+
+.title {
+  color: $color-text-black;
+  font-size: 8rem;
+}
+
+.subTitle {
+  color: $color-text-black;
+  font-size: 6rem;
+}
+
+.button {
+  margin-top: 7rem;
+  background-color: $color-secondary;
+  width: fit-content;
+  cursor: pointer;
+  padding: 2.5rem 3.5rem;
+  border-radius: 10rem;
+  transition: all 0.2s ease-out;
+  color: white;
+  z-index: 9;
+  outline: none;
+  font-size: 2.5rem;
+
+  a,
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $color-secondary-dark;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 3rem;
+    padding: 3rem 4rem;
+    margin-top: 8rem;
+  }
+}
+
+.navLink {
+  text-decoration: none;
+  color: $color-text-black;
+}

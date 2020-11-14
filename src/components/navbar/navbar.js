@@ -26,10 +26,10 @@ const Navbar = () => {
           />
           <div className={classes.logoText}>Happy Relationships</div>
         </div>
-        <div className={classes.links}>
-          <ul>
+        <div className={classes.navsContainer}>
+          <ul className={classes.navsList}>
             {navs.map(({ title, scrollElementId }) => (
-              <li key={title}>
+              <li key={title} className={classes.navItem}>
                 <div
                   role="navigation"
                   onClick={() => scrollTo(scrollElementId)}
