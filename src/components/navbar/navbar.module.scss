@@ -2,7 +2,7 @@
 
 header {
   padding: 2rem 8rem;
-  // position: fixed;
+  position: fixed;
   width: 100%;
   box-shadow: $box-shadow-soft;
   z-index: 9999;
@@ -68,12 +68,8 @@ nav {
 .logoText {
   color: $color-text-black;
   margin-left: 1rem;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   letter-spacing: -1px;
-
-  @media only screen and (max-width: 950px) {
-    font-size: 2.5rem;
-  }
 
   @media only screen and (max-width: 600px) {
     font-size: 3rem;

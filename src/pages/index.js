@@ -7,27 +7,29 @@ import Footer from '../components/footer/footer';
 import Hero from '../components/hero/hero';
 import Navbar from '../components/navbar/navbar';
 import Lottie from 'react-lottie';
-import * as animationData from '../assets/lottie/womanPhone2.json';
+import animationData from '../assets/lottie/womanPhone3.json';
 
 import '../normalize.scss';
 import '../style.scss';
 import classes from './index.module.scss';
 
-const defaultOptions = {
+const lottieOptions = {
   loop: true,
   autoplay: true,
-  animationData: animationData.default,
+  animationData: animationData,
 };
 
 const Index = () => {
+  console.log(animationData);
+  // console.log(animationData.default);
   return (
     <div>
       <Helmet title="Happy Relationships" />
       <Navbar />
-      <div className={classes.heroBg}>
+      <div className={classes.heroBg} style={{ marginTop: '7rem' }}>
         <div className={classes.lottieContainer}>
           <Lottie
-            options={defaultOptions}
+            options={lottieOptions}
             height="40rem"
             isClickToPauseDisabled={true}
           />

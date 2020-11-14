@@ -5,22 +5,48 @@ import post2 from '../../assets/img/post2.png';
 import post3 from '../../assets/img/post3.png';
 
 const CheckInstagram = () => {
+  const redirectToInstagram = () => {
+    window.open('https://www.instagram.com/happy__relationships', '_blank');
+  };
+
+  const instagramPosts = [
+    {
+      src: post1,
+      alt: 'Instagram post 1',
+    },
+    {
+      src: post2,
+      alt: 'Instagram post 2',
+    },
+    {
+      src: post3,
+      alt: 'Instagram post 3',
+    },
+  ];
+
   return (
     <section id="community" className={classes.container}>
       <div className={classes.subContainer}>
         <h2 className={classes.titleContainer}>
-          <p className={classes.title}>Check out our Instagram</p>
+          <p className={classes.title}>Our Community</p>
           <p className={classes.subTitle}>
-            Lots of daily insights and fun, engaging advice
+            We are a community of people who seek to improve their
+            relationships. Join us. 👋🏽 What is your story?
           </p>
         </h2>
         <div className={classes.instagramPostsContainer}>
-          <img className={classes.instagramPost} src={post1} alt="post 1" />
-          <img className={classes.instagramPost} src={post2} alt="post 2" />
-          <img className={classes.instagramPost} src={post3} alt="post 3" />
+          {instagramPosts.map(({ src, alt }) => (
+            <img
+              key={alt}
+              className={classes.instagramPost}
+              src={src}
+              alt={alt}
+            />
+          ))}
         </div>
-        <button className={classes.button}>Join our community</button>
-        {/* <div className={classes.anchor} /> */}
+        <button onClick={redirectToInstagram} className={classes.button}>
+          Join our community
+        </button>
       </div>
     </section>
   );

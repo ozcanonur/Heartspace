@@ -13,13 +13,14 @@
   display: flex;
   flex-direction: column;
   padding: 12rem 6rem;
+  margin-top: 7rem;
 }
 
 .title {
   font-size: 8rem;
   font-weight: 900;
   margin-bottom: 3rem;
-  color: $color-white;
+  color: $color-text-black;
 
   @media only screen and (max-width: 600px) {
     margin-bottom: 4rem;
@@ -31,22 +32,22 @@
     margin-top: 1rem;
     font-size: 3.5rem;
     font-weight: $font-weight-light;
-    color: $color-white;
+    color: $color-text-black;
   }
 }
 
 .button {
-  margin-top: 4rem;
-  background-color: $color-secondary;
+  margin-top: 5rem;
+  background-color: #378b8b;
   width: fit-content;
   cursor: pointer;
-  padding: 2rem 3rem;
+  padding: 2.5rem 3.5rem;
   border-radius: 10rem;
   transition: all 0.2s ease-out;
   color: white;
   z-index: 9;
   outline: none;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
 
   &:hover {
     background-color: $color-secondary-dark;
@@ -54,7 +55,7 @@
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1000px) {
     font-size: 3rem;
     padding: 3rem 4rem;
     margin-top: 6rem;

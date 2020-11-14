@@ -7,6 +7,10 @@ import Facebook from '../../assets/svg/facebook.inline.svg';
 import Linkedin from '../../assets/svg/linkedin.inline.svg';
 
 const Footer = () => {
+  const redirectToInstagram = () => {
+    window.open('https://www.instagram.com/happy__relationships', '_blank');
+  };
+
   return (
     <footer className={classes.container}>
       <div className={classes.copyright}>
@@ -16,7 +20,7 @@ const Footer = () => {
         Privacy Policy
       </button>
       <div className={classes.socialMediaContainer}>
-        <Instagram />
+        <Instagram onClick={redirectToInstagram} />
         <Twitter />
         <Facebook />
         <Linkedin />

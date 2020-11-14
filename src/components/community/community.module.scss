@@ -1,12 +1,12 @@
 @import '../../variables.scss';
 
 .container {
-  margin-top: 30rem;
+  margin-top: 20rem;
   position: relative;
 
-  @media only screen and (max-width: 600px) {
-    margin-top: 20rem;
-  }
+  // @media only screen and (max-width: 600px) {
+  //   margin-top: 20rem;
+  // }
 }
 
 .subContainer {
@@ -23,47 +23,31 @@
 .title {
   color: $color-grey-medium;
   font-size: 4rem;
-
-  // @media only screen and (max-width: 600px) {
-  //   font-size: 5rem;
-  // }
 }
 
 .subTitle {
   margin-top: 3rem;
   color: $color-grey-medium;
   font-size: 3rem;
+}
 
-  // @media only screen and (max-width: 600px) {
-  //   font-size: 4rem;
-  // }
+.article {
+  display: flex;
+  margin-top: 4rem;
+  flex-direction: column;
+}
+
+.story {
+  margin-left: 4rem;
 }
 
 .storyContainer {
   display: flex;
-  margin-top: 4rem;
-
-  @media only screen and (max-width: 400px) {
-    flex-direction: column;
-  }
-}
-
-.imgContainer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.img {
-  width: 20rem;
-  height: 20rem;
-  object-fit: cover;
-  border-radius: 1rem;
+  margin-top: 6rem;
 }
 
 .storyText {
   color: $color-grey-medium;
-  margin-left: 5rem;
   font-size: 2rem;
   font-weight: $font-weight-light;
 
@@ -77,16 +61,11 @@
   }
 }
 
-.footerText {
+.storyUser {
+  font-size: 2.5rem;
+  margin-top: 4rem;
   color: $color-grey-medium;
-  font-size: 1.6rem;
-  margin-top: 2rem;
-  margin-left: 1.5rem;
   font-weight: $font-weight-light;
-
-  @media only screen and (max-width: 600px) {
-    font-size: 2rem;
-  }
 }
 
 .lottieContainer {
@@ -98,4 +77,14 @@
   @media only screen and (max-width: 400px) {
     bottom: 82%;
   }
+}
+
+.lottieSarah {
+  // bottom: 70%;
+  // left: 50%;
+  // transform: translateX(-50%);
+
+  // @media only screen and (max-width: 400px) {
+  //   bottom: 82%;
+  // }
 }

@@ -23,20 +23,19 @@ const cards = [
     buttonText: 'Take it now!',
   },
   {
-    id: 'aboutUs',
-    lottie: getLottieOptions(meditate),
-    title: 'About us / Who we are',
-    text:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, nemo! Dicta assumenda rem vel velit, tempore ad minima? Rem similique assumenda, cupiditate voluptatem suscipit rerum?',
-    buttonText: 'Contact us',
-  },
-  {
     id: 'getInTouch',
     lottie: getLottieOptions(editor2),
     title: 'Get in touch',
     text:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos doloribus nostrum eligendi ducimus. Exercitationem, sapiente!',
     buttonText: 'Contact us',
+  },
+  {
+    id: 'aboutUs',
+    lottie: getLottieOptions(meditate),
+    title: 'About us / Who we are',
+    text:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, nemo! Dicta assumenda rem vel velit, tempore ad minima? Rem similique assumenda, cupiditate voluptatem suscipit rerum?',
   },
 ];
 
@@ -57,7 +56,11 @@ const Cards = () => {
               <div className={classes.cardTypography}>
                 <h3 className={classes.cardTitle}>{title}</h3>
                 <article className={classes.cardText}>{text}</article>
-                <button className={classes.button}>{buttonText}</button>
+                {buttonText ? (
+                  <div className={classes.buttonContainer}>
+                    <button className={classes.button}>{buttonText}</button>
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>
