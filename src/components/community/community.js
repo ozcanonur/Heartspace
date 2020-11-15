@@ -1,15 +1,39 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+
 import classes from './community.module.scss';
 import Wave from 'react-wavify';
 import Lottie from 'react-lottie';
 import * as animationData2 from '../../assets/lottie/sarah.json';
 
 const Community = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      contentfulCommunityFeedback {
+        title
+        subtitle
+        storyText {
+          raw
+        }
+        userName
+      }
+    }
+  `);
+
+  const {
+    title,
+    subtitle,
+    storyText: { raw: storyText },
+    userName,
+  } = data.contentfulCommunityFeedback;
+
   const lottieOptionsSarah = {
     loop: true,
     autoplay: true,
     animationData: animationData2.default,
   };
+
+  const parsedStoryText = JSON.parse(storyText).content[0].content[0].value;
 
   return (
     <section className={classes.container}>
@@ -19,7 +43,7 @@ const Community = () => {
         options={{ height: 20, amplitude: 20, speed: 0.3, points: 5 }}
       />
       <div className={classes.subContainer}>
-        <h2 className={classes.heading}>Community Story</h2>
+        <h2 className={classes.heading}>{title}</h2>
         <div className={classes.storyContainer}>
           <div className={classes.lottieSarah}>
             <Lottie
@@ -30,18 +54,9 @@ const Community = () => {
             />
           </div>
           <div className={classes.story}>
-            <h3 className={classes.storyTitle}>
-              Changing my thoughts has changed my relationship
-            </h3>
-            <article className={classes.storyText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              accusantium facilis saepe et expedita magni asperiores modi hic
-              mollitia iusto enim nostrum quae facere laborum, placeat
-              provident, nihil incidunt doloremque! Officiis consequuntur libero
-              vitae mollitia? Sed quia, temporibus a consectetur ratione
-              nesciunt, iure tempora atque incidunt debitis ad, neque fuga?
-            </article>
-            <p className={classes.storyUserInfo}>- Sarah from London, UK</p>
+            <h3 className={classes.storyTitle}>{subtitle}</h3>
+            <article className={classes.storyText}>{parsedStoryText}</article>
+            <p className={classes.storyUserInfo}>{`- ${userName}`}</p>
           </div>
         </div>
       </div>

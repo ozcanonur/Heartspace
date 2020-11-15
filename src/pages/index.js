@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import Cards from '../components/cards/cards';
 import CheckInstagram from '../components/checkInstagram/checkInstagram';
@@ -20,11 +21,19 @@ const lottieOptions = {
 };
 
 const Index = () => {
-  console.log(animationData);
-  // console.log(animationData.default);
+  const data = useStaticQuery(graphql`
+    query {
+      contentfulIndex {
+        siteTitle
+      }
+    }
+  `);
+
+  const siteTitle = data.contentfulIndex.siteTitle;
+
   return (
     <div>
-      <Helmet title="Happy Relationships" />
+      <Helmet title={siteTitle} />
       <Navbar />
       <div className={classes.heroBg}>
         <div className={classes.lottieContainer}>

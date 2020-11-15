@@ -2,6 +2,8 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-smoothscroll',
+    `gatsby-transformer-json`,
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

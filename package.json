@@ -14,6 +14,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "gatsby": "^2.25.3",
+    "gatsby-image": "^2.5.0",
     "gatsby-plugin-react-helmet": "^3.4.0",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.4.2",
@@ -22,7 +23,9 @@
     "gatsby-remark-lottie": "^1.0.3",
     "gatsby-source-contentful": "^4.0.0",
     "gatsby-source-filesystem": "^2.4.2",
+    "gatsby-transformer-json": "^2.5.0",
     "gatsby-transformer-remark": "^2.10.0",
+    "gatsby-transformer-sharp": "^2.6.0",
     "markdown-to-jsx": "^7.0.1",
     "node-sass": "^4.0",
     "react": "^16.12.0",
@@ -33,7 +36,7 @@
     "react-wavify": "^1.4.0"
   },
   "devDependencies": {
-    "prettier": "2.1.2",
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "prettier": "2.1.2"
   }
 }

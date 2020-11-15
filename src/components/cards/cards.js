@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Lottie from 'react-lottie';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import ContactModal from './modal';
 import * as consulting from '../../assets/lottie/consulting.json';
@@ -16,6 +17,19 @@ const getLottieOptions = (animationData) => {
 };
 
 const Cards = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulCardAtBottom {
+        nodes {
+          title
+          text
+        }
+      }
+    }
+  `);
+
+  const cardContents = data.allContentfulCardAtBottom.nodes;
+
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -26,26 +40,23 @@ const Cards = () => {
     {
       id: 'relationshipAssessment',
       lottie: getLottieOptions(consulting),
-      title: 'Relationship Strength Quiz',
-      text:
-        'Psychology-based relationship assessment will help key areas you can improve in your relationship',
+      title: cardContents[0].title,
+      text: cardContents[0].text,
       buttonText: 'Take it now!',
     },
     {
       id: 'getInTouch',
       lottie: getLottieOptions(editor2),
-      title: 'Get in touch',
-      text:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos doloribus nostrum eligendi ducimus. Exercitationem, sapiente!',
+      title: cardContents[1].title,
+      text: cardContents[1].text,
       buttonText: 'Contact us',
       onClick: openModal,
     },
     {
       id: 'aboutUs',
       lottie: getLottieOptions(meditate),
-      title: 'About us / Who we are',
-      text:
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, nemo! Dicta assumenda rem vel velit, tempore ad minima? Rem similique assumenda, cupiditate voluptatem suscipit rerum?',
+      title: cardContents[2].title,
+      text: cardContents[2].text,
     },
   ];
 

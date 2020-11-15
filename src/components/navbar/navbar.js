@@ -1,6 +1,7 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import logo from '../../assets/img/happy_logo_circle small.png';
+
 import classes from './navbar.module.scss';
 
 const navs = [
@@ -15,6 +16,22 @@ const navs = [
 ];
 
 const Navbar = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulNav {
+        nodes {
+          logo {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const logo = data.allContentfulNav.nodes[0].logo.file.url;
+
   return (
     <header>
       <nav>
