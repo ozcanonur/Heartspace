@@ -11,8 +11,8 @@ const CheckInstagram = () => {
         subtitle1
         subtitle2
         images {
-          file {
-            url
+          fluid {
+            src
           }
         }
       }
@@ -21,7 +21,7 @@ const CheckInstagram = () => {
 
   const { title, subtitle1, subtitle2, images } = data.contentfulCheckInstagram;
 
-  const imageUrls = images.map((image) => image.file.url);
+  const imageUrls = images.map((image) => image.fluid.src);
 
   const redirectToInstagram = () => {
     window.open('https://www.instagram.com/happy__relationships', '_blank');

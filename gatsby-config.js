@@ -2,7 +2,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-smoothscroll',
-    `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-source-filesystem',
@@ -17,12 +16,6 @@ module.exports = {
         rule: {
           include: /\.inline\.svg$/,
         },
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: ['gatsby-remark-lottie'],
       },
     },
     {

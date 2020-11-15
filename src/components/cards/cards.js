@@ -40,8 +40,8 @@ const Cards = () => {
     {
       id: 'relationshipAssessment',
       lottie: getLottieOptions(consulting),
-      title: cardContents[0].title,
-      text: cardContents[0].text,
+      title: cardContents[2].title,
+      text: cardContents[2].text,
       buttonText: 'Take it now!',
     },
     {
@@ -55,8 +55,8 @@ const Cards = () => {
     {
       id: 'aboutUs',
       lottie: getLottieOptions(meditate),
-      title: cardContents[2].title,
-      text: cardContents[2].text,
+      title: cardContents[0].title,
+      text: cardContents[0].text,
     },
   ];
 
