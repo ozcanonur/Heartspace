@@ -7,18 +7,11 @@ import Community from '../components/community/community';
 import Footer from '../components/footer/footer';
 import Hero from '../components/hero/hero';
 import Navbar from '../components/navbar/navbar';
-import Lottie from 'react-lottie';
-import animationData from '../assets/lottie/womanPhone3.json';
+import IndexLottie from './indexLottie';
 
 import '../normalize.scss';
 import '../style.scss';
 import classes from './index.module.scss';
-
-const lottieOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: animationData,
-};
 
 const Index = () => {
   const data = useStaticQuery(graphql`
@@ -36,13 +29,7 @@ const Index = () => {
       <Helmet title={siteTitle} />
       <Navbar />
       <div className={classes.heroBg}>
-        <div className={classes.lottieContainer}>
-          <Lottie
-            options={lottieOptions}
-            height="40rem"
-            isClickToPauseDisabled={true}
-          />
-        </div>
+        <IndexLottie />
       </div>
       <main className={classes.main}>
         <Hero />
