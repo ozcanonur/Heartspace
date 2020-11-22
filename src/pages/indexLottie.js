@@ -50,6 +50,9 @@ const IndexLottie = () => {
         break;
       case 'hero':
         setLottiePosition({ bottom: 0, left: 40 });
+        break;
+      default:
+        break;
     }
   }, [lottiePosition.bottom]);
 

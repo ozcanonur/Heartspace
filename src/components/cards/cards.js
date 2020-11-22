@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Lottie from 'react-lottie';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, navigate } from 'gatsby';
 
 import ContactModal from './modal';
 import * as consulting from '../../assets/lottie/consulting.json';
@@ -36,6 +36,10 @@ const Cards = () => {
     setModalOpen(true);
   };
 
+  const navigateToRelationshipAssessment = () => {
+    navigate('/relationshipAssessment');
+  };
+
   const cards = [
     {
       id: 'relationshipAssessment',
@@ -43,6 +47,7 @@ const Cards = () => {
       title: cardContents[2].title,
       text: cardContents[2].text,
       buttonText: 'Take it now!',
+      onClick: navigateToRelationshipAssessment,
     },
     {
       id: 'getInTouch',

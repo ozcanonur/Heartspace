@@ -3831,6 +3831,11 @@ contentful@^7.14.8:
     json-stringify-safe "^5.0.1"
     lodash "^4.17.11"
 
+conversational-form@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/conversational-form/-/conversational-form-1.0.2.tgz#8d493229ba137c9a7875b720ec7e6e87d0f2ae94"
+  integrity sha512-sm1BspLtyNlJzGFVMAeOhphzvaGnWNEzoTUmtkmSp10Ehb+Ns+1+w1XFC+tBtkqmXIOGndDCwdsDxVN/bRjEqA==
+
 convert-hrtime@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/convert-hrtime/-/convert-hrtime-3.0.0.tgz#62c7593f5809ca10be8da858a6d2f702bcda00aa"
