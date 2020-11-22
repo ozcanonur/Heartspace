@@ -5,14 +5,14 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import classes from './navbar.module.scss';
 
 const navs = [
-  { title: 'Home', scrollElementId: '#home' },
-  { title: 'Community', scrollElementId: '#community' },
-  // {
-  //   title: 'Relationship Assessment',
-  //   scrollElementId: '#relationshipAssessment',
-  // },
-  { title: 'About us', scrollElementId: '#aboutUs' },
-  { title: 'Get in touch', scrollElementId: '#getInTouch' },
+  { title: 'Home', onClick: () => scrollTo('#home') },
+  { title: 'Community', onClick: () => scrollTo('#community') },
+  {
+    title: 'Relationship Assessment',
+    onClick: () => navigate('/relationshipAssessment'),
+  },
+  { title: 'About us', onClick: () => scrollTo('#aboutUs') },
+  { title: 'Get in touch', onClick: () => scrollTo('#getInTouch') },
 ];
 
 const Navbar = () => {
@@ -45,24 +45,13 @@ const Navbar = () => {
         </div>
         <div className={classes.navsContainer}>
           <ul className={classes.navsList}>
-            {navs.map(({ title, scrollElementId }) => (
+            {navs.map(({ title, onClick }) => (
               <li key={title} className={classes.navItem}>
-                <div
-                  role="navigation"
-                  onClick={() => scrollTo(scrollElementId)}
-                >
+                <div role="navigation" onClick={onClick}>
                   {title}
                 </div>
               </li>
             ))}
-            <li className={classes.navItem}>
-              <div
-                role="navigation"
-                onClick={() => navigate('/relationshipAssessment')}
-              >
-                Relationship Assessment
-              </div>
-            </li>
           </ul>
         </div>
       </nav>

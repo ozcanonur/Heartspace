@@ -1,34 +1,46 @@
+const parseMultipleSelectionQuestion = (question) => {
+  const { tag, type, name } = question;
+  const fields = [];
+  question.options.forEach((option, index) => {
+    const field = {
+      tag,
+      type,
+      name,
+      'cf-label': option,
+      value: option,
+    };
+    if (index === 0) field['cf-questions'] = question.questionText;
+    fields.push(field);
+  });
+
+  return fields;
+};
+
+const parseTextInputQuestion = (question) => {
+  const { tag, type, name, questionText } = question;
+  const field = {
+    tag,
+    type,
+    name,
+    'cf-questions': questionText,
+  };
+
+  return field;
+};
+
 export const parseRelationshipVariables = (questions) => {
   const result = [];
-  for (let i = 0; i < questions.length; i++) {
-    const question = questions[i];
-
+  questions.forEach((question) => {
+    // If it's single/multiple selection
     if (question.options) {
-      const fields = [];
-      for (let j = 0; j < question.options.length; j++) {
-        const { tag, type, name, options } = question;
-        let field = {
-          tag,
-          type,
-          name,
-          'cf-label': options[j],
-          value: options[j],
-        };
-        if (j === 0) field['cf-questions'] = question.questionText;
-        fields.push(field);
-      }
+      const fields = parseMultipleSelectionQuestion(question);
       result.push(fields);
     } else {
-      const { tag, type, name, questionText } = question;
-      const field = {
-        tag,
-        type,
-        name,
-        'cf-questions': questionText,
-      };
+      // If it's input
+      const field = parseTextInputQuestion(question);
       result.push(field);
     }
-  }
+  });
 
   return result.flat();
 };
