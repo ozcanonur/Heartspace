@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, navigate } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import classes from './navbar.module.scss';
@@ -7,10 +7,10 @@ import classes from './navbar.module.scss';
 const navs = [
   { title: 'Home', scrollElementId: '#home' },
   { title: 'Community', scrollElementId: '#community' },
-  {
-    title: 'Relationship Assessment',
-    scrollElementId: '#relationshipAssessment',
-  },
+  // {
+  //   title: 'Relationship Assessment',
+  //   scrollElementId: '#relationshipAssessment',
+  // },
   { title: 'About us', scrollElementId: '#aboutUs' },
   { title: 'Get in touch', scrollElementId: '#getInTouch' },
 ];
@@ -55,6 +55,14 @@ const Navbar = () => {
                 </div>
               </li>
             ))}
+            <li className={classes.navItem}>
+              <div
+                role="navigation"
+                onClick={() => navigate('/relationshipAssessment')}
+              >
+                Relationship Assessment
+              </div>
+            </li>
           </ul>
         </div>
       </nav>
