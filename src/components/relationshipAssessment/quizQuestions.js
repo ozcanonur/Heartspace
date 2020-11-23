@@ -5,8 +5,15 @@ export const questions = [
     name: 'started',
     questionText:
       'Welcome to our psychology-based relationship strength assessment.&&At the end, our expert tool will provide you with an analysis of the strength of your relationship.&&It is completely free.&&The questions are based on the journal research paper published by the Psychological Association.&&Note that your privacy matters to us. Your answers are 100% confidential and kept secure through our encryption technology.&&This test will take about 4 minutes to complete.&&Are you ready?',
-    options: ['Yes', 'No'],
-    // No => Exit condition
+    options: [`Yes, let's start!`, 'No, not yet.'],
+  },
+  {
+    tag: 'input',
+    type: 'text',
+    name: 'started',
+    questionText:
+      'No worries - come back when you feel ready. We will be here for you.',
+    conditional: 'No, not yet.',
   },
   {
     tag: 'input',
@@ -66,6 +73,13 @@ export const questions = [
       'More than 15 years',
       'Prefer not to identify',
     ],
+  },
+  {
+    tag: 'input',
+    type: 'text',
+    name: 'relationshipLength',
+    questionText: `“To love oneself is the beginning of a lifelong romance” wrote Oscar Wilde.&&This assessment is most helpful when you are in a relationship.&&Come back when you are in one. :)`,
+    conditional: 'Not in a romantic relationship',
   },
   {
     tag: 'input',
@@ -146,7 +160,7 @@ export const questions = [
   {
     tag: 'input',
     type: 'text',
-    name: 'addressingProblems ',
+    name: 'addressingProblems',
     questionText: `How do you address these problems currently?&&Think of a time when you were faced with a relationship issue, what did you do? Be as descriptive as possible.`,
   },
   {
@@ -159,7 +173,7 @@ export const questions = [
     tag: 'input',
     type: 'checkbox',
     name: 'howEnjoyable',
-    questionText: `Ok <name>, let’s talk about the positives.&&When you reflect on the following questions, it is important that you consider only the positive qualities of your relationship and ignore the negative ones.&&How “enjoyable” do you feel your relationship is?`,
+    questionText: `Ok, let’s talk about the positives.&&When you reflect on the following questions, it is important that you consider only the positive qualities of your relationship and ignore the negative ones.&&How “enjoyable” do you feel your relationship is?`,
     options: [
       'Not at all true',
       'A tiny bit',

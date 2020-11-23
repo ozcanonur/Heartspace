@@ -13,7 +13,7 @@ import '../normalize.scss';
 import '../style.scss';
 import classes from './index.module.scss';
 
-const Index = () => {
+const Index = ({ location }) => {
   const data = useStaticQuery(graphql`
     query {
       contentfulIndex {
@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <div>
       <Helmet title={siteTitle} />
-      <Navbar />
+      <Navbar location={location} />
       <div className={classes.heroBg}>
         <IndexLottie />
       </div>

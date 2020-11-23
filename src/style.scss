@@ -42,5 +42,21 @@ body {
 
 cf-list {
   max-width: 100%;
-  margin-left: 6rem;
+}
+
+.cf-progressBar {
+  height: 10rem !important;
+  background: linear-gradient(to right, #2c2c2e, white);
+}
+
+.bar {
+  background: #7cd07c !important;
+}
+
+#conversational-form {
+  padding-top: 10rem;
+}
+
+a {
+  text-decoration: none;
 }

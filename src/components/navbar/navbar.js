@@ -1,21 +1,35 @@
 import React from 'react';
-import { graphql, useStaticQuery, navigate } from 'gatsby';
+import { graphql, useStaticQuery, navigate, Link } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import classes from './navbar.module.scss';
 
-const navs = [
-  { title: 'Home', onClick: () => scrollTo('#home') },
-  { title: 'Community', onClick: () => scrollTo('#community') },
-  {
-    title: 'Relationship Assessment',
-    onClick: () => navigate('/relationshipAssessment'),
-  },
-  { title: 'About us', onClick: () => scrollTo('#aboutUs') },
-  { title: 'Get in touch', onClick: () => scrollTo('#getInTouch') },
-];
+const Navbar = ({ location }) => {
+  const onHomePage = location.pathname === '/';
 
-const Navbar = () => {
+  const navs = [
+    {
+      title: 'Home',
+      onClick: () => (onHomePage ? scrollTo('#home') : navigate('/')),
+    },
+    {
+      title: 'Community',
+      onClick: () => (onHomePage ? scrollTo('#community') : navigate('/')),
+    },
+    {
+      title: 'Relationship Assessment',
+      onClick: () => navigate('/relationshipAssessment'),
+    },
+    {
+      title: 'About us',
+      onClick: () => (onHomePage ? scrollTo('#aboutUs') : navigate('/')),
+    },
+    {
+      title: 'Get in touch',
+      onClick: () => (onHomePage ? scrollTo('#getInTouch') : navigate('/')),
+    },
+  ];
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulNav {
@@ -35,14 +49,16 @@ const Navbar = () => {
   return (
     <header>
       <nav>
-        <div className={classes.logoContainer}>
-          <img
-            src={logo}
-            alt="Happy Relationships Logo"
-            className={classes.logoImg}
-          />
-          <div className={classes.logoText}>Happy Relationships</div>
-        </div>
+        <Link to="/">
+          <div className={classes.logoContainer}>
+            <img
+              src={logo}
+              alt="Happy Relationships Logo"
+              className={classes.logoImg}
+            />
+            <div className={classes.logoText}>Happy Relationships</div>
+          </div>
+        </Link>
         <div className={classes.navsContainer}>
           <ul className={classes.navsList}>
             {navs.map(({ title, onClick }) => (

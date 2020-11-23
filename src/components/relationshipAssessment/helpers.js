@@ -17,18 +17,19 @@ const parseMultipleSelectionQuestion = (question) => {
 };
 
 const parseTextInputQuestion = (question) => {
-  const { tag, type, name, questionText } = question;
+  const { tag, type, name, questionText, conditional } = question;
   const field = {
     tag,
     type,
     name,
     'cf-questions': questionText,
+    [`cf-conditional-${name}`]: conditional,
   };
 
   return field;
 };
 
-export const parseRelationshipVariables = (questions) => {
+export const parseQuestions = (questions) => {
   const result = [];
   questions.forEach((question) => {
     // If it's single/multiple selection

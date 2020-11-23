@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Navbar from '../components/navbar/navbar';
 import Footer from '../components/footer/footer';
 import { Helmet } from 'react-helmet';
@@ -8,7 +8,7 @@ import RelationshipAssessment from '../components/relationshipAssessment/quiz';
 
 import classes from './relationshipAssessment.module.scss';
 
-const Quiz = () => {
+const Quiz = ({ location }) => {
   const data = useStaticQuery(graphql`
     query {
       contentfulIndex {
@@ -22,7 +22,7 @@ const Quiz = () => {
   return (
     <div>
       <Helmet title={siteTitle} />
-      <Navbar />
+      <Navbar location={location} />
       <RelationshipAssessment />
       {/* <Footer /> */}
     </div>
