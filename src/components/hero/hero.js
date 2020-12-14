@@ -31,7 +31,7 @@ const Hero = () => {
             <p>{subtitle3}</p>
           </div>
           <button onClick={redirectToInstagram} className={classes.button}>
-            Check out our community
+            Join our community
           </button>
         </h1>
       </div>

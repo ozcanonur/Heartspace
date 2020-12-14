@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 import ContactModal from './modal';
 import classes from './footer.module.scss';
 import Instagram from '../../assets/svg/instagram.inline.svg';
-import Twitter from '../../assets/svg/twitter.inline.svg';
-import Facebook from '../../assets/svg/facebook.inline.svg';
-import Linkedin from '../../assets/svg/linkedin.inline.svg';
 
 const Footer = () => {
   const redirectToInstagram = () => {
@@ -28,9 +25,6 @@ const Footer = () => {
       </button>
       <div className={classes.socialMediaContainer}>
         <Instagram onClick={redirectToInstagram} />
-        <Twitter />
-        <Facebook />
-        <Linkedin />
       </div>
       <ContactModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
     </footer>
