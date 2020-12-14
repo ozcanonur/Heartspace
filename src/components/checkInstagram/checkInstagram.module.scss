@@ -63,11 +63,11 @@
 
 .img {
   transition: transform 0.2s;
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: $box-shadow-hard;
   max-width: 100%;
   border-radius: 5rem;
-  height: 40rem;
+  height: 33.8rem;
 
   @media only screen and (max-width: 1000px) {
     height: 60rem;

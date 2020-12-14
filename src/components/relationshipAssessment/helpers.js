@@ -45,3 +45,53 @@ export const parseQuestions = (questions) => {
 
   return result.flat();
 };
+
+const getQuestionScore = (questionName, answer) => {
+  let score = 0;
+  switch (answer) {
+    case 'Not at all':
+      score += 1;
+      break;
+    case 'A tiny bit':
+      score += 2;
+      break;
+    case 'A little':
+      score += 3;
+      break;
+    case 'Somewhat':
+      score += 4;
+      break;
+    case 'Mostly':
+      score += 5;
+      break;
+    case 'Very Extremely':
+      score += 6;
+      break;
+    default:
+      break;
+  }
+
+  if (
+    questionName === 'howBad' ||
+    questionName === 'howEmpty' ||
+    questionName === 'howLifeless' ||
+    questionName === 'howMiserable'
+  )
+    score *= -1;
+
+  return score;
+};
+
+export const getFullScore = (answers) => {
+  let score = 0;
+  Object.keys(answers).forEach((question) => {
+    score += getQuestionScore(question, answers[question][0]);
+  });
+
+  let classification = '';
+  if (score < 14) classification = 'Lower than average';
+  else if (score > 17) classification = 'Higher than average';
+  else classification = 'Average';
+
+  return { score, classification };
+};
