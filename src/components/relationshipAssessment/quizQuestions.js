@@ -150,18 +150,6 @@ export const questions = [
   },
   {
     tag: 'input',
-    type: 'text',
-    name: 'addressingProblems',
-    questionText: `How do you address these problems currently?&&Think of a time when you were faced with a relationship issue, what did you do? Be as descriptive as possible.`,
-  },
-  {
-    tag: 'input',
-    type: 'text',
-    name: 'username',
-    questionText: `You’re doing great.&&Now, on to the final part.&&We will ask you to reflect on your relationship from 8 different perspectives. And that’s it!&&What can we call you btw? (Psst - it's OK to keep your name secret 🕵️)`,
-  },
-  {
-    tag: 'input',
     type: 'radio',
     name: 'howEnjoyable',
     questionText: `Ok, let’s talk about the positives.&&When you reflect on the following questions, it is important that you consider only the positive qualities of your relationship and ignore the negative ones.&&How “enjoyable” do you feel your relationship is?`,

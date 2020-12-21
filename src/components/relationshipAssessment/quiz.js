@@ -1,15 +1,24 @@
 import React, { useEffect, useRef } from 'react';
 import { ConversationalForm } from 'conversational-form';
 import { questions } from './quizQuestions';
-import { parseQuestions, getFullScore } from './helpers';
+import { parseQuestions, getFullScore, attachAnswerButtonListeners, makeRandomSessionId } from './helpers';
+import axios from 'axios';
 
 const RelationshipAssessment = () => {
   const ref = useRef(null);
 
+  useEffect(() => {
+    const now = new Date();
+    const secondsSinceEpoch = Math.round(now.getTime() / 1000);
+    const sessionId = `${secondsSinceEpoch.toString()}_${makeRandomSessionId(16)}`;
+
+    attachAnswerButtonListeners(sessionId);
+  }, []);
+
   const formFields = parseQuestions(questions);
 
   const submitCallback = async function () {
-    const formDataSerialized = this.getFormData(true);
+    // const formDataSerialized = this.getFormData(true);
 
     this.addRobotChatResponse(
       `Well done. We are done.&&Reflecting back and regularly assessing your relationship is an important first step.&&Give us a moment while we analyse your answers&&...`
@@ -58,13 +67,14 @@ const RelationshipAssessment = () => {
         userInterfaceOptions: {
           robot: {
             robotResponseTime: 0,
-            chainedResponseTime: 750,
+            chainedResponseTime: 0,
           },
         },
         // loadExternalStyleSheet: false
       },
       tags: formFields,
     });
+
     ref.current.appendChild(cf.el);
   }, []);
 

@@ -47,6 +47,10 @@ cf-list {
 .cf-progressBar {
   height: 10rem !important;
   background: linear-gradient(to right, #2c2c2e, white);
+
+  @media only screen and (max-width: 850px) {
+    height: 12rem !important;
+  }
 }
 
 .bar {
