@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { ConversationalForm } from 'conversational-form';
 import { questions } from './quizQuestions';
 import { parseQuestions, getFullScore, attachAnswerButtonListeners, makeRandomSessionId } from './helpers';
+import axios from 'axios';
 
 const RelationshipAssessment = () => {
   const ref = useRef(null);
@@ -12,6 +13,8 @@ const RelationshipAssessment = () => {
     const sessionId = `${secondsSinceEpoch.toString()}_${makeRandomSessionId(16)}`;
 
     attachAnswerButtonListeners(sessionId);
+
+    axios.get('https://heartspacerelweb.herokuapp.com/isAlive');
   }, []);
 
   const formFields = parseQuestions(questions);
@@ -63,10 +66,11 @@ const RelationshipAssessment = () => {
         preventAutoFocus: false,
         theme: 'dark',
         showProgressBar: true,
+
         userInterfaceOptions: {
           robot: {
             robotResponseTime: 0,
-            chainedResponseTime: 0,
+            chainedResponseTime: 1250,
           },
         },
         // loadExternalStyleSheet: false

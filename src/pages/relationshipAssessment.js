@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import RelationshipAssessment from '../components/relationshipAssessment/quiz';
+import classes from './relationshipAssessment.module.scss';
 
 const Quiz = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -27,9 +28,8 @@ const Quiz = ({ location }) => {
             gtag('config', 'G-HH650H7WVM');`}
         </script>
       </Helmet>
-      <Navbar location={location} />
+      <Navbar location={location} className={classes.navbar} />
       <RelationshipAssessment />
-      {/* <Footer /> */}
     </div>
   );
 };

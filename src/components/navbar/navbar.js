@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery, navigate, Link } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-// import Drawer from 'assets/svg/mobile_drawer.svg';
+import OutsideClickHandler from 'react-outside-click-handler';
 
 import classes from './navbar.module.scss';
 
-const Navbar = ({ location }) => {
+const Navbar = ({ location, className }) => {
   const onHomePage = location.pathname === '/';
+
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const navs = [
     {
@@ -47,16 +49,41 @@ const Navbar = ({ location }) => {
 
   const logo = data.allContentfulNav.nodes[0].logo.file.url;
 
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  };
+
+  const closeDrawer = () => {
+    setDrawerOpen(false);
+  };
+
   return (
-    <header>
+    <header className={className}>
       <nav>
         <Link to="/">
           <div className={classes.logoContainer}>
             <img src={logo} alt="Happy Relationships Logo" className={classes.logoImg} />
-            <div className={classes.logoText}>Happy Relationships</div>
+            <div className={classes.logoText} role="title">
+              Happy Relationships
+            </div>
           </div>
         </Link>
         <div className={classes.navsContainer}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 15.39 11"
+            onClick={toggleDrawer}
+            className={classes.drawer}
+          >
+            <defs>
+              <style>{'.prefix__cls-1{fill:#3e3e3f;stroke:#000;stroke-miterlimit:10}'}</style>
+            </defs>
+            <g id="prefix__Layer_2">
+              <g id="prefix__Layer_1-2">
+                <path className="prefix__cls-1" d="M0 .5h15.39M0 5.5h15.39M0 10.5h15.39" />
+              </g>
+            </g>
+          </svg>
           <ul className={classes.navsList}>
             {navs.map(({ title, onClick }) => (
               <li key={title} className={classes.navItem}>
@@ -66,6 +93,25 @@ const Navbar = ({ location }) => {
               </li>
             ))}
           </ul>
+          <OutsideClickHandler onOutsideClick={closeDrawer}>
+            <div
+              className={classes.drawerMenu}
+              style={{ opacity: drawerOpen ? 1 : 0, display: drawerOpen ? 'inherit' : 'none' }}
+            >
+              {navs.map(({ title, onClick }) => (
+                <div
+                  key={title}
+                  className={classes.drawerItem}
+                  onClick={() => {
+                    onClick();
+                    setDrawerOpen(false);
+                  }}
+                >
+                  {title}
+                </div>
+              ))}
+            </div>
+          </OutsideClickHandler>
         </div>
       </nav>
     </header>

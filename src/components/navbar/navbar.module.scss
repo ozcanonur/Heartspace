@@ -12,12 +12,21 @@ header {
 nav {
   display: flex;
   align-items: center;
+  justify-content: first baseline;
+
+  @media only screen and (max-width: 950px) {
+    justify-content: space-between;
+  }
 }
 
 .navsList {
   list-style: none;
   display: flex;
   justify-content: space-around;
+
+  @media only screen and (max-width: 950px) {
+    display: none;
+  }
 
   & > li:not(:last-child) {
     margin-right: 2.5rem;
@@ -45,10 +54,7 @@ nav {
 
 .navsContainer {
   margin-left: 6rem;
-
-  @media only screen and (max-width: 950px) {
-    display: none;
-  }
+  position: relative;
 }
 
 .logoContainer {
@@ -75,4 +81,38 @@ nav {
   @media only screen and (max-width: 600px) {
     font-size: 3rem;
   }
+}
+
+.drawer {
+  margin-left: auto;
+  height: 3.5rem;
+  display: none;
+  cursor: pointer;
+
+  @media only screen and (max-width: 950px) {
+    display: block;
+  }
+}
+
+.drawerMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  margin-top: 2rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 15px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 2rem;
+  transition: all 0.2s ease-in-out;
+  width: max-content;
+}
+
+.drawerItem {
+  background-color: white;
+  font-size: 4rem;
+  padding: 2.5rem 3rem;
+  width: 100%;
+  min-width: max-content;
+  cursor: pointer;
+  color: #363636;
 }

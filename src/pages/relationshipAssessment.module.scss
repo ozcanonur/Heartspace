@@ -1,0 +1,15 @@
+.navbar {
+  background-color: #2c2c2e;
+
+  & div[role='title'] {
+    color: white !important;
+  }
+
+  & div[role='navigation'] {
+    color: white !important;
+  }
+
+  & * {
+    stroke: white !important;
+  }
+}
