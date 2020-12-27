@@ -31,5 +31,11 @@ module.exports = {
         trackingId: 'G-HH650H7WVM',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'G-HH650H7WVM',
+      },
+    },
   ],
 };
