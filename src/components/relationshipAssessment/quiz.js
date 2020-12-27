@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { ConversationalForm } from 'conversational-form';
 import { questions } from './quizQuestions';
 import { parseQuestions, getFullScore, attachAnswerButtonListeners, makeRandomSessionId } from './helpers';
-import axios from 'axios';
 
 const RelationshipAssessment = () => {
   const ref = useRef(null);
@@ -18,7 +17,7 @@ const RelationshipAssessment = () => {
   const formFields = parseQuestions(questions);
 
   const submitCallback = async function () {
-    // const formDataSerialized = this.getFormData(true);
+    const formDataSerialized = this.getFormData(true);
 
     this.addRobotChatResponse(
       `Well done. We are done.&&Reflecting back and regularly assessing your relationship is an important first step.&&Give us a moment while we analyse your answers&&...`
@@ -76,7 +75,7 @@ const RelationshipAssessment = () => {
     });
 
     ref.current.appendChild(cf.el);
-  }, []);
+  }, [formFields]);
 
   return <div ref={ref} />;
 };

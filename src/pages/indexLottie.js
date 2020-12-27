@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect, useCallback } from 'react';
 import Lottie from 'react-lottie';
 import animationData from '../assets/lottie/womanPhone3.json';
@@ -72,11 +73,7 @@ const IndexLottie = () => {
         left: `${lottiePosition.left}%`,
       }}
     >
-      <Lottie
-        options={lottieOptions}
-        height="40rem"
-        isClickToPauseDisabled={true}
-      />
+      <Lottie options={lottieOptions} height="40rem" isClickToPauseDisabled={true} />
     </div>
   );
 };

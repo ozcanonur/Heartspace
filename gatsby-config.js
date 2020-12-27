@@ -25,6 +25,11 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-gtag',
+      options: {
+        trackingId: 'G-HH650H7WVM',
+      },
+    },
   ],
 };
