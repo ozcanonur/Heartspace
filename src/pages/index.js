@@ -26,7 +26,15 @@ const Index = ({ location }) => {
 
   return (
     <div>
-      <Helmet title={siteTitle} />
+      <Helmet title={siteTitle}>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH650H7WVM%22%3E" defer></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HH650H7WVM');`}
+        </script>
+      </Helmet>
       <Navbar location={location} />
       <div className={classes.heroBg}>
         <IndexLottie />

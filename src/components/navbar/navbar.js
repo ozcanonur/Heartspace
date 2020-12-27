@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery, navigate, Link } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
+// import Drawer from 'assets/svg/mobile_drawer.svg';
 
 import classes from './navbar.module.scss';
 
@@ -51,11 +52,7 @@ const Navbar = ({ location }) => {
       <nav>
         <Link to="/">
           <div className={classes.logoContainer}>
-            <img
-              src={logo}
-              alt="Happy Relationships Logo"
-              className={classes.logoImg}
-            />
+            <img src={logo} alt="Happy Relationships Logo" className={classes.logoImg} />
             <div className={classes.logoText}>Happy Relationships</div>
           </div>
         </Link>
