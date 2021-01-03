@@ -54,7 +54,7 @@ const RelationshipAssessment = () => {
         preventAutoFocus: false,
         theme: 'dark',
         showProgressBar: true,
-
+        preventAutoFocus: true,
         userInterfaceOptions: {
           robot: {
             robotResponseTime: 0,
