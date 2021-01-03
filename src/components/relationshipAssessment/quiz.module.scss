@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .container {
   background-color: #2c2c2e;
   position: relative;
@@ -98,4 +100,18 @@ hr {
   border-radius: 1rem;
   // background-color: white;
   margin-top: 1rem;
+}
+
+.modalContainer {
+  padding: 2rem 4rem;
+  border: none;
+
+  & > p:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  & > p {
+    font-size: 3rem;
+    color: #3e3e3f;
+  }
 }
