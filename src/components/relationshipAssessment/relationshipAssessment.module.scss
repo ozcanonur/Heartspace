@@ -1,18 +1,11 @@
-@import '../../variables.scss';
-
 .container {
   background-color: #2c2c2e;
   position: relative;
-  height: 100vh;
+  flex-grow: 1;
 }
 
 .resultContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
-
   padding: 4rem 6rem;
   // background-color: #eee;
   display: flex;
@@ -41,6 +34,7 @@ hr {
   font-family: 'Apercu';
 
   margin-bottom: 5rem !important;
+  margin-top: 0 !important;
   font-size: 4rem;
   text-align: center;
   font-weight: 500;

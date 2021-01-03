@@ -5,7 +5,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 
 import classes from './navbar.module.scss';
 
-const Navbar = ({ location, className }) => {
+const Navbar = ({ location, className, ...props }) => {
   const onHomePage = location.pathname === '/';
 
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -58,7 +58,7 @@ const Navbar = ({ location, className }) => {
   };
 
   return (
-    <header className={className}>
+    <header className={className} {...props}>
       <nav>
         <Link to="/">
           <div className={classes.logoContainer}>

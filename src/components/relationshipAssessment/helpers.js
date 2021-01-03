@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { questions } from './quizQuestions';
 
 const parseMultipleSelectionQuestion = (question) => {
   const { tag, type, name } = question;
@@ -99,16 +98,6 @@ export const getFullScore = (answers) => {
   return { score, classification, scores: { negativeScores: 15, positiveScores: 20 } };
 };
 
-export const makeRandomSessionId = (length) => {
-  var result = '';
-  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-};
-
 let reference;
 export const attachAnswerButtonListeners = async (sessionId) => {
   const uniqueQuestions = {};
@@ -172,4 +161,22 @@ export const attachAnswerButtonListeners = async (sessionId) => {
       inputButton.addEventListener('click', reference);
     }
   }
+};
+
+export const isValidEmail = (email) => email.trim().length !== 0 && email.includes('@') && email.includes('.');
+
+export const makeSessionId = (length) => {
+  const now = new Date();
+  const secondsSinceEpoch = Math.round(now.getTime() / 1000);
+
+  let randomCharacters = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    randomCharacters += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+  const sessionId = `${secondsSinceEpoch.toString()}_${randomCharacters}`;
+
+  return sessionId;
 };
