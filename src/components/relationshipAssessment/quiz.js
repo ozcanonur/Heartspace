@@ -1,16 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ConversationalForm } from 'conversational-form';
 import { questions } from './quizQuestions';
 import { parseQuestions, getFullScore, attachAnswerButtonListeners, makeRandomSessionId } from './helpers';
 import axios from 'axios';
 
+import classes from './quiz.module.scss';
+
 const RelationshipAssessment = () => {
   const ref = useRef(null);
+
+  const [isAssessmentDone, setIsAssessmentDone] = useState(true);
+  const [scores, setScores] = useState({ negativeScores: 15, positiveScores: 20 });
+  const [inputValue, setInputValue] = useState('');
+  const [sessionId, setSessionId] = useState('');
+
+  const inputOnChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
   useEffect(() => {
     const now = new Date();
     const secondsSinceEpoch = Math.round(now.getTime() / 1000);
     const sessionId = `${secondsSinceEpoch.toString()}_${makeRandomSessionId(16)}`;
+    setSessionId(sessionId);
 
     attachAnswerButtonListeners(sessionId);
 
@@ -26,7 +38,9 @@ const RelationshipAssessment = () => {
       `Well done. We are done.&&Reflecting back and regularly assessing your relationship is an important first step.&&Give us a moment while we analyse your answers&&...`
     );
 
-    const { score, classification } = getFullScore(formDataSerialized);
+    const { score, classification, scores } = getFullScore(formDataSerialized);
+
+    setScores(scores);
 
     setTimeout(() => {
       this.addRobotChatResponse(
@@ -53,8 +67,10 @@ const RelationshipAssessment = () => {
         `That is great news.&&Because your relationship is very open to ${nextLineAdditionalText}improvement with the right approach.&&And taking this assessment was an important first step.&&Would you like a more in-depth analysis?`
       );
 
+      setIsAssessmentDone(true);
+
       // Need to continue convo here somehow
-    }, 8000);
+    }, 500);
   };
 
   // Conversational form object is tied to window object
@@ -70,7 +86,7 @@ const RelationshipAssessment = () => {
         userInterfaceOptions: {
           robot: {
             robotResponseTime: 0,
-            chainedResponseTime: 1250,
+            chainedResponseTime: 0,
           },
         },
         // loadExternalStyleSheet: false
@@ -81,7 +97,76 @@ const RelationshipAssessment = () => {
     ref.current.appendChild(cf.el);
   }, [formFields]);
 
-  return <div ref={ref} />;
+  const submitEmail = () => {
+    const params = { sessionId, question: 'email', answer: inputValue };
+    axios.post('https://heartspacerelweb.herokuapp.com/assessment/questionResponse', params);
+  };
+
+  const { negativeScores, positiveScores } = scores;
+
+  return (
+    <div className={classes.container}>
+      <div ref={ref} style={{ display: isAssessmentDone ? 'none' : 'inherit' }} />
+      <div className={classes.resultContainer} style={{ display: isAssessmentDone ? 'flex' : 'none' }}>
+        <div className={classes.resultTextsContainer}>
+          <h1 className={classes.resultNumber}>Your relationship strength score is 50.</h1>
+
+          <div className={classes.resultLongText}>
+            <p>What does this mean?</p>
+            <hr />
+            <p>
+              The questions in this assessment are based on a psychological research And thousands of couples have taken
+              it since 2016 Compared to everyone else, your relationship strength score is higher than most couples.
+            </p>
+            <hr />
+            <div className={classes.visualisationContainer}>
+              <div className={classes.visualisation}>
+                <div className={classes.visualisationTextContainer}>
+                  <div className={classes.interactionTypeScore}>{`Negative: ${negativeScores}%`}</div>
+                  <div className={classes.interactionTypeCategory}>
+                    {negativeScores < 20 ? 'Lower than average' : 'Higher than average'}
+                  </div>
+                </div>
+                <div
+                  className={classes.visualisationLine}
+                  style={{
+                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${negativeScores}%, white ${negativeScores}%, white 100%)`,
+                  }}
+                />
+              </div>
+              <div className={classes.visualisation}>
+                <div className={classes.visualisationTextContainer}>
+                  <div className={classes.interactionTypeScore}>{`Positive: ${positiveScores}%`}</div>
+                  <div className={classes.interactionTypeCategory}>
+                    {positiveScores < 20 ? 'Lower than average' : 'Higher than average'}
+                  </div>
+                </div>
+                <div
+                  className={classes.visualisationLine}
+                  style={{
+                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${positiveScores}%, white ${positiveScores}%, white 100%)`,
+                  }}
+                />
+              </div>
+            </div>
+            <hr />
+            <p>
+              That is great news. Because your relationship is very open to even further improvement with the right
+              approach and taking this assessment was an important first step.
+            </p>
+            <hr />
+            <p>Would you like a more in-depth analysis?</p>
+          </div>
+          <input className={classes.emailInput} value={inputValue} onChange={inputOnChange} />
+          <div className={classes.buttonContainer}>
+            <div className={classes.submitButton} onClick={submitEmail}>
+              Submit
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default RelationshipAssessment;

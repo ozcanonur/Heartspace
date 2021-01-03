@@ -96,7 +96,7 @@ export const getFullScore = (answers) => {
   else if (score > 17) classification = 'Higher than average';
   else classification = 'Average';
 
-  return { score, classification };
+  return { score, classification, scores: { negativeScores: 15, positiveScores: 20 } };
 };
 
 export const makeRandomSessionId = (length) => {

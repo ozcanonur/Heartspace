@@ -1,0 +1,101 @@
+.container {
+  background-color: #2c2c2e;
+  position: relative;
+  height: 100vh;
+}
+
+.resultContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  padding: 4rem 6rem;
+  // background-color: #eee;
+  display: flex;
+  font-family: 'Apercu';
+  font-size: 2.5rem;
+  color: white;
+  flex-direction: column;
+}
+
+.resultTextsContainer {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Apercu';
+  flex-grow: 1;
+
+  & p:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+hr {
+  margin-bottom: 2.5rem;
+}
+
+.resultNumber {
+  font-family: 'Apercu';
+
+  margin-bottom: 5rem !important;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 500;
+
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  color: white;
+  box-shadow: 0 2px 2px rgba(255, 255, 255, 0.1), 0 3px 3px rgba(255, 255, 255, 0.1);
+}
+
+.emailInput {
+  border: none;
+  margin-top: 4rem;
+  font-size: 3rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  outline: none;
+  color: #3e3e3f;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.submitButton {
+  background-color: #378b8b;
+  width: fit-content;
+  cursor: pointer;
+  padding: 2rem 7rem;
+  border-radius: 10rem;
+  transition: all 0.2s ease-out;
+  color: white;
+  z-index: 9;
+  outline: none;
+}
+
+.visualisationContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.visualisation {
+  margin-bottom: 4rem;
+}
+
+.visualisationTextContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.visualisationLine {
+  height: 2rem;
+  border-radius: 1rem;
+  // background-color: white;
+  margin-top: 1rem;
+}
