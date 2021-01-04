@@ -13,7 +13,7 @@ const CHAINED_RESPONSE_TIME = 750;
 const RelationshipAssessment = () => {
   const [sessionId, setSessionId] = useState('');
   const [isAssessmentDone, setIsAssessmentDone] = useState(false);
-  const [positiveAndNegativeScores, setPositiveAndNegativeScores] = useState({ positivesScore: 0, negativesScore: 20 });
+  const [positiveAndNegativeScores, setPositiveAndNegativeScores] = useState({ positivesScore: 0, negativesScore: 0 });
 
   const formFields = parseQuestions(questions);
 

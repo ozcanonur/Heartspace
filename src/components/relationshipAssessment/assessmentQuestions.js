@@ -7,21 +7,21 @@ export const questions = [
       'Welcome to our psychology-based relationship strength assessment.&&At the end, our expert tool will provide you with an analysis of the strength of your relationship.&&The questions are based on the journal research paper published by the Psychological Association.&&Note that your privacy matters to us. Your answers are 100% confidential and kept secure through our encryption technology.&&This test will take about 4 minutes to complete.&&Are you ready?',
     options: [`Yes, let's start!`, 'No, not yet.'],
   },
-  // {
-  //   tag: 'input',
-  //   type: 'text',
-  //   name: 'started',
-  //   questionText: 'No worries - come back when you feel ready. We will be here for you.',
-  //   conditional: 'No, not yet.',
-  // },
-  // {
-  //   tag: 'input',
-  //   type: 'radio',
-  //   name: 'age',
-  //   questionText:
-  //     'Great!&&Firstly, can you tell us a bit about yourself?&&This will help our expert system to finetune its analysis.&&How old are you?',
-  //   options: ['17 or younger', '18-25', '26-34', '35-43', '44-55', '56-65', '66 or older'],
-  // },
+  {
+    tag: 'input',
+    type: 'text',
+    name: 'started',
+    questionText: 'No worries - come back when you feel ready. We will be here for you.',
+    conditional: 'No, not yet.',
+  },
+  {
+    tag: 'input',
+    type: 'radio',
+    name: 'age',
+    questionText:
+      'Great!&&Firstly, can you tell us a bit about yourself?&&This will help our expert system to finetune its analysis.&&How old are you?',
+    options: ['17 or younger', '18-25', '26-34', '35-43', '44-55', '56-65', '66 or older'],
+  },
   // {
   //   tag: 'input',
   //   type: 'radio',
