@@ -29,7 +29,7 @@ const RelationshipAssessment = () => {
     const resultScreenTimeoutLength = CHAINED_RESPONSE_TIME * 6 + 2000;
 
     setTimeout(() => {
-      const { positiveAndNegativeScores } = getPositiveAndNegativeScores(formDataSerialized);
+      const positiveAndNegativeScores = getPositiveAndNegativeScores(formDataSerialized);
 
       setPositiveAndNegativeScores(positiveAndNegativeScores);
 
