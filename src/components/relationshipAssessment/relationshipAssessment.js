@@ -31,7 +31,7 @@ const RelationshipAssessment = () => {
     setTimeout(() => {
       const { positiveAndNegativeScores } = getPositiveAndNegativeScores(formDataSerialized);
 
-      setScores(positiveAndNegativeScores);
+      setPositiveAndNegativeScores(positiveAndNegativeScores);
 
       setIsAssessmentDone(true);
     }, resultScreenTimeoutLength);
