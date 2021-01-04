@@ -73,29 +73,32 @@ const getQuestionScore = (questionName, answer) => {
       break;
   }
 
+  let isPositiveQuestion = true;
+
   if (
     questionName === 'howBad' ||
     questionName === 'howEmpty' ||
     questionName === 'howLifeless' ||
     questionName === 'howMiserable'
-  )
-    score *= -1;
+  ) {
+    isPositiveQuestion = false;
+  }
 
-  return score;
+  return { score, isPositiveQuestion };
 };
 
-export const getFullScore = (answers) => {
-  let score = 0;
-  Object.keys(answers).forEach((question) => {
-    score += getQuestionScore(question, answers[question][0]);
-  });
-
-  let classification = '';
-  if (score < 14) classification = 'Lower than average';
-  else if (score > 17) classification = 'Higher than average';
-  else classification = 'Average';
-
-  return { score, classification, scores: { negativeScores: 15, positiveScores: 20 } };
+export const getPositiveAndNegativeScores = (answers) => {
+  // let positivesScore = 0, negativesScore = 0;
+  // Object.keys(answers).forEach((question) => {
+  //   let [questionScore, isPositiveQuestion] = getQuestionScore(question, answers[question][0])
+  //   if (isPositiveQuestion) {
+  //     positivesScore += questionScore;
+  //   } else {
+  //     negativesScore += questionScore;
+  //   }
+  // });
+  let positivesScore = 10, negativesScore = 21;
+  return { positivesScore, negativesScore };
 };
 
 let reference;

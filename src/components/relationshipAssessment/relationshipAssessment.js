@@ -4,7 +4,7 @@ import { ConversationalForm } from 'conversational-form';
 
 import ResultScreen from './resultScreen';
 import { questions } from './assessmentQuestions';
-import { parseQuestions, getFullScore, attachAnswerButtonListeners, makeSessionId } from './helpers';
+import { parseQuestions, getPositiveAndNegativeScores, attachAnswerButtonListeners, makeSessionId } from './helpers';
 
 import classes from './relationshipAssessment.module.scss';
 
@@ -13,7 +13,7 @@ const CHAINED_RESPONSE_TIME = 750;
 const RelationshipAssessment = () => {
   const [sessionId, setSessionId] = useState('');
   const [isAssessmentDone, setIsAssessmentDone] = useState(false);
-  const [scores, setScores] = useState({ negativeScores: 15, positiveScores: 20 });
+  const [positiveAndNegativeScores, setPositiveAndNegativeScores] = useState({ positivesScore: 0, negativesScore: 20 });
 
   const formFields = parseQuestions(questions);
 
@@ -29,9 +29,9 @@ const RelationshipAssessment = () => {
     const resultScreenTimeoutLength = CHAINED_RESPONSE_TIME * 6 + 2000;
 
     setTimeout(() => {
-      const { scores } = getFullScore(formDataSerialized);
+      const { positiveAndNegativeScores } = getPositiveAndNegativeScores(formDataSerialized);
 
-      setScores(scores);
+      setScores(positiveAndNegativeScores);
 
       setIsAssessmentDone(true);
     }, resultScreenTimeoutLength);
@@ -74,7 +74,7 @@ const RelationshipAssessment = () => {
       <div ref={assessmentRef} style={{ display: isAssessmentDone ? 'none' : 'inherit', transition: 'all .2s' }} />
       <ResultScreen
         sessionId={sessionId}
-        scores={scores}
+        positiveAndNegativeScores={positiveAndNegativeScores}
         style={{ display: isAssessmentDone ? 'flex' : 'none', transition: 'all .2s' }}
       />
     </div>

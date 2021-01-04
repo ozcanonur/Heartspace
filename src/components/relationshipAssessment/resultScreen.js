@@ -7,8 +7,8 @@ import { isValidEmail } from './helpers';
 
 import classes from './relationshipAssessment.module.scss';
 
-const ResultScreen = ({ sessionId, scores, ...props }) => {
-  const { negativeScores, positiveScores } = scores;
+const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
+  const { positivesScore, negativesScore } = positiveAndNegativeScores;
 
   const [inputValue, setInputValue] = useState('');
   const [isEmailPostSuccess, setIsEmailPostSuccess] = useState(true);
@@ -50,7 +50,7 @@ const ResultScreen = ({ sessionId, scores, ...props }) => {
     <>
       <div className={classes.resultContainer} {...props}>
         <div className={classes.resultTextsContainer}>
-          <h1 className={classes.resultNumber}>Your relationship strength score is 50.</h1>
+          <h1 className={classes.resultNumber}>{`Your relationship strength score is: ${positivesScore - negativesScore}.%`}</h1>
           <div className={classes.resultLongText}>
             <p>What does this mean?</p>
             <hr />
@@ -62,29 +62,29 @@ const ResultScreen = ({ sessionId, scores, ...props }) => {
             <div className={classes.visualisationContainer}>
               <div className={classes.visualisation}>
                 <div className={classes.visualisationTextContainer}>
-                  <div className={classes.interactionTypeScore}>{`Negative: ${negativeScores}%`}</div>
+                  <div className={classes.interactionTypeScore}>{`Negative: ${negativesScore}%`}</div>
                   <div className={classes.interactionTypeCategory}>
-                    {negativeScores < 20 ? 'Lower than average' : 'Higher than average'}
+                    {negativesScore < 20 ? 'Lower than average' : 'Higher than average'}
                   </div>
                 </div>
                 <div
                   className={classes.visualisationLine}
                   style={{
-                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${negativeScores}%, white ${negativeScores}%, white 100%)`,
+                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${negativesScore}%, white ${negativesScore}%, white 100%)`,
                   }}
                 />
               </div>
               <div className={classes.visualisation}>
                 <div className={classes.visualisationTextContainer}>
-                  <div className={classes.interactionTypeScore}>{`Positive: ${positiveScores}%`}</div>
+                  <div className={classes.interactionTypeScore}>{`Positive: ${positivesScore}%`}</div>
                   <div className={classes.interactionTypeCategory}>
-                    {positiveScores < 20 ? 'Lower than average' : 'Higher than average'}
+                    {positivesScore < 20 ? 'Lower than average' : 'Higher than average'}
                   </div>
                 </div>
                 <div
                   className={classes.visualisationLine}
                   style={{
-                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${positiveScores}%, white ${positiveScores}%, white 100%)`,
+                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${positivesScore}%, white ${positivesScore}%, white 100%)`,
                   }}
                 />
               </div>
