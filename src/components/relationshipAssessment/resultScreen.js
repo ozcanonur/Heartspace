@@ -7,8 +7,11 @@ import { isValidEmail } from './helpers';
 
 import classes from './relationshipAssessment.module.scss';
 
-const ResultScreen = ({ sessionId, scores, ...props }) => {
-  const { negativeScores, positiveScores } = scores;
+const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
+  const { positivesScore, negativesScore } = positiveAndNegativeScores;
+
+  const ComparisonEnum = {"lower": 1, "average": 2, "higher": 3}
+
 
   const [inputValue, setInputValue] = useState('');
   const [isEmailPostSuccess, setIsEmailPostSuccess] = useState(true);
@@ -46,45 +49,118 @@ const ResultScreen = ({ sessionId, scores, ...props }) => {
     }
   };
 
+  const getPositivesComparisonResult = (positivesScore) => {
+    if (positivesScore <= 13) {
+      return ComparisonEnum.lower;
+    } else if (positivesScore >= 14 && positivesScore <= 23) {
+      return ComparisonEnum.average;
+    } else {
+      return ComparisonEnum.higher;
+    }
+  }
+
+  const getNegativesComparisonResult = (negativesScore) => {
+    if (negativesScore <= 3) {
+      return ComparisonEnum.higher;
+    } else if (negativesScore >= 4 && negativesScore <= 7) {
+      return ComparisonEnum.average;
+    } else {
+      return ComparisonEnum.lower;
+    }
+  }
+
+  const getTotalComparisonResult = (positivesScore, negativesScore) => {
+    let totalScore = positivesScore - negativesScore;
+    if (totalScore <= 13) {
+      return ComparisonEnum.lower;
+    } else if (totalScore >= 14 && totalScore <= 17) {
+      return ComparisonEnum.average;
+    } else {
+      return ComparisonEnum.higher;
+    }
+  }
+
+  const getConclusiveComparisonStatement = (positivesScore, negativesScore) => {
+    let comparisonResult = getTotalComparisonResult(positivesScore, negativesScore);
+    switch (comparisonResult) {
+      case ComparisonEnum.lower:
+        return 'slightly lower than';
+      case ComparisonEnum.average:
+        return 'similar to';
+      case ComparisonEnum.higher:
+        return 'slightly higher than';
+      default:
+        break;
+    }
+  };
+
+  const getPositivesComparisonStatement = (positivesScore) => {
+    let comparisonResult = getPositivesComparisonResult(positivesScore);
+    switch (comparisonResult) {
+      case ComparisonEnum.lower:
+        return 'Lower than average';
+      case ComparisonEnum.average:
+        return 'Similar to average';
+      case ComparisonEnum.higher:
+        return 'Higher than average';
+      default:
+        break;
+    }
+  };
+
+  const getNegativesComparisonStatement = (negativesScore) => {
+    let comparisonResult = getNegativesComparisonResult(negativesScore);
+    switch (comparisonResult) {
+      case ComparisonEnum.lower:
+        return 'Lower than average';
+      case ComparisonEnum.average:
+        return 'Similar to average';
+      case ComparisonEnum.higher:
+        return 'Higher than average';
+      default:
+        break;
+    }
+  };
+
   return (
     <>
       <div className={classes.resultContainer} {...props}>
         <div className={classes.resultTextsContainer}>
-          <h1 className={classes.resultNumber}>Your relationship strength score is 50.</h1>
+          <h1 className={classes.resultNumber}>{`Your relationship strength score is: ${positivesScore - negativesScore}.`}</h1>
           <div className={classes.resultLongText}>
             <p>What does this mean?</p>
             <hr />
             <p>
-              The questions in this assessment are based on a psychological research And thousands of couples have taken
-              it since 2016 Compared to everyone else, your relationship strength score is higher than most couples.
+              The questions in this assessment are based on a psychological research. And thousands of couples have taken
+              it since 2016. Compared to everyone else, your relationship strength score is {`${getConclusiveComparisonStatement(positivesScore, negativesScore)}`} most couples.
             </p>
             <hr />
             <div className={classes.visualisationContainer}>
               <div className={classes.visualisation}>
                 <div className={classes.visualisationTextContainer}>
-                  <div className={classes.interactionTypeScore}>{`Negative: ${negativeScores}%`}</div>
+                  <div className={classes.interactionTypeScore}>{`Positive Aspects: ${positivesScore / 24 * 100}%`}</div>
                   <div className={classes.interactionTypeCategory}>
-                    {negativeScores < 20 ? 'Lower than average' : 'Higher than average'}
+                    {`${getPositivesComparisonStatement(positivesScore)}`}
                   </div>
                 </div>
                 <div
                   className={classes.visualisationLine}
                   style={{
-                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${negativeScores}%, white ${negativeScores}%, white 100%)`,
+                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${positivesScore}%, white ${positivesScore}%, white 100%)`,
                   }}
                 />
               </div>
               <div className={classes.visualisation}>
                 <div className={classes.visualisationTextContainer}>
-                  <div className={classes.interactionTypeScore}>{`Positive: ${positiveScores}%`}</div>
+                  <div className={classes.interactionTypeScore}>{`Negative Aspects: ${negativesScore / 24 * 100}%`}</div>
                   <div className={classes.interactionTypeCategory}>
-                    {positiveScores < 20 ? 'Lower than average' : 'Higher than average'}
+                    {`${getNegativesComparisonStatement(negativesScore)}`}
                   </div>
                 </div>
                 <div
                   className={classes.visualisationLine}
                   style={{
-                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${positiveScores}%, white ${positiveScores}%, white 100%)`,
+                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${negativesScore}%, white ${negativesScore}%, white 100%)`,
                   }}
                 />
               </div>
