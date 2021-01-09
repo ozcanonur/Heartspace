@@ -82,29 +82,3 @@ const RelationshipAssessment = () => {
 };
 
 export default RelationshipAssessment;
-
-// setTimeout(() => {
-//   this.addRobotChatResponse(
-//     `We have your relationship strength score.&&Your score is ${score}.&&What does this mean?&&The questions in this assessment are based on a psychological research and thousands of couples have taken it since 2016.`
-//   );
-
-//   let nextLineAdditionalText =
-//     classification === 'Lower than average'
-//       ? ' is almost as high as '
-//       : classification === 'Average'
-//       ? ' similar to '
-//       : classification === 'Higher than average'
-//       ? ' higher than '
-//       : '';
-
-//   this.addRobotChatResponse(
-//     `Compared to everyone else, your relationship score is${nextLineAdditionalText}most couples.`
-//   );
-
-//   if (classification === 'Lower than average') this.addRobotChatResponse(`Don't fret!`);
-
-//   nextLineAdditionalText = classification === 'Higher than average' ? 'even further ' : '';
-//   this.addRobotChatResponse(
-//     `That is great news.&&Because your relationship is very open to ${nextLineAdditionalText}improvement with the right approach.&&And taking this assessment was an important first step.&&Would you like a more in-depth analysis?`
-//   );
-// }, 2000);

@@ -2,7 +2,6 @@
 
 .container {
   position: relative;
-  margin-top: 10rem;
 }
 
 .subContainer {
@@ -22,6 +21,7 @@
 .storyTitle {
   color: $color-grey-medium;
   font-size: 4rem;
+  margin-left: 4rem;
 }
 
 .article {
@@ -29,13 +29,10 @@
   flex-direction: column;
 }
 
-.story {
-  margin-left: 4rem;
-}
-
 .storyContainer {
   display: flex;
   margin-top: 6rem;
+  flex-direction: column;
 }
 
 .storyText {
@@ -45,7 +42,7 @@
   margin-top: 4rem;
 
   @media only screen and (max-width: 600px) {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   @media only screen and (max-width: 400px) {

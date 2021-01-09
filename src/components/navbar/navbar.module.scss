@@ -1,7 +1,7 @@
 @import '../../variables.scss';
 
 header {
-  padding: 2rem 8rem;
+  padding: 2rem 6rem;
   position: fixed;
   width: 100%;
   box-shadow: $box-shadow-soft;
@@ -13,6 +13,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: first baseline;
+  padding-right: 6rem;
 
   @media only screen and (max-width: 950px) {
     justify-content: space-between;

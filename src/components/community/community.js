@@ -41,20 +41,16 @@ const Community = () => {
         fill="#fde7db"
         paused={false}
         options={{ height: 20, amplitude: 20, speed: 0.3, points: 5 }}
+        style={{ height: '14rem' }}
       />
       <div className={classes.subContainer}>
         <h2 className={classes.heading}>{title}</h2>
         <div className={classes.storyContainer}>
           <div className={classes.lottieSarah}>
-            <Lottie
-              options={lottieOptionsSarah}
-              height="20rem"
-              width="20rem"
-              isClickToPauseDisabled={true}
-            />
+            <Lottie options={lottieOptionsSarah} height="20rem" width="40rem" isClickToPauseDisabled={true} />
+            <h3 className={classes.storyTitle}>{subtitle}</h3>
           </div>
           <div className={classes.story}>
-            <h3 className={classes.storyTitle}>{subtitle}</h3>
             <article className={classes.storyText}>{parsedStoryText}</article>
             <p className={classes.storyUserInfo}>{`- ${userName}`}</p>
           </div>

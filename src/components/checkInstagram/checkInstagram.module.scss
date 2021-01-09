@@ -5,7 +5,7 @@
   padding: 4rem;
 
   @media only screen and (max-width: 700px) {
-    margin-top: 10rem;
+    margin-top: 18rem;
   }
 }
 
@@ -43,7 +43,7 @@
 .headingSubTitle2 {
   color: $color-grey-medium;
   font-size: 4rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
   text-align: center;
 }
 
@@ -63,14 +63,14 @@
 
 .img {
   transition: transform 0.2s;
-  object-fit: contain;
+  object-fit: cover;
   box-shadow: $box-shadow-hard;
   max-width: 100%;
   border-radius: 5rem;
   height: 33.8rem;
 
   @media only screen and (max-width: 1000px) {
-    height: 60rem;
+    height: 50rem;
   }
 
   &:hover {
@@ -98,7 +98,7 @@
   color: white;
   z-index: 9;
   outline: none;
-  font-size: 3.5rem;
+  font-size: 4rem;
 
   &:hover {
     background-color: $color-secondary-dark;
@@ -107,8 +107,8 @@
   }
 
   @media only screen and (max-width: 1000px) {
-    font-size: 3rem;
-    padding: 3rem 4rem;
+    font-size: 4rem;
+    padding: 3rem 5rem;
     margin-top: 8rem;
   }
 }

@@ -10,8 +10,7 @@ import classes from './relationshipAssessment.module.scss';
 const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
   const { positivesScore, negativesScore } = positiveAndNegativeScores;
 
-  const ComparisonEnum = {"lower": 1, "average": 2, "higher": 3}
-
+  const ComparisonEnum = { lower: 1, average: 2, higher: 3 };
 
   const [inputValue, setInputValue] = useState('');
   const [isEmailPostSuccess, setIsEmailPostSuccess] = useState(true);
@@ -57,7 +56,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
     } else {
       return ComparisonEnum.higher;
     }
-  }
+  };
 
   const getNegativesComparisonResult = (negativesScore) => {
     if (negativesScore <= 3) {
@@ -67,7 +66,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
     } else {
       return ComparisonEnum.lower;
     }
-  }
+  };
 
   const getTotalComparisonResult = (positivesScore, negativesScore) => {
     let totalScore = positivesScore - negativesScore;
@@ -78,7 +77,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
     } else {
       return ComparisonEnum.higher;
     }
-  }
+  };
 
   const getConclusiveComparisonStatement = (positivesScore, negativesScore) => {
     let comparisonResult = getTotalComparisonResult(positivesScore, negativesScore);
@@ -126,19 +125,25 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
     <>
       <div className={classes.resultContainer} {...props}>
         <div className={classes.resultTextsContainer}>
-          <h1 className={classes.resultNumber}>{`Your relationship strength score is: ${positivesScore - negativesScore}.`}</h1>
+          <h1 className={classes.resultNumber}>{`Your relationship strength score is: ${
+            positivesScore - negativesScore
+          }.`}</h1>
           <div className={classes.resultLongText}>
             <p>What does this mean?</p>
             <hr />
             <p>
-              The questions in this assessment are based on a psychological research. And thousands of couples have taken
-              it since 2016. Compared to everyone else, your relationship strength score is {`${getConclusiveComparisonStatement(positivesScore, negativesScore)}`} most couples.
+              The questions in this assessment are based on a psychological research. And thousands of couples have
+              taken it since 2016. Compared to everyone else, your relationship strength score is{' '}
+              {`${getConclusiveComparisonStatement(positivesScore, negativesScore)}`} most couples.
             </p>
             <hr />
             <div className={classes.visualisationContainer}>
               <div className={classes.visualisation}>
                 <div className={classes.visualisationTextContainer}>
-                  <div className={classes.interactionTypeScore}>{`Positive Aspects: ${positivesScore / 24 * 100}%`}</div>
+                  <div className={classes.interactionTypeScore}>{`Positive Aspects: ${Math.round(
+                    (positivesScore / 24) * 100,
+                    3
+                  )}%`}</div>
                   <div className={classes.interactionTypeCategory}>
                     {`${getPositivesComparisonStatement(positivesScore)}`}
                   </div>
@@ -152,7 +157,10 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
               </div>
               <div className={classes.visualisation}>
                 <div className={classes.visualisationTextContainer}>
-                  <div className={classes.interactionTypeScore}>{`Negative Aspects: ${negativesScore / 24 * 100}%`}</div>
+                  <div className={classes.interactionTypeScore}>{`Negative Aspects: ${Math.round(
+                    (negativesScore / 24) * 100,
+                    3
+                  )}%`}</div>
                   <div className={classes.interactionTypeCategory}>
                     {`${getNegativesComparisonStatement(negativesScore)}`}
                   </div>

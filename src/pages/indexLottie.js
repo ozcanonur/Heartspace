@@ -66,14 +66,8 @@ const IndexLottie = () => {
   // }, [moveLottie]);
 
   return (
-    <div
-      className={classes.lottieContainer}
-      style={{
-        bottom: `${lottiePosition.bottom}%`,
-        left: `${lottiePosition.left}%`,
-      }}
-    >
-      <Lottie options={lottieOptions} height="40rem" isClickToPauseDisabled={true} />
+    <div className={classes.lottieContainer}>
+      <Lottie options={lottieOptions} height="35rem" isClickToPauseDisabled={true} />
     </div>
   );
 };
