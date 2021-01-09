@@ -12,6 +12,11 @@
     left: 30%;
     bottom: -2%;
   }
+
+  @media only screen and (max-width: 330px) {
+    left: 28%;
+    bottom: -17%;
+  }
 }
 
 .heroBg {

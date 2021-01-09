@@ -2,12 +2,17 @@
 
 .container {
   position: relative;
+  margin-top: 10rem;
+
+  @media only screen and (max-width: 900px) {
+    margin-top: 0;
+  }
 }
 
 .subContainer {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, $color-primary, transparent 30%);
+  background: linear-gradient(to bottom, $color-primary, rgba(255, 255, 255, 0.001) 30%);
   padding: 6rem;
   border-radius: 4px;
   margin-top: -1rem;
