@@ -10,7 +10,7 @@
   // background-color: #eee;
   display: flex;
   font-family: 'Apercu';
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: white;
   flex-direction: column;
 }
@@ -22,7 +22,7 @@
   flex-grow: 1;
 
   & p:not(:last-child) {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
   }
 }
 
@@ -33,9 +33,9 @@ hr {
 .resultNumber {
   font-family: 'Apercu';
 
-  margin-bottom: 5rem !important;
+  margin-bottom: 6rem !important;
   margin-top: 0 !important;
-  font-size: 4rem;
+  font-size: 6rem;
   text-align: center;
   font-weight: 500;
 
@@ -47,8 +47,8 @@ hr {
 
 .emailInput {
   border: none;
-  margin-top: 4rem;
-  font-size: 3rem;
+  margin-top: 5rem;
+  font-size: 3.5rem;
   border-radius: 1rem;
   padding: 1rem;
   outline: none;
@@ -60,7 +60,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 .submitButton {
@@ -81,7 +81,7 @@ hr {
 }
 
 .visualisation {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .visualisationTextContainer {
@@ -93,7 +93,7 @@ hr {
   height: 2rem;
   border-radius: 1rem;
   // background-color: white;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .modalContainer {
@@ -105,7 +105,7 @@ hr {
   }
 
   & > p {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #3e3e3f;
   }
 }
