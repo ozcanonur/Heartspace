@@ -2,10 +2,10 @@ import React from 'react';
 import Modal from 'react-modal';
 import Markdown from 'markdown-to-jsx';
 
-import classes from './modalterms.module.scss';
-import terms from './terms';
+import classes from './modalcookies.module.scss';
+import cookies from './cookies';
 
-const TermsModal = ({ modalOpen, setModalOpen }) => {
+const CookiesModal = ({ modalOpen, setModalOpen }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -31,14 +31,14 @@ const TermsModal = ({ modalOpen, setModalOpen }) => {
       isOpen={modalOpen}
       onRequestClose={closeModal}
       style={customStyles}
-      contentLabel="terms"
+      contentLabel="cookies"
     >
       <div className={classes.modalContainer}>
         <h2 className={classes.heading}>Happy Relationships' Terms</h2>
-        <Markdown className={classes.markdown}>{terms}</Markdown>
+        <Markdown className={classes.markdown}>{cookies}</Markdown>
       </div>
     </Modal>
   );
 };
 
-export default TermsModal;
+export default CookiesModal;

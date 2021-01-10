@@ -45,7 +45,7 @@ const Footer = () => {
       <button onClick={openTermsModal} className={classes.termsButton}>
         Terms
       </button>
-      <button onClick={openCookiesModal} className={classes.cookieButton}>
+      <button onClick={openCookiesModal} className={classes.cookiesButton}>
         Cookies
       </button>
       <div className={classes.socialMediaContainer}>
