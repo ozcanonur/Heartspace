@@ -18,10 +18,16 @@ const Footer = () => {
   return (
     <footer className={classes.container}>
       <p className={classes.copyrightText}>
-        &copy; 2020 Happy Relationships Inc.
+        &copy; 2021 Happy Relationships Inc.
       </p>
       <button onClick={openModal} className={classes.privacyButton}>
         Privacy Policy
+      </button>
+      <button onClick={openModal} className={classes.termsButton}>
+        Terms
+      </button>
+      <button onClick={openModal} className={classes.cookieButton}>
+        Cookies
       </button>
       <div className={classes.socialMediaContainer}>
         <Instagram onClick={redirectToInstagram} />

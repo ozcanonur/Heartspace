@@ -30,6 +30,20 @@
   }
 }
 
+.termsButton {
+  color: $color-white-dark;
+  opacity: 0.8;
+  font-weight: $font-weight-light;
+  margin-left: 8rem;
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 1px solid $color-white;
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 2rem;
+  }
+}
+
 .socialMediaContainer {
   display: flex;
   align-items: center;
