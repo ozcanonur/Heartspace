@@ -34,7 +34,7 @@ const TermsModal = ({ modalOpen, setModalOpen }) => {
       contentLabel="terms"
     >
       <div className={classes.modalContainer}>
-        <h2 className={classes.heading}>Happy Relationships' Terms</h2>
+        <h2 className={classes.heading}>Heartspace Terms of Use</h2>
         <Markdown className={classes.markdown}>{terms}</Markdown>
       </div>
     </Modal>

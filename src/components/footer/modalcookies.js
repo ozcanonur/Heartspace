@@ -34,7 +34,7 @@ const CookiesModal = ({ modalOpen, setModalOpen }) => {
       contentLabel="cookies"
     >
       <div className={classes.modalContainer}>
-        <h2 className={classes.heading}>Happy Relationships' Terms</h2>
+        <h2 className={classes.heading}>Heartspace Cookies Policy</h2>
         <Markdown className={classes.markdown}>{cookies}</Markdown>
       </div>
     </Modal>

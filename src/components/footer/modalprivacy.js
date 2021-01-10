@@ -34,7 +34,7 @@ const PrivacyModal = ({ modalOpen, setModalOpen }) => {
       contentLabel="Privacy Policy"
     >
       <div className={classes.modalContainer}>
-        <h2 className={classes.heading}>Happy Relationships' Privacy Policy</h2>
+        <h2 className={classes.heading}>Heartspace Privacy Policy</h2>
         <Markdown className={classes.markdown}>{privacyPolicy}</Markdown>
       </div>
     </Modal>
