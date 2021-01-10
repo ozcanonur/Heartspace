@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import ContactModal from './modal';
-import classes from './footer.module.scss';
+import PrivacyModal from './modalprivacy';
+import classes from './footer.moduleprivacy.scss';
 import Instagram from '../../assets/svg/instagram.inline.svg';
 
 const Footer = () => {
@@ -32,7 +32,7 @@ const Footer = () => {
       <div className={classes.socialMediaContainer}>
         <Instagram onClick={redirectToInstagram} />
       </div>
-      <ContactModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+      <PrivacyModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
     </footer>
   );
 };

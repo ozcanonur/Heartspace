@@ -31,7 +31,7 @@ const ContactModal = ({ modalOpen, setModalOpen }) => {
       isOpen={modalOpen}
       onRequestClose={closeModal}
       style={customStyles}
-      contentLabel="Contact us"
+      contentLabel="Privacy Policy"
     >
       <div className={classes.modalContainer}>
         <h2 className={classes.heading}>Happy Relationships' Privacy Policy</h2>
