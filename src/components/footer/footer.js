@@ -13,7 +13,6 @@ const Footer = () => {
     window.open('https://www.instagram.com/happy__relationships', '_blank');
   };
 
-
   // privacy modal
   const [modalPrivacyOpen, setModalPrivacyOpen] = useState(false);
 
