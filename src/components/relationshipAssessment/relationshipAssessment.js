@@ -46,7 +46,16 @@ const RelationshipAssessment = () => {
 
     attachAnswerButtonListeners(newSessionId);
 
-    axios.get('https://heartspacerelweb.herokuapp.com/isAlive');
+    axios.get('https://heartspacerelweb.herokuapp.com/isAlive').then(resp => {
+      if (resp && resp.status === 200) {
+        console.log(200000);
+        ga('send', 'event', 'Assessment', 'land', '');
+      } else {
+        ga('send', 'event', 'Assessment', 'networkFailure', '');
+      }
+    });
+    
+    // ga('send', 'event', 'Assessment', 'land', '');
 
     const cf = ConversationalForm.startTheConversation({
       options: {
