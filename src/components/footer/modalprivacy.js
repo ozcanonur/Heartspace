@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import Markdown from 'markdown-to-jsx';
 
-import classes from './modal.module.scss';
+import classes from './modalprivacy.module.scss';
 import privacyPolicy from './privacyPolicy';
 
 const ContactModal = ({ modalOpen, setModalOpen }) => {
