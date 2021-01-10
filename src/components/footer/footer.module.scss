@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   background-color: $color-grey-dark;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 3rem;
   margin-top: 10rem;
 }
@@ -30,10 +30,38 @@
   }
 }
 
+.termsButton {
+  color: $color-white-dark;
+  opacity: 0.8;
+  font-weight: $font-weight-light;
+  margin-left: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 1px solid $color-white;
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 1rem;
+  }
+}
+
+.cookiesButton {
+  color: $color-white-dark;
+  opacity: 0.8;
+  font-weight: $font-weight-light;
+  margin-left: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 1px solid $color-white;
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 1rem;
+  }
+}
+
 .socialMediaContainer {
   display: flex;
   align-items: center;
-  margin-left: 8rem;
+  margin-left: 4rem;
 
   svg {
     width: 3.5rem;

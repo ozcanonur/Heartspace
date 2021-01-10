@@ -2,10 +2,10 @@ import React from 'react';
 import Modal from 'react-modal';
 import Markdown from 'markdown-to-jsx';
 
-import classes from './modal.module.scss';
-import privacyPolicy from './privacyPolicy';
+import classes from './modalcookies.module.scss';
+import cookies from './cookies';
 
-const ContactModal = ({ modalOpen, setModalOpen }) => {
+const CookiesModal = ({ modalOpen, setModalOpen }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -31,14 +31,14 @@ const ContactModal = ({ modalOpen, setModalOpen }) => {
       isOpen={modalOpen}
       onRequestClose={closeModal}
       style={customStyles}
-      contentLabel="Contact us"
+      contentLabel="cookies"
     >
       <div className={classes.modalContainer}>
-        <h2 className={classes.heading}>Happy Relationships' Privacy Policy</h2>
-        <Markdown className={classes.markdown}>{privacyPolicy}</Markdown>
+        <h2 className={classes.heading}>Heartspace Cookies Policy</h2>
+        <Markdown className={classes.markdown}>{cookies}</Markdown>
       </div>
     </Modal>
   );
 };
 
-export default ContactModal;
+export default CookiesModal;
