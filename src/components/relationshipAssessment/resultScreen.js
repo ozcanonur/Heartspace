@@ -9,6 +9,8 @@ import classes from './relationshipAssessment.module.scss';
 
 const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
   const { positivesScore, negativesScore } = positiveAndNegativeScores;
+  const positivesScorePercentile = Math.round((positivesScore / 24) * 100);
+  const negativesScorePercentile = Math.round((negativesScore / 24) * 100);
 
   const ComparisonEnum = { lower: 1, average: 2, higher: 3 };
 
@@ -140,10 +142,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
             <div className={classes.visualisationContainer}>
               <div className={classes.visualisation}>
                 <div className={classes.visualisationTextContainer}>
-                  <div className={classes.interactionTypeScore}>{`Positive Aspects: ${Math.round(
-                    (positivesScore / 24) * 100,
-                    3
-                  )}%`}</div>
+                  <div className={classes.interactionTypeScore}>{`Positive Aspects: ${positivesScorePercentile}%`}</div>
                   <div className={classes.interactionTypeCategory}>
                     {`${getPositivesComparisonStatement(positivesScore)}`}
                   </div>
@@ -151,16 +150,13 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
                 <div
                   className={classes.visualisationLine}
                   style={{
-                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${positivesScore}%, white ${positivesScore}%, white 100%)`,
+                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${positivesScorePercentile}%, white ${positivesScorePercentile}%, white 100%)`,
                   }}
                 />
               </div>
               <div className={classes.visualisation}>
                 <div className={classes.visualisationTextContainer}>
-                  <div className={classes.interactionTypeScore}>{`Negative Aspects: ${Math.round(
-                    (negativesScore / 24) * 100,
-                    3
-                  )}%`}</div>
+                  <div className={classes.interactionTypeScore}>{`Negative Aspects: ${negativesScorePercentile}%`}</div>
                   <div className={classes.interactionTypeCategory}>
                     {`${getNegativesComparisonStatement(negativesScore)}`}
                   </div>
@@ -168,7 +164,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
                 <div
                   className={classes.visualisationLine}
                   style={{
-                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${negativesScore}%, white ${negativesScore}%, white 100%)`,
+                    background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${negativesScorePercentile}%, white ${negativesScorePercentile}%, white 100%)`,
                   }}
                 />
               </div>
