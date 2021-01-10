@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import PrivacyModal from './modalprivacy';
-import classes from './footer.moduleprivacy.scss';
+import classes from './footer.module.scss';
 import Instagram from '../../assets/svg/instagram.inline.svg';
 
 const Footer = () => {
