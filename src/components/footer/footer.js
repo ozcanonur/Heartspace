@@ -37,7 +37,7 @@ const Footer = () => {
   return (
     <footer className={classes.container}>
       <p className={classes.copyrightText}>
-        &copy; 2021 Happy Relationships Inc.
+        &copy; 2021 Heartspace Inc.
       </p>
       <button onClick={openPrivacyModal} className={classes.privacyButton}>
         Privacy Policy

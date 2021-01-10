@@ -62,9 +62,9 @@ const Navbar = ({ location, className, ...props }) => {
       <nav>
         <Link to="/">
           <div className={classes.logoContainer}>
-            <img src={logo} alt="Happy Relationships Logo" className={classes.logoImg} />
+            <img src={logo} alt="Heartspace Logo" className={classes.logoImg} />
             <div className={classes.logoText} role="title">
-              Happy Relationships
+              Heartspace
             </div>
           </div>
         </Link>

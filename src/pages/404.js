@@ -12,10 +12,10 @@ const NotFound = () => {
             <div className={classes.logoContainer}>
               <img
                 src={logo}
-                alt="Happy Relationships Logo"
+                alt="Heartspace Logo"
                 className={classes.logoImg}
               />
-              <div className={classes.logoText}>Happy Relationships</div>
+              <div className={classes.logoText}>Heartspace</div>
             </div>
           </Link>
         </nav>
