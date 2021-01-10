@@ -32,7 +32,7 @@ const Footer = () => {
       <div className={classes.socialMediaContainer}>
         <Instagram onClick={redirectToInstagram} />
       </div>
-      <PrivacyModal modalPrivacyOpen={modalPrivacyOpen} setModalPrivacyOpen={setModalPrivacyOpen} />
+      <PrivacyModal modalOpen={modalPrivacyOpen} setModalOpen={setModalPrivacyOpen} />
     </footer>
   );
 };
