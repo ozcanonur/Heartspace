@@ -22,11 +22,15 @@
 .heroBg {
   background: $color-primary;
   border-radius: $border-radius-hero-bg;
-  height: 96rem;
+  height: 80rem;
   width: 100%;
   position: absolute;
   margin-top: 7rem;
   transform: scale(1.2);
+
+  @media only screen and (max-width: 600px) {
+    height: 96rem;
+  }
 }
 
 .main {

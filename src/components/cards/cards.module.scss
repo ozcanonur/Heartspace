@@ -43,18 +43,26 @@
 }
 
 .cardTitle {
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 400;
   color: $color-grey-medium;
   text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 6rem;
+  }
 }
 
 .cardText {
   color: $color-grey-medium;
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-top: 4rem;
   font-weight: $font-weight-light;
   text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 3.5rem;
+  }
 }
 
 .button {
@@ -62,7 +70,7 @@
   background-color: $color-secondary;
   width: fit-content;
   cursor: pointer;
-  padding: 2rem 3rem;
+  padding: 2rem 5rem;
   border-radius: 10rem;
   transition: all 0.2s ease-out;
   color: $color-white;

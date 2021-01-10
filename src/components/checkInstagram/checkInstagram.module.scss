@@ -28,23 +28,35 @@
 
 .headingTitle {
   color: $color-grey-medium;
-  font-size: 7rem;
+  font-size: 5rem;
   font-weight: 900;
   text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 7rem;
+  }
 }
 
 .headingSubTitle {
   color: $color-grey-medium;
-  font-size: 4rem;
+  font-size: 3rem;
   margin-top: 3rem;
   text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 4rem;
+  }
 }
 
 .headingSubTitle2 {
   color: $color-grey-medium;
-  font-size: 4rem;
+  font-size: 3rem;
   margin-top: 3rem;
   text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 4rem;
+  }
 }
 
 .imgContainer {
@@ -98,7 +110,7 @@
   color: white;
   z-index: 9;
   outline: none;
-  font-size: 4rem;
+  font-size: 3rem;
 
   &:hover {
     background-color: $color-secondary-dark;
