@@ -5,7 +5,7 @@ import Markdown from 'markdown-to-jsx';
 import classes from './modalprivacy.module.scss';
 import privacyPolicy from './privacyPolicy';
 
-const ContactModal = ({ modalOpen, setModalOpen }) => {
+const PrivacyModal = ({ modalOpen, setModalOpen }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -41,4 +41,4 @@ const ContactModal = ({ modalOpen, setModalOpen }) => {
   );
 };
 
-export default ContactModal;
+export default PrivacyModal;
