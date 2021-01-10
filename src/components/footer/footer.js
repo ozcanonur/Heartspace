@@ -6,16 +6,21 @@ import classes from './footer.module.scss';
 import Instagram from '../../assets/svg/instagram.inline.svg';
 
 const Footer = () => {
+
+  // instagram icon
   const redirectToInstagram = () => {
     window.open('https://www.instagram.com/happy__relationships', '_blank');
   };
 
+
+  // privacy modal
   const [modalPrivacyOpen, setModalPrivacyOpen] = useState(false);
 
   const openPrivacyModal = () => {
     setModalPrivacyOpen(true);
   };
 
+  // terms modal
   const [modalTermsOpen, setModalTermsOpen] = useState(false);
 
   const openTermsModal = () => {
@@ -40,6 +45,7 @@ const Footer = () => {
         <Instagram onClick={redirectToInstagram} />
       </div>
       <PrivacyModal modalOpen={modalPrivacyOpen} setModalOpen={setModalPrivacyOpen} />
+      <TermsModal modalOpen={modalTermsOpen} setModalOpen={setModalTermsOpen} />
     </footer>
   );
 };
