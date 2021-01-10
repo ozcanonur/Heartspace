@@ -49,9 +49,12 @@ const RelationshipAssessment = () => {
     axios.get('https://heartspacerelweb.herokuapp.com/isAlive').then(resp => {
       if (resp && resp.status === 200) {
         console.log(200000);
-        ga('send', 'event', 'Assessment', 'land', '');
+        gtag('event', 'Assessment', {
+          'event_category': 'land',
+          'event_label': ''
+        });
       } else {
-        ga('send', 'event', 'Assessment', 'networkFailure', '');
+        // ga('send', 'event', 'Assessment', 'networkFailure', '');
       }
     });
     
