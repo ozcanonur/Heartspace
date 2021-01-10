@@ -9,10 +9,10 @@ const Footer = () => {
     window.open('https://www.instagram.com/happy__relationships', '_blank');
   };
 
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalPrivacyOpen, setModalPrivacyOpen] = useState(false);
 
-  const openModal = () => {
-    setModalOpen(true);
+  const openPrivacyModal = () => {
+    setModalPrivacyOpen(true);
   };
 
   return (
@@ -32,7 +32,7 @@ const Footer = () => {
       <div className={classes.socialMediaContainer}>
         <Instagram onClick={redirectToInstagram} />
       </div>
-      <PrivacyModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+      <PrivacyModal modalPrivacyOpen={modalPrivacyOpen} setModalPrivacyOpen={setModalPrivacyOpen} />
     </footer>
   );
 };
