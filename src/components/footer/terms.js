@@ -14,11 +14,11 @@ The following terminology applies to these Terms and Conditions, Privacy Stateme
 <br />
 
 ##Cookies
-We employ the use of cookies. By accessing Heartspace, you agreed to use cookies in agreement with the Heartspace's Privacy Policy.
+We employ the use of cookies, however minimal. By accessing Heartspace, you agreed to use cookies in agreement with the Heartspace's Privacy Policy and Cookies Policy.
 
 <br />
 
-Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
+Cookies are used by our website to collect analytics information, for the purpose of tracking how many page views we get and how our website is being used.
 
 <br />
 
@@ -112,10 +112,10 @@ Without prior approval and written permission, you may not create frames around 
 We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.
 
 ##Your Privacy
-Please read our Privacy Policy
+Please read our Privacy Policy.
 
 ##Reservation of Rights
-We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.
+We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amend these terms and conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.
 
 ##Removal of links from our website
 If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.
@@ -134,6 +134,10 @@ limit or exclude our or your liability for fraud or fraudulent misrepresentation
 limit any of our or your liabilities in any way that is not permitted under applicable law; or
 exclude any of our or your liabilities that may not be excluded under applicable law.
 The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.
+
+<br />
+
+While there is third party evidence that the information in this website provides immense improvements to one's relationship, Heartspace makes no claims, representations or guarantees that this website provide a physical or therapeutic benefit.
 
 <br />
 
