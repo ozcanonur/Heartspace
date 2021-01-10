@@ -20,13 +20,13 @@ const Footer = () => {
       <p className={classes.copyrightText}>
         &copy; 2021 Happy Relationships Inc.
       </p>
-      <button onClick={openModal} className={classes.privacyButton}>
+      <button onClick={openPrivacyModal} className={classes.privacyButton}>
         Privacy Policy
       </button>
-      <button onClick={openModal} className={classes.termsButton}>
+      <button onClick={openPrivacyModal} className={classes.termsButton}>
         Terms
       </button>
-      <button onClick={openModal} className={classes.cookieButton}>
+      <button onClick={openPrivacyModal} className={classes.cookieButton}>
         Cookies
       </button>
       <div className={classes.socialMediaContainer}>
