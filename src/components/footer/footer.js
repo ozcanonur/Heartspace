@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import PrivacyModal from './modalprivacy';
 import TermsModal from './modalterms';
+import CookiesModal from './modalcookies';
 import classes from './footer.module.scss';
 import Instagram from '../../assets/svg/instagram.inline.svg';
 
@@ -27,6 +28,13 @@ const Footer = () => {
     setModalTermsOpen(true);
   };
 
+  // cookies modal
+  const [modalCookiesOpen, setModalCookiesOpen] = useState(false);
+
+  const openCookiesModal = () => {
+    setModalCookiesOpen(true);
+  };
+
   return (
     <footer className={classes.container}>
       <p className={classes.copyrightText}>
@@ -36,9 +44,9 @@ const Footer = () => {
         Privacy Policy
       </button>
       <button onClick={openTermsModal} className={classes.termsButton}>
-        Terms
+        Cookies
       </button>
-      <button onClick={openPrivacyModal} className={classes.cookieButton}>
+      <button onClick={openCookiesModal} className={classes.cookieButton}>
         Cookies
       </button>
       <div className={classes.socialMediaContainer}>
@@ -46,6 +54,7 @@ const Footer = () => {
       </div>
       <PrivacyModal modalOpen={modalPrivacyOpen} setModalOpen={setModalPrivacyOpen} />
       <TermsModal modalOpen={modalTermsOpen} setModalOpen={setModalTermsOpen} />
+      <CookiesModal modalOpen={modalCookiesOpen} setModalOpen={setModalCookiesOpen} />
     </footer>
   );
 };
