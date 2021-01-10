@@ -43,7 +43,7 @@ const Footer = () => {
         Privacy Policy
       </button>
       <button onClick={openTermsModal} className={classes.termsButton}>
-        Cookies
+        Terms
       </button>
       <button onClick={openCookiesModal} className={classes.cookieButton}>
         Cookies
