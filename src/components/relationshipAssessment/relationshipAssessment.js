@@ -41,6 +41,8 @@ const RelationshipAssessment = () => {
 
   // Only run on first render
   useEffect(() => {
+    let isMounted = true;
+
     const newSessionId = makeSessionId(16);
     setSessionId(newSessionId);
 
@@ -66,7 +68,11 @@ const RelationshipAssessment = () => {
       tags: formFields,
     });
 
-    assessmentRef.current.appendChild(cf.el);
+    if (isMounted) assessmentRef.current.appendChild(cf.el);
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (
