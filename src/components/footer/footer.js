@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import PrivacyModal from './modalprivacy';
+import TermsModal from './modalterms';
 import classes from './footer.module.scss';
 import Instagram from '../../assets/svg/instagram.inline.svg';
 
@@ -15,6 +16,12 @@ const Footer = () => {
     setModalPrivacyOpen(true);
   };
 
+  const [modalTermsOpen, setModalTermsOpen] = useState(false);
+
+  const openTermsModal = () => {
+    setModalTermsOpen(true);
+  };
+
   return (
     <footer className={classes.container}>
       <p className={classes.copyrightText}>
@@ -23,7 +30,7 @@ const Footer = () => {
       <button onClick={openPrivacyModal} className={classes.privacyButton}>
         Privacy Policy
       </button>
-      <button onClick={openPrivacyModal} className={classes.termsButton}>
+      <button onClick={openTermsModal} className={classes.termsButton}>
         Terms
       </button>
       <button onClick={openPrivacyModal} className={classes.cookieButton}>

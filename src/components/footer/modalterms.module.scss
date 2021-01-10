@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+.modalContainer {
+  padding: 2rem 4rem;
+  border: none;
+}
+
+.heading {
+  font-size: 4rem;
+  color: $color-grey-medium;
+}
+
+.markdown {
+  font-size: 2rem;
+  max-width: 60vw;
+  max-height: 50vh;
+}
