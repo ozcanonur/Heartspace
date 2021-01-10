@@ -38,7 +38,7 @@ const ContactModal = ({ modalOpen, setModalOpen }) => {
       <div className={classes.modalContainer}>
         <h2 className={classes.heading}>Contact us</h2>
         <p className={classes.text}>
-          You can contact us by emailing xxxx@gmail.com.
+          You can contact us by emailing hello@findheartspace.com.
         </p>
         <p className={classes.text2}>
           Or you can directly message us on Instagram!
