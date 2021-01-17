@@ -54,19 +54,37 @@ const getQuestionScore = (questionName, answer) => {
     case 'Not at all':
       score += 1;
       break;
+    case 'Not at all true':
+      score += 1;
+      break;
     case 'A tiny bit':
+      score += 2;
+      break;
+    case 'A little true':
       score += 2;
       break;
     case 'A little':
       score += 3;
       break;
+    case 'Somewhat true':
+      score += 3;
+      break;
     case 'Somewhat':
+      score += 4;
+      break;
+    case 'Mostly true':
       score += 4;
       break;
     case 'Mostly':
       score += 5;
       break;
+    case 'Very true':
+      score += 5;
+      break;
     case 'Very Extremely':
+      score += 6;
+      break;
+    case 'Completely true':
       score += 6;
       break;
     default:
