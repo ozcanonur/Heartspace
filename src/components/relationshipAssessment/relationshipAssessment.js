@@ -92,11 +92,11 @@ const RelationshipAssessment = () => {
   return (
     <div className={classes.container}>
       <div ref={assessmentRef} style={{ display: isAssessmentDone ? 'none' : 'inherit', transition: 'all .2s' }} />
-      <ResultScreen
+      {isAssessmentDone ? <ResultScreen
         sessionId={sessionId}
         positiveAndNegativeScores={positiveAndNegativeScores}
-        style={{ display: isAssessmentDone ? 'flex' : 'none', transition: 'all .2s' }}
-      />
+        style={{display: 'flex'}} 
+      /> : null}
     </div>
   );
 };
