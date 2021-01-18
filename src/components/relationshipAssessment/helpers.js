@@ -108,11 +108,11 @@ const getQuestionScore = (questionName, answer) => {
 export const getPositiveAndNegativeScores = (answers) => {
   let positivesScore = 0, negativesScore = 0;
   Object.keys(answers).forEach((question) => {
-    let [questionScore, isPositiveQuestion] = getQuestionScore(question, answers[question][0])
+    let { score, isPositiveQuestion } = getQuestionScore(question, answers[question][0]);
     if (isPositiveQuestion) {
-      positivesScore += questionScore;
+      positivesScore += score;
     } else {
-      negativesScore += questionScore;
+      negativesScore += score;
     }
   });
   return { positivesScore, negativesScore };
