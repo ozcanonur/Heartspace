@@ -186,7 +186,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
             </div>
             <hr />
             <p>
-              That is good news - there are aspects your relationship that can further improve for a more lasting, resilient bond. To access your full report and a more in-depth analysis of your answers, please enter your email address.
+              That is good news - there are aspects of your relationship that can further improve for a more lasting, resilient bond. To access your full report and a more in-depth analysis of your answers, please enter your email address.
             </p>
             <hr />
             <p>Would you like a more in-depth analysis?</p>
