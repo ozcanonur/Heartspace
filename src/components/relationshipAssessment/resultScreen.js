@@ -87,9 +87,9 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
 
   const getTotalComparisonResult = (positivesScore, negativesScore) => {
     let totalScore = positivesScore - negativesScore;
-    if (totalScore <= 13) {
+    if (totalScore <= 7) {
       return ComparisonEnum.lower;
-    } else if (totalScore >= 14 && totalScore <= 17) {
+    } else if (totalScore >= 7 && totalScore <= 16) {
       return ComparisonEnum.average;
     } else {
       return ComparisonEnum.higher;
@@ -146,10 +146,10 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
             positivesScore - negativesScore
           }.`}</h1>
           <div className={classes.resultLongText}>
-            <p>What does this mean?</p>
+            <p>Hey, Kudos to you for choosing to be more aware and conscious in your relationship - and completing this assessment was a great step.</p>
             <hr />
             <p>
-              The questions in this assessment are based on a psychological research. And thousands of couples have
+              So what does this score mean? The questions in this assessment are based on a psychological research. And thousands of couples have
               taken it since 2016. Compared to everyone else, your relationship strength score is{' '}
               {`${getConclusiveComparisonStatement(positivesScore, negativesScore)}`} most couples.
             </p>
@@ -186,13 +186,13 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
             </div>
             <hr />
             <p>
-              That is great news. Because your relationship is very open to even further improvement with the right
-              approach and taking this assessment was an important first step.
+              That is good news - there are aspects your relationship that can further improve for a more lasting, resilient bond. To access your full report and a more in-depth analysis of your answers, please enter your email address.
             </p>
             <hr />
             <p>Would you like a more in-depth analysis?</p>
+            <p className={classes.spamNotice}>* Don’t worry, we hate spam as much as you do. We won’t annoy you and you can unsubscribe anytime.</p>
           </div>
-          <input className={classes.emailInput} value={inputValue} onChange={inputOnChange} />
+          <input className={classes.emailInput} placeholder="Enter your email" value={inputValue} onChange={inputOnChange} />
           <div className={classes.buttonContainer}>
             <div className={classes.submitButton} onClick={submitEmail}>
               Submit
