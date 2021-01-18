@@ -4,7 +4,7 @@ export const questions = [
     type: 'radio',
     name: 'started',
     questionText:
-      'Welcome to our psychology-based relationship strength assessment.&&At the end, our expert tool will provide you with an analysis of the strength of your relationship.&&The questions are based on the journal research paper published by the Psychological Association.&&Note that your privacy matters to us. Your answers are 100% confidential and kept secure through our encryption technology.&&This test will take about 4 minutes to complete.&&Are you ready?',
+      'Welcome to our psychology-based relationship strength assessment.&&The questions are based on the journal research paper published by the Psychological Association.&&Note that your privacy matters to us. Your answers are 100% confidential and kept secure through our encryption technology.&&This test will take about 4 minutes to complete.&&Are you ready?',
     options: [`Yes, let's start!`, 'No, not yet.'],
   },
   {
