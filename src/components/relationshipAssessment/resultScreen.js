@@ -68,7 +68,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
   const getPositivesComparisonResult = (positivesScore) => {
     if (positivesScore <= 13) {
       return ComparisonEnum.lower;
-    } else if (positivesScore >= 14 && positivesScore <= 23) {
+    } else if (positivesScore >= 14 && positivesScore <= 20) {
       return ComparisonEnum.average;
     } else {
       return ComparisonEnum.higher;
