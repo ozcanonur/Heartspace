@@ -192,7 +192,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
             <p>Would you like a more in-depth analysis?</p>
             <p className={classes.spamNotice}>* Don’t worry, we hate spam as much as you do. We won’t annoy you and you can unsubscribe anytime.</p>
           </div>
-          <input className={classes.emailInput} placeholder="Enter your email" value={inputValue} onChange={inputOnChange} />
+          <input className={classes.emailInput} placeholder="Enter your email" value={inputValue} onChange={inputOnChange} required autocomplete="email"/>
           <div className={classes.buttonContainer}>
             <div className={classes.submitButton} onClick={submitEmail}>
               Submit
