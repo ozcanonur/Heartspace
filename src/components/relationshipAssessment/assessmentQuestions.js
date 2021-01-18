@@ -4,7 +4,7 @@ export const questions = [
     type: 'radio',
     name: 'started',
     questionText:
-      'Welcome to our psychology-based relationship strength assessment.&&The questions are based on the journal research paper published by the Psychological Association.&&Note that your privacy matters to us. Your answers are 100% confidential and kept secure through our encryption technology.&&This test will take about 4 minutes to complete.&&Are you ready?',
+      'Welcome to our psychological research-based relationship strength assessment.&&These questions are based on the journal research paper published by the Psychological Association.&&It will take you about 2 minutes to complete this test.&&Are you ready?',
     options: [`Yes, let's start!`, 'No, not yet.'],
   },
   {
@@ -19,7 +19,7 @@ export const questions = [
     type: 'radio',
     name: 'age',
     questionText:
-      'Great!&&Firstly, can you tell us a bit about yourself?&&This will help our expert system to finetune its analysis.&&How old are you?',
+      'Great!&&Note that your privacy matters to us. Your answers are 100% confidential and anonymous through our secure technology.&&Firstly, can you tell us a bit about yourself?&&This will help our expert system to finetune its analysis.&&How old are you?',
     options: ['17 or younger', '18-25', '26-34', '35-43', '44-55', '56-65', '66 or older'],
   },
   {
