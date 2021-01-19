@@ -133,6 +133,8 @@ const makeRetriableQuestionResponseRequest = (params, numAttempts) => {
     .then((resp) => {
       if (resp.status >= 200 && resp.status < 300) {
         console.log("Successful request");
+      } else if (resp.status >= 300 && resp.status < 500) {
+        console.log("Request returned with status code", resp.status, "and won't be retried");
       } else {
         console.error("Failed request. ", resp.status, "Attempting retry...");
         setTimeout(() => {
