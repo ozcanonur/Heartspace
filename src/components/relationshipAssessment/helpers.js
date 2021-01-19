@@ -118,6 +118,35 @@ export const getPositiveAndNegativeScores = (answers) => {
   return { positivesScore, negativesScore };
 };
 
+const makeRetriableQuestionResponseRequest = (params, numAttempts) => {
+  console.log("Attempting new question response request");
+
+  const maxAttempts = 200;
+  const retryPeriod = numAttempts * 1000 / 2;
+
+  if (numAttempts > maxAttempts) {
+    console.log("Out of retries");
+    return;
+  }
+
+  axios.post('https://heartspacerelweb.herokuapp.com/assessment/questionResponse', params)
+    .then((resp) => {
+      if (resp.status >= 200 && resp.status < 300) {
+        console.log("Successful request");
+      } else {
+        console.error("Failed request. ", resp.status, "Attempting retry...");
+        setTimeout(() => {
+           makeRetriableQuestionResponseRequest(params, numAttempts + 1);
+        }, retryPeriod);
+      }
+    }, (e) => {
+        console.error("Failed request. ", e, "Attempting retry...");
+        setTimeout(() => {
+          makeRetriableQuestionResponseRequest(params, numAttempts + 1);
+        }, retryPeriod);
+  });;
+};
+
 let reference;
 export const attachAnswerButtonListeners = async (sessionId) => {
   const uniqueQuestions = {};
@@ -156,7 +185,7 @@ export const attachAnswerButtonListeners = async (sessionId) => {
           if (buttonInnerHTML.includes('span')) answer = buttonInnerHTML.match(RegExp(`(?<=span>)(.*)(?=</span)`))[0];
 
           const params = { sessionId, question: question.textContent, answer };
-          axios.post('https://heartspacerelweb.herokuapp.com/assessment/questionResponse', params);
+          makeRetriableQuestionResponseRequest(params, 1);
         });
       }
     } else if (checkboxes && checkboxes.length !== 0) {
@@ -175,7 +204,7 @@ export const attachAnswerButtonListeners = async (sessionId) => {
         }
 
         const params = { sessionId, question: question.textContent, answer: checkedBoxTexts.join(' "and" ') };
-        axios.post('https://heartspacerelweb.herokuapp.com/assessment/questionResponse', params);
+        makeRetriableQuestionResponseRequest(params, 1);
       };
 
       inputButton.addEventListener('click', reference);
