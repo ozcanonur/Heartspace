@@ -147,6 +147,19 @@ const makeRetriableQuestionResponseRequest = (params, numAttempts) => {
   });;
 };
 
+const extractAnswerOutOfSpan = (innerHTML) => {
+  let start = buttonInnerHTML.indexOf("<span>");
+  if (start !== -1) {
+    let end = buttonInnerHTML.indexOf("</span>");
+    if (end !== -1) {
+      let actualStart = start + "<span>".length;
+      return buttonInnerHTML.substring(actualStart, end);
+    }
+  }
+  console.error("We're in trouble");
+  return '';
+};
+
 let reference;
 export const attachAnswerButtonListeners = async (sessionId) => {
   const uniqueQuestions = {};
@@ -182,7 +195,9 @@ export const attachAnswerButtonListeners = async (sessionId) => {
 
           // Fix to ignore clicking at middle or around
           let answer = buttonInnerHTML;
-          if (buttonInnerHTML.includes('span')) answer = buttonInnerHTML.match(RegExp(`(?<=span>)(.*)(?=</span)`))[0];
+          if (buttonInnerHTML.includes('span')) {
+            answer = extractAnswerOutOfSpan(buttonInnerHTML);
+          }
 
           const params = { sessionId, question: question.textContent, answer };
           makeRetriableQuestionResponseRequest(params, 1);
@@ -199,8 +214,10 @@ export const attachAnswerButtonListeners = async (sessionId) => {
 
         const checkedBoxTexts = [];
         for (const checkbox of checkboxes) {
-          if (checkbox.getAttribute('checked') === 'checked')
-            checkedBoxTexts.push(checkbox.innerHTML.match(RegExp(`(?<=span>)(.*)(?=</span)`))[0]);
+          if (checkbox.getAttribute('checked') === 'checked') {
+            let checkedBoxText = extractAnswerOutOfSpan(checkbox.innerHTML);
+            checkedBoxTexts.push(checkedBoxText);
+          }
         }
 
         const params = { sessionId, question: question.textContent, answer: checkedBoxTexts.join(' "and" ') };
