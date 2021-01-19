@@ -148,12 +148,12 @@ const makeRetriableQuestionResponseRequest = (params, numAttempts) => {
 };
 
 const extractAnswerOutOfSpan = (innerHTML) => {
-  let start = buttonInnerHTML.indexOf("<span>");
+  let start = innerHTML.indexOf("<span>");
   if (start !== -1) {
-    let end = buttonInnerHTML.indexOf("</span>");
+    let end = innerHTML.indexOf("</span>");
     if (end !== -1) {
       let actualStart = start + "<span>".length;
-      return buttonInnerHTML.substring(actualStart, end);
+      return innerHTML.substring(actualStart, end);
     }
   }
   console.error("We're in trouble");
