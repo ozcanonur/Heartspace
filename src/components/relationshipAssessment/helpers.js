@@ -81,7 +81,7 @@ const getQuestionScore = (questionName, answer) => {
     case 'Very true':
       score += 5;
       break;
-    case 'Very Extremely':
+    case 'Very extremely':
       score += 6;
       break;
     case 'Completely true':
