@@ -182,6 +182,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
                     background: `linear-gradient(to right, #f2a07e 0, #f2a07e ${negativesScorePercentile}%, white ${negativesScorePercentile}%, white 100%)`,
                   }}
                 />
+                <p className={classes.smallNotice}>* Smaller the percentage, the better.</p>
               </div>
             </div>
             <hr />
@@ -190,7 +191,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
             </p>
             <hr />
             <p>Would you like a more in-depth analysis?</p>
-            <p className={classes.spamNotice}>* Don’t worry, we hate spam as much as you do. We won’t annoy you and you can unsubscribe anytime.</p>
+            <p className={classes.smallNotice}>* Don’t worry, we hate spam as much as you do. We won’t annoy you and you can unsubscribe anytime.</p>
           </div>
           <input className={classes.emailInput} placeholder="Enter your email" value={inputValue} onChange={inputOnChange} required autocomplete="email"/>
           <div className={classes.buttonContainer}>
