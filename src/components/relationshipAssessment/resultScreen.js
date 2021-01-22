@@ -100,11 +100,11 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
     let comparisonResult = getTotalComparisonResult(positivesScore, negativesScore);
     switch (comparisonResult) {
       case ComparisonEnum.lower:
-        return 'slightly lower than';
+        return 'slightly worse than';
       case ComparisonEnum.average:
         return 'similar to';
       case ComparisonEnum.higher:
-        return 'slightly higher than';
+        return 'better than';
       default:
         break;
     }
@@ -114,11 +114,11 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
     let comparisonResult = getPositivesComparisonResult(positivesScore);
     switch (comparisonResult) {
       case ComparisonEnum.lower:
-        return 'Lower than average';
+        return 'Worse than average';
       case ComparisonEnum.average:
         return 'Similar to average';
       case ComparisonEnum.higher:
-        return 'Higher than average';
+        return 'Better than average';
       default:
         break;
     }
@@ -128,14 +128,18 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
     let comparisonResult = getNegativesComparisonResult(negativesScore);
     switch (comparisonResult) {
       case ComparisonEnum.lower:
-        return 'Lower than average';
+        return 'Worse than average';
       case ComparisonEnum.average:
         return 'Similar to average';
       case ComparisonEnum.higher:
-        return 'Higher than average';
+        return 'Better than average';
       default:
         break;
     }
+  };
+
+  const roundToNearestHalf = (score) => {
+    return Math.round(score * 2) / 2;
   };
 
   return (
@@ -143,8 +147,8 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
       <div className={classes.resultContainer} {...props}>
         <div className={classes.resultTextsContainer}>
           <h1 className={classes.resultNumber}>{`Your relationship strength score is: ${
-            positivesScore - negativesScore
-          }.`}</h1>
+            Math.max(roundToNearestHalf((positivesScore - negativesScore) * 10 / 24), 1)
+          }/10.`}</h1>
           <div className={classes.resultLongText}>
             <p>Hey, Kudos to you for choosing to be more aware and conscious in your relationship - and completing this assessment was a great step.</p>
             <hr />
@@ -186,7 +190,10 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
             </div>
             <hr />
             <p>
-              That is good news - there are aspects of your relationship that can further improve for a more lasting, resilient bond. To access your full report and a more in-depth analysis of your answers, please enter your email address.
+              That is good news - there are aspects of your relationship that can further improve for a more lasting, resilient bond.
+            </p>
+            <p>
+              To access your full report and a more in-depth analysis of your answers, please enter your email address.
             </p>
             <hr />
             <p>Would you like a more in-depth analysis?</p>
