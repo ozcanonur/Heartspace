@@ -153,20 +153,20 @@ export const questions = [
     questionText: `Now, we will briefly explore any problems you might be having in your relationship.&&In the past month, have you experienced an issue in any of the following areas? Select all that apply.`,
     options: problemsOptions
   },
-  {
-    tag: 'input',
-    type: 'checkbox',
-    name: 'contributingIssues',
-    questionText: `What could be contributing to the issues you experience? Select all that apply.`,
-    options: contributingIssuesOptions,
-  },
-  {
-    tag: 'input',
-    type: 'checkbox',
-    name: 'pastThreeMonths',
-    questionText: `Do any of the following apply to you now or in the past 3 months?`,
-    options: pastThreeMonthsOptions,
-  },
+  // {
+  //   tag: 'input',
+  //   type: 'checkbox',
+  //   name: 'contributingIssues',
+  //   questionText: `What could be contributing to the issues you experience? Select all that apply.`,
+  //   options: contributingIssuesOptions,
+  // },
+  // {
+  //   tag: 'input',
+  //   type: 'checkbox',
+  //   name: 'pastThreeMonths',
+  //   questionText: `Do any of the following apply to you now or in the past 3 months?`,
+  //   options: pastThreeMonthsOptions,
+  // },
   {
     tag: 'input',
     type: 'radio',
