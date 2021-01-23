@@ -55,7 +55,7 @@ const RelationshipAssessment = () => {
     const newSessionId = makeSessionId(16);
     setSessionId(newSessionId);
 
-    // attachAnswerButtonListeners(newSessionId);
+    attachAnswerButtonListeners(newSessionId);
 
     axios.get('https://heartspacerelweb.herokuapp.com/isAlive').then((resp) => {
       if (!resp || resp.status !== 200) {
