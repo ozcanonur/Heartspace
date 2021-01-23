@@ -105,3 +105,11 @@ a {
     height: 0;
   }
 }
+
+scrollable {
+  overscroll-behavior: contain;
+}
+
+cf-input {
+  overscroll-behavior: contain;
+}

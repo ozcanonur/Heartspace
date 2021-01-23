@@ -6,7 +6,7 @@ import RelationshipAssessment from '../components/relationshipAssessment/relatio
 
 const Quiz = ({ location }) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overscrollBehavior: 'contain' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <Helmet title="Relationship Assessment">
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH650H7WVM%22%3E" defer></script>
         <script>
