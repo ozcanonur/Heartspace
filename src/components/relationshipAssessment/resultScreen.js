@@ -47,21 +47,23 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
           'event_category': '',
           'event_label': ''
         });
+        setIsEmailPostSuccess(true);
         return openModal();
       } else {
         gtag('event', 'assessment_email_submission_failure', {
           'event_category': '',
           'event_label': 'network'
         });
+        setIsEmailPostSuccess(false);
       }
 
-      setIsEmailPostSuccess(false);
     } catch (error) {
       console.error('Something went wrong with us.');
-        gtag('event', 'assessment_email_submission_failure', {
-          'event_category': '',
-          'event_label': 'js-trycatch-block'
-        });
+      gtag('event', 'assessment_email_submission_failure', {
+        'event_category': '',
+        'event_label': 'js-trycatch-block'
+      });
+      setIsEmailPostSuccess(false);
     }
   };
 
