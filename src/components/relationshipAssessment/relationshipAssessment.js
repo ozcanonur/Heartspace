@@ -9,7 +9,7 @@ import { parseQuestions, getPositiveAndNegativeScores, attachAnswerButtonListene
 
 import classes from './relationshipAssessment.module.scss';
 
-const CHAINED_RESPONSE_TIME = 0;
+const CHAINED_RESPONSE_TIME = 750;
 
 const RelationshipAssessment = () => {
   const [sessionId, setSessionId] = useState('');
