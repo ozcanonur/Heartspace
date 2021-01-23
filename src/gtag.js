@@ -1,6 +1,6 @@
 let gtag;
 
-if (window) {
+if (typeof window !== `undefined`) {
   window.dataLayer = window.dataLayer || [];
 
   function gtag() {
