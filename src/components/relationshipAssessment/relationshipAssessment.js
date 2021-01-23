@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { ConversationalForm } from 'conversational-form';
+import gtag from '../../gtag';
 
 import ResultScreen from './resultScreen';
 import { questions } from './assessmentQuestions';
@@ -8,7 +9,7 @@ import { parseQuestions, getPositiveAndNegativeScores, attachAnswerButtonListene
 
 import classes from './relationshipAssessment.module.scss';
 
-const CHAINED_RESPONSE_TIME = 750;
+const CHAINED_RESPONSE_TIME = 0;
 
 const RelationshipAssessment = () => {
   const [sessionId, setSessionId] = useState('');
@@ -35,12 +36,13 @@ const RelationshipAssessment = () => {
 
       setIsAssessmentDone(true);
 
-      if (!gtag) return;
-      gtag('event', 'assessment_completed', {
-        'event_category': '',
-        'event_label': '',
-        'non_interaction': true
-      });
+      if (gtag) {
+        gtag('event', 'assessment_completed', {
+          event_category: '',
+          event_label: '',
+          non_interaction: true,
+        });
+      }
     }, resultScreenTimeoutLength);
   };
 
@@ -53,24 +55,24 @@ const RelationshipAssessment = () => {
     const newSessionId = makeSessionId(16);
     setSessionId(newSessionId);
 
-    attachAnswerButtonListeners(newSessionId);
+    // attachAnswerButtonListeners(newSessionId);
 
-    axios.get('https://heartspacerelweb.herokuapp.com/isAlive').then(resp => {
+    axios.get('https://heartspacerelweb.herokuapp.com/isAlive').then((resp) => {
       if (!resp || resp.status !== 200) {
         if (!gtag) return;
         gtag('event', 'assessment_isAlive_failure', {
-          'event_category': '',
-          'event_label': '',
-          'non_interaction': true
+          event_category: '',
+          event_label: '',
+          non_interaction: true,
         });
       }
     });
-    
+
     const cf = ConversationalForm.startTheConversation({
       options: {
         submitCallback,
         preventAutoFocus: false,
-        theme: 'dark',
+        theme: 'light',
         showProgressBar: true,
         preventAutoFocus: true,
         userInterfaceOptions: {
@@ -79,6 +81,7 @@ const RelationshipAssessment = () => {
             chainedResponseTime: CHAINED_RESPONSE_TIME,
           },
         },
+        // scrollAcceleration: 0,
         // loadExternalStyleSheet: false
       },
       tags: formFields,
@@ -94,11 +97,13 @@ const RelationshipAssessment = () => {
   return (
     <div className={classes.container}>
       <div ref={assessmentRef} style={{ display: isAssessmentDone ? 'none' : 'inherit', transition: 'all .2s' }} />
-      {isAssessmentDone ? <ResultScreen
-        sessionId={sessionId}
-        positiveAndNegativeScores={positiveAndNegativeScores}
-        style={{display: 'flex'}} 
-      /> : null}
+      {isAssessmentDone ? (
+        <ResultScreen
+          sessionId={sessionId}
+          positiveAndNegativeScores={positiveAndNegativeScores}
+          style={{ display: 'flex' }}
+        />
+      ) : null}
     </div>
   );
 };

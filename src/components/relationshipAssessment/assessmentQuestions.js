@@ -1,10 +1,10 @@
 function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 }
 
 var problemsOptions = [
@@ -47,111 +47,111 @@ shuffleArray(contributingIssuesOptions);
 shuffleArray(pastThreeMonthsOptions);
 
 export const questions = [
-  {
-    tag: 'input',
-    type: 'radio',
-    name: 'started',
-    questionText:
-      'Welcome to our psychological research-based relationship strength assessment.&&These questions are based on the journal research paper published by the Psychological Association.&&It will take you about 2 minutes to complete this test.&&Are you ready?',
-    options: [`Yes, let's start!`, 'No, not yet.'],
-  },
-  {
-    tag: 'input',
-    type: 'text',
-    name: 'started',
-    questionText: 'No worries - come back when you feel ready. We will be here for you.',
-    conditional: 'No, not yet.',
-  },
-  {
-    tag: 'input',
-    type: 'radio',
-    name: 'age',
-    questionText:
-      'Great!&&Note that your privacy matters to us. Your answers are 100% confidential and anonymous through our secure technology.&&Firstly, can you tell us a bit about yourself?&&This will help our expert system to finetune its analysis.&&How old are you?',
-    options: ['17 or younger', '18-25', '26-34', '35-43', '44-55', '56-65', '66 or older'],
-  },
-  {
-    tag: 'input',
-    type: 'radio',
-    name: 'gender',
-    questionText: 'Your gender?',
-    options: [
-      'Female',
-      'Male',
-      'Non-binary',
-      'Prefer not to say',
-      'Do not know',
-      // 'Other' => Custom condition
-    ],
-  },
-  {
-    tag: 'input',
-    type: 'radio',
-    name: 'sexualOrientation',
-    questionText: 'What is your sexual orientation?',
-    options: [
-      'Heterosexual',
-      'Gay / Lesbian',
-      'Bisexual',
-      'Prefer not to say',
-      'Do not know',
-      // 'Other' => Custom condition
-    ],
-  },
-  {
-    tag: 'input',
-    type: 'radio',
-    name: 'relationshipLength',
-    questionText: 'What is the length of your relationship?',
-    options: [
-      'Not in a romantic relationship',
-      'Less than/equal to 1 year',
-      'Between 1 year to 3 years',
-      'Between 4 years to 9 years',
-      'Between 9 years to 15 years',
-      'More than 15 years',
-      'Prefer not to identify',
-    ],
-  },
-  {
-    tag: 'input',
-    type: 'text',
-    name: 'relationshipLength',
-    questionText: `“To love oneself is the beginning of a lifelong romance” wrote Oscar Wilde.&&This assessment is most helpful when you are in a relationship.&&Come back when you are in one. :)`,
-    conditional: 'Not in a romantic relationship',
-  },
-  {
-    tag: 'input',
-    type: 'radio',
-    name: 'relationshipSatisfaction',
-    questionText: `Amazing. Let's get to it.&&We will ask you two general questions about your relationship.&&What is your current level of happiness and satisfaction in your relationship?`,
-    options: [
-      `Not satisfied at all - I'd like to see a major change`,
-      `Somewhat - Ups and downs but I'd like to see some improvement`,
-      `I am mostly happy and satisfied but would still benefit from further improvement and excitement`,
-      `I am completely satisfied and like to keep it this way`,
-    ],
-  },
-  {
-    tag: 'input',
-    type: 'radio',
-    name: 'negativeInteractions',
-    questionText: `How often do you experience a "negative interaction" in your relationship?&&We define "negative interaction" as any conflict, argument, problem or issue.`,
-    options: [
-      'Daily',
-      'Many times a week',
-      'Once or twice a week',
-      'Few times a month',
-      'Few times a year',
-      'Once a year or less often',
-    ],
-  },
+  // {
+  //   tag: 'input',
+  //   type: 'radio',
+  //   name: 'started',
+  //   questionText:
+  //     'Welcome to our psychological research-based relationship strength assessment.&&These questions are based on the journal research paper published by the Psychological Association.&&It will take you about 2 minutes to complete this test.&&Are you ready?',
+  //   options: [`Yes, let's start!`, 'No, not yet.'],
+  // },
+  // {
+  //   tag: 'input',
+  //   type: 'text',
+  //   name: 'started',
+  //   questionText: 'No worries - come back when you feel ready. We will be here for you.',
+  //   conditional: 'No, not yet.',
+  // },
+  // {
+  //   tag: 'input',
+  //   type: 'radio',
+  //   name: 'age',
+  //   questionText:
+  //     'Great! Note that your privacy matters to us. Your answers are 100% confidential and anonymous through our secure technology.&&Firstly, can you tell us a bit about yourself?&&This will help our expert system to finetune its analysis.&&How old are you?',
+  //   options: ['17 or younger', '18-25', '26-34', '35-43', '44-55', '56-65', '66 or older'],
+  // },
+  // {
+  //   tag: 'input',
+  //   type: 'radio',
+  //   name: 'gender',
+  //   questionText: 'Your gender?',
+  //   options: [
+  //     'Female',
+  //     'Male',
+  //     'Non-binary',
+  //     'Prefer not to say',
+  //     'Do not know',
+  //     // 'Other' => Custom condition
+  //   ],
+  // },
+  // {
+  //   tag: 'input',
+  //   type: 'radio',
+  //   name: 'sexualOrientation',
+  //   questionText: 'What is your sexual orientation?',
+  //   options: [
+  //     'Heterosexual',
+  //     'Gay / Lesbian',
+  //     'Bisexual',
+  //     'Prefer not to say',
+  //     'Do not know',
+  //     // 'Other' => Custom condition
+  //   ],
+  // },
+  // {
+  //   tag: 'input',
+  //   type: 'radio',
+  //   name: 'relationshipLength',
+  //   questionText: 'What is the length of your relationship?',
+  //   options: [
+  //     'Not in a romantic relationship',
+  //     'Less than/equal to 1 year',
+  //     'Between 1 year to 3 years',
+  //     'Between 4 years to 9 years',
+  //     'Between 9 years to 15 years',
+  //     'More than 15 years',
+  //     'Prefer not to identify',
+  //   ],
+  // },
+  // {
+  //   tag: 'input',
+  //   type: 'text',
+  //   name: 'relationshipLength',
+  //   questionText: `“To love oneself is the beginning of a lifelong romance” wrote Oscar Wilde.&&This assessment is most helpful when you are in a relationship.&&Come back when you are in one. :)`,
+  //   conditional: 'Not in a romantic relationship',
+  // },
+  // {
+  //   tag: 'input',
+  //   type: 'radio',
+  //   name: 'relationshipSatisfaction',
+  //   questionText: `Amazing. Let's get to it.&&We will ask you two general questions about your relationship.&&What is your current level of happiness and satisfaction in your relationship?`,
+  //   options: [
+  //     `Not satisfied at all - I'd like to see a major change`,
+  //     `Somewhat - Ups and downs but I'd like to see some improvement`,
+  //     `I am mostly happy and satisfied but would still benefit from further improvement and excitement`,
+  //     `I am completely satisfied and like to keep it this way`,
+  //   ],
+  // },
+  // {
+  //   tag: 'input',
+  //   type: 'radio',
+  //   name: 'negativeInteractions',
+  //   questionText: `How often do you experience a "negative interaction" in your relationship?&&We define "negative interaction" as any conflict, argument, problem or issue.`,
+  //   options: [
+  //     'Daily',
+  //     'Many times a week',
+  //     'Once or twice a week',
+  //     'Few times a month',
+  //     'Few times a year',
+  //     'Once a year or less often',
+  //   ],
+  // },
   {
     tag: 'input',
     type: 'checkbox',
     name: 'problems',
     questionText: `Now, we will briefly explore any problems you might be having in your relationship.&&In the past month, have you experienced an issue in any of the following areas? Select all that apply.`,
-    options: problemsOptions
+    options: problemsOptions,
   },
   // {
   //   tag: 'input',

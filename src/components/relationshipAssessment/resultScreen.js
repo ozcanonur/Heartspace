@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import gtag from '../../gtag';
 
 import Modal from './modal';
 
@@ -45,8 +46,8 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
       if (res.status === 201 || res.status === 200) {
         if (gtag) {
           gtag('event', 'assessment_email_submission_success', {
-            'event_category': '',
-            'event_label': ''
+            event_category: '',
+            event_label: '',
           });
         }
         setIsEmailPostSuccess(true);
@@ -54,19 +55,18 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
       } else {
         if (gtag) {
           gtag('event', 'assessment_email_submission_failure', {
-            'event_category': '',
-            'event_label': 'network'
+            event_category: '',
+            event_label: 'network',
           });
         }
         setIsEmailPostSuccess(false);
       }
-
     } catch (error) {
       console.error('Something went wrong with us.');
       if (gtag) {
         gtag('event', 'assessment_email_submission_failure', {
-          'event_category': '',
-          'event_label': 'js-trycatch-block'
+          event_category: '',
+          event_label: 'js-trycatch-block',
         });
       }
       setIsEmailPostSuccess(false);
@@ -154,16 +154,20 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
     <>
       <div className={classes.resultContainer} {...props}>
         <div className={classes.resultTextsContainer}>
-          <h1 className={classes.resultNumber}>{`Your relationship strength score is: ${
-            Math.max(roundToNearestHalf((positivesScore - negativesScore) * 10 / 24), 1)
-          }/10.`}</h1>
+          <h1 className={classes.resultNumber}>{`Your relationship strength score is: ${Math.max(
+            roundToNearestHalf(((positivesScore - negativesScore) * 10) / 24),
+            1
+          )}/10.`}</h1>
           <div className={classes.resultLongText}>
-            <p>Hey, Kudos to you for choosing to be more aware and conscious in your relationship - and completing this assessment was a great step.</p>
+            <p>
+              Hey, Kudos to you for choosing to be more aware and conscious in your relationship - and completing this
+              assessment was a great step.
+            </p>
             <hr />
             <p>
-              So what does this score mean? The questions in this assessment are based on a psychological research. And thousands of couples have
-              taken it since 2016. Compared to everyone else, your relationship strength score is{' '}
-              {`${getConclusiveComparisonStatement(positivesScore, negativesScore)}`} most couples.
+              So what does this score mean? The questions in this assessment are based on a psychological research. And
+              thousands of couples have taken it since 2016. Compared to everyone else, your relationship strength score
+              is {`${getConclusiveComparisonStatement(positivesScore, negativesScore)}`} most couples.
             </p>
             <hr />
             <div className={classes.visualisationContainer}>
@@ -199,16 +203,26 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
             </div>
             <hr />
             <p>
-              That is good news - there are aspects of your relationship that can further improve for a more lasting, resilient bond.
+              That is good news - there are aspects of your relationship that can further improve for a more lasting,
+              resilient bond.
             </p>
             <p>
               To access your full report and a more in-depth analysis of your answers, please enter your email address.
             </p>
             <hr />
             <p>Would you like a more in-depth analysis?</p>
-            <p className={classes.smallNotice}>* Don’t worry, we hate spam as much as you do. We won’t annoy you and you can unsubscribe anytime.</p>
+            <p className={classes.smallNotice}>
+              * Don’t worry, we hate spam as much as you do. We won’t annoy you and you can unsubscribe anytime.
+            </p>
           </div>
-          <input className={classes.emailInput} placeholder="Enter your email" value={inputValue} onChange={inputOnChange} required autocomplete="email"/>
+          <input
+            className={classes.emailInput}
+            placeholder="Enter your email"
+            value={inputValue}
+            onChange={inputOnChange}
+            required
+            autocomplete="email"
+          />
           <div className={classes.buttonContainer}>
             <div className={classes.submitButton} onClick={submitEmail}>
               Submit

@@ -3859,10 +3859,9 @@ contentful@^7.14.8:
     json-stringify-safe "^5.0.1"
     lodash "^4.17.11"
 
-conversational-form@^1.0.2:
+conversational-form@ozcanonur/conversational-form:
   version "1.0.2"
-  resolved "https://registry.yarnpkg.com/conversational-form/-/conversational-form-1.0.2.tgz#8d493229ba137c9a7875b720ec7e6e87d0f2ae94"
-  integrity sha512-sm1BspLtyNlJzGFVMAeOhphzvaGnWNEzoTUmtkmSp10Ehb+Ns+1+w1XFC+tBtkqmXIOGndDCwdsDxVN/bRjEqA==
+  resolved "https://codeload.github.com/ozcanonur/conversational-form/tar.gz/0557929d27b82ae73416d8b1a4fe36c1b41082b3"
 
 convert-hrtime@^3.0.0:
   version "3.0.0"

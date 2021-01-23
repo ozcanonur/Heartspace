@@ -106,7 +106,8 @@ const getQuestionScore = (questionName, answer) => {
 };
 
 export const getPositiveAndNegativeScores = (answers) => {
-  let positivesScore = 0, negativesScore = 0;
+  let positivesScore = 0,
+    negativesScore = 0;
   Object.keys(answers).forEach((question) => {
     let { score, isPositiveQuestion } = getQuestionScore(question, answers[question][0]);
     if (isPositiveQuestion) {
@@ -119,42 +120,44 @@ export const getPositiveAndNegativeScores = (answers) => {
 };
 
 const makeRetriableQuestionResponseRequest = (params, numAttempts) => {
-  console.log("Attempting new question response request");
+  console.log('Attempting new question response request');
 
   const maxAttempts = 200;
-  const retryPeriod = numAttempts * 1000 / 2;
+  const retryPeriod = (numAttempts * 1000) / 2;
 
   if (numAttempts > maxAttempts) {
-    console.log("Out of retries");
+    console.log('Out of retries');
     return;
   }
 
-  axios.post('https://heartspacerelweb.herokuapp.com/assessment/questionResponse', params)
-    .then((resp) => {
+  axios.post('https://heartspacerelweb.herokuapp.com/assessment/questionResponse', params).then(
+    (resp) => {
       if (resp.status >= 200 && resp.status < 300) {
-        console.log("Successful request");
+        console.log('Successful request');
       } else if (resp.status >= 300 && resp.status < 500) {
-        console.log("Request returned with status code", resp.status, "and won't be retried");
+        console.log('Request returned with status code', resp.status, "and won't be retried");
       } else {
-        console.error("Failed request. ", resp.status, "Attempting retry...");
-        setTimeout(() => {
-           makeRetriableQuestionResponseRequest(params, numAttempts + 1);
-        }, retryPeriod);
-      }
-    }, (e) => {
-        console.error("Failed request. ", e, "Attempting retry...");
+        console.error('Failed request. ', resp.status, 'Attempting retry...');
         setTimeout(() => {
           makeRetriableQuestionResponseRequest(params, numAttempts + 1);
         }, retryPeriod);
-  });;
+      }
+    },
+    (e) => {
+      console.error('Failed request. ', e, 'Attempting retry...');
+      setTimeout(() => {
+        makeRetriableQuestionResponseRequest(params, numAttempts + 1);
+      }, retryPeriod);
+    }
+  );
 };
 
 const extractAnswerOutOfSpan = (innerHTML) => {
-  let start = innerHTML.indexOf("<span>");
+  let start = innerHTML.indexOf('<span>');
   if (start !== -1) {
-    let end = innerHTML.indexOf("</span>");
+    let end = innerHTML.indexOf('</span>');
     if (end !== -1) {
-      let actualStart = start + "<span>".length;
+      let actualStart = start + '<span>'.length;
       return innerHTML.substring(actualStart, end);
     }
   }

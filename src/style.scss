@@ -75,3 +75,33 @@ a {
 #___gatsby > div {
   height: 100%;
 }
+
+.active.cf-gradient {
+  pointer-events: none;
+  display: none;
+}
+
+.cf-gradient.active {
+  pointer-events: none;
+  display: none;
+}
+
+.user.can-edit.peak-thumb.show {
+  pointer-events: none;
+}
+
+.cf-button:focus,
+.cf-button:focus:not([checked='checked']),
+.cf-button:hover,
+.cf-button:hover:not([checked='checked']) {
+  background: white !important;
+  color: black !important;
+
+  & > div > cf-checkbox {
+    background: white;
+  }
+
+  & > div > cf-checkbox::after {
+    height: 0;
+  }
+}
