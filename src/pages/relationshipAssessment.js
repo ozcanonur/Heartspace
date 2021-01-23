@@ -3,11 +3,10 @@ import Navbar from '../components/navbar/navbar';
 import { Helmet } from 'react-helmet';
 
 import RelationshipAssessment from '../components/relationshipAssessment/relationshipAssessment';
-import classes from './relationshipAssessment.module.scss';
 
 const Quiz = ({ location }) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overscrollBehavior: 'contain' }}>
       <Helmet title="Relationship Assessment">
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH650H7WVM%22%3E" defer></script>
         <script>
@@ -17,7 +16,7 @@ const Quiz = ({ location }) => {
             gtag('config', 'G-HH650H7WVM');`}
         </script>
       </Helmet>
-      <Navbar location={location} className={classes.navbar} style={{ position: 'inherit', height: 'none' }} />
+      <Navbar location={location} style={{ position: 'inherit', height: 'none' }} />
       <RelationshipAssessment />
     </div>
   );
