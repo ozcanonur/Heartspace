@@ -35,6 +35,7 @@ const RelationshipAssessment = () => {
 
       setIsAssessmentDone(true);
 
+      if (!gtag) return;
       gtag('event', 'assessment_completed', {
         'event_category': '',
         'event_label': '',
@@ -56,6 +57,7 @@ const RelationshipAssessment = () => {
 
     axios.get('https://heartspacerelweb.herokuapp.com/isAlive').then(resp => {
       if (!resp || resp.status !== 200) {
+        if (!gtag) return;
         gtag('event', 'assessment_isAlive_failure', {
           'event_category': '',
           'event_label': '',
