@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import gtag from '../../gtag';
+// import gtag from '../../gtag';
 
 import Modal from './modal';
 
@@ -44,7 +44,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
       setLoading(false);
 
       if (res.status === 201 || res.status === 200) {
-        if (gtag) {
+        if (typeof window !== `undefined`) {
           gtag('event', 'assessment_email_submission_success', {
             event_category: '',
             event_label: '',
@@ -53,7 +53,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
         setIsEmailPostSuccess(true);
         return openModal();
       } else {
-        if (gtag) {
+        if (typeof window !== `undefined`) {
           gtag('event', 'assessment_email_submission_failure', {
             event_category: '',
             event_label: 'network',
@@ -63,7 +63,7 @@ const ResultScreen = ({ sessionId, positiveAndNegativeScores, ...props }) => {
       }
     } catch (error) {
       console.error('Something went wrong with us.');
-      if (gtag) {
+      if (typeof window !== `undefined`) {
         gtag('event', 'assessment_email_submission_failure', {
           event_category: '',
           event_label: 'js-trycatch-block',

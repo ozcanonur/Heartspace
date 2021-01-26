@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { ConversationalForm } from 'conversational-form';
-import gtag from '../../gtag';
+// import gtag from '../../gtag';
 
 import ResultScreen from './resultScreen';
 import { questions } from './assessmentQuestions';
@@ -36,7 +36,7 @@ const RelationshipAssessment = () => {
 
       setIsAssessmentDone(true);
 
-      if (gtag) {
+      if (typeof window !== `undefined`) {
         gtag('event', 'assessment_completed', {
           event_category: '',
           event_label: '',
